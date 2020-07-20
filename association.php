@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="assets\css\styles.css">
     <title>Titre Pro</title>
     <style>
-
+        .header {
+            height: 170px;
+            width: auto;
+        }
     </style>
 </head>
 
@@ -45,15 +48,33 @@
                 <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#connexionModal">Connexion</button>
             </div>
             <div class="form-group">
-            <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
             </div>
         </form>
     </nav>
 
     <main>
         <div class="container-fluid">
-            <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">à la une</div>
+            <div class="row justify-content-center mb-1">
+                <div class="col text-uppercase h2 text-dark text-center">Liste des structures</div>
+            </div>
+            <div class="row justify-content-center mb-3 pb-1">
+                <div class="col-sm-4 card w-100 shadow rounded">
+                    <form class="mb-3 bg-light p-5" action="index.php" method="post" novalidate>
+                        <div class="form-group">
+                            <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
+                            <select class="form-control" id="activity" name="activity">
+                                <option>culture</option>
+                                <option>environnement</option>
+                                <option>social</option>
+                                <option>sport</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <a href="association.php" class="btn btn-secondary" role="button">Rechercher</a>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">

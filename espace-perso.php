@@ -45,7 +45,7 @@
                 <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#connexionModal">Connexion</button>
             </div>
             <div class="form-group">
-            <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
             </div>
         </form>
     </nav>
@@ -53,55 +53,45 @@
     <main>
         <div class="container-fluid">
             <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">à la une</div>
+                <div class="col text-uppercase h2 text-dark text-center">Mon espace</div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
                     <div class="card w-100 shadow rounded">
-                        <img src="assets\img\aquacaux.jpg" class="card-img-top" style="height: 18rem;" alt="aquacaux">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded">
-                        <img src="assets\img\graineEnMain.jpg" class="card-img-top" style="height: 18rem;" alt="graineenmain">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded">
-                        <img src="assets\img\médiaction.jpg" class="card-img-top" style="height: 18rem;" alt="médiaction">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
-                        </div>
+                        <form class="mb-3 bg-light p-5" action="index.php" method="post" novalidate>
+                            <div class="form-group">
+                                <label for="assoName" class="text-secondary font-weight-bold">Nom de votre association</label>
+                                <input type="text" class="form-control" id="assoName" name="assoName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="activity" class="text-secondary font-weight-bold">Domaine d'activité</label>
+                                <select class="form-control" id="activity" name="activity">
+                                    <option>Culture</option>
+                                    <option>Environnement</option>
+                                    <option>Social</option>
+                                    <option>Sport</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="adress" class="text-secondary font-weight-bold">Adresse</label>
+                                <input type="text" class="form-control" id="adress" name="adress" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="text-secondary font-weight-bold">Téléphone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mail" class="text-secondary font-weight-bold">Adresse mail</label>
+                                <input type="email" class="form-control" id="mail" name="mail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="siren" class="text-secondary font-weight-bold">Numéro SIREN</label>
+                                <input type="email" class="form-control" id="siren" name="siren" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" name="submit" class="btn btn-secondary">Valider</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
