@@ -1,0 +1,44 @@
+INSERT INTO `advert` (`advert_title`, `advert_date`, `advert_description`, `advert_object`, `advert_validate`, `id_user`)
+ VALUES
+ ('accompagnateur', '2020-07-15', 'accompagner des personnes agées lors de sorties culturel', 
+ 'accompagnateur public', '1', '10'),
+ ('animatrice', '2020-07-25', 'animation auprès d'un jeune public', 
+ 'animatrice enfant', '1', '6'),
+ ('ramassage déchet', '2020-07-28', 'rammassage de dechet sur la plage du havre', 
+ 'déchet plastiques', '0', '9'),
+ ('lecture public', '2020-07-30', 'lecture de contes pour des enfants', 
+ 'lecture public', '0', '3');
+ 
+
+INSERT INTO `usertype` (`usertype_value`)
+ VALUES
+ ('Administrateur'),
+ ('Modérateur'),
+ ('Association'),
+ ('Bénévole');
+
+INSERT INTO `activity` (`activity_name`)
+ VALUES
+ ('Culture'),
+ ('Environnement'),
+ ('Social'),
+ ('Sport');
+
+INSERT INTO `user` (`user_password`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`,
+ `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`,
+ `organization_mail`, `organization_siren`, `organization_desc` , `user_validation`, `id_usertypes`)
+ VALUES
+ ('admin', 'admin@outlook.com', '', '', '', '', '', '', '', '', '', '1', 1),
+ ('modo', 'modo@outlook.com', '', '', '', '', '', '', '', '', '', '0', 2),
+ ('gégé', 'gégé@outlook.com', 'Gerard', 'Depardieu', '76', '', '', '', '', '', '', '1', 4),
+ ('dédé', 'dédé@outlook.com', 'Didier', 'Dechamps', '56', '', '', 'e', '', '', '', '1', 4),
+ ('cricri', 'cricri@outlook.com', 'Christine', 'Boutin', '78', '', '', '', '', '', '', '1', 4),
+ ('dedel', 'dedel@outlook.com', 'Delphine', 'Bateaux', '61', '', '', '', '', '', '', '0', 4),
+ ('bob', 'bob@outlook.com', 'Robert', 'Redford', '84', '', '', '', '', '', '', '0', 4),
+ ('bob', 'bob@outlook.com', 'Robert', 'Redford', '84', '', '', '', '', '', '', '0', 4),
+ ('aquacaux', 'aquacaux@orange.fr', '', '', '', 'Aquacaux', '5 rue du bout du monde', '0244556633',
+ 'aquacaux.contact@orange.fr', '065156165065', 'association insertion com bat espaces naturel', '1', 3),
+('médiaction', 'médiaction@orange.fr', '', '', '', 'Médiaction', '12 avenue Maréchal Foch', '0244226688',
+ 'médiaction.contact@orange.fr', '037806166874', 'association insertion médiation culturel' , '1', 3),
+('graineenmain', 'graineenmain@orange.fr', '', '', '', 'Graine en main', '65 chemin de campagne', '0266441122',
+ 'graineenmain.contact@orange.fr', '278664562001', 'association insertion production légumes bio' , '0', 3);
