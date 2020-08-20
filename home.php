@@ -27,25 +27,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="index.php">Accueil</a>
+                    <a class="nav-link text-white" href="home.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="association.php">Association</a>
+                    <a class="nav-link text-white" href="organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="espace-perso.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact</a>
+                    <a class="nav-link text-white" href="user.php">Espace personnel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#connexionModal">Connexion</button>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-            <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -68,7 +71,7 @@
                             <li class="list-group-item">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-dark">site web</div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +87,7 @@
                             <li class="list-group-item">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-dark">site web</div>
                         </div>
                     </div>
                 </div>
@@ -100,7 +103,7 @@
                             <li class="list-group-item">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                                <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-dark">site web</div>
                         </div>
                     </div>
                 </div>
@@ -113,73 +116,6 @@
             <div class="text-white h4">mentions légales / contact / acceuil</div>
         </div>
     </footer>
-
-    <!-- modal connexion -->
-    <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="inscriptionModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div id="articleModalHeader" class="modal-header bg-dark">
-                    <div class="modal-title text-white h4" id="exampleModalLabel">Formulaire d'inscription</div>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="mb-3 bg-light p-5" action="index.php" method="post" novalidate>
-                    <div class="form-group">
-                        <label for="login" class="text-secondary font-weight-bold">Identifiant</label>
-                        <input type="text" class="form-control" id="login" name="login" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="text-secondary font-weight-bold">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-outline-secondary">Se connecter</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- modal connexion -->
-
-    <!-- modal d'inscription -->
-    <div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="inscriptionModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div id="articleModalHeader" class="modal-header bg-dark">
-                    <div class="modal-title text-white h4" id="exampleModalLabel">Formulaire d'inscription</div>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="mb-3 bg-light p-5" action="index.php" method="post" novalidate>
-                    <div class="form-group">
-                        <label for="login" class="text-secondary font-weight-bold">Adresse mail</label>
-                        <input type="email" class="form-control" id="login" name="login" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="login" class="text-secondary font-weight-bold">Identifiant</label>
-                        <input type="text" class="form-control" id="login" name="login" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="text-secondary font-weight-bold">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="userType" class="text-secondary font-weight-bold">Utilisateur</label>
-                        <select class="form-control" id="userType">
-                            <option>Bénévole</option>
-                            <option>Association</option>
-                        </select>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-outline-secondary">S'inscrire</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- modal d'inscription -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

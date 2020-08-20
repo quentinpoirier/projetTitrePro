@@ -27,25 +27,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="index.php">Accueil</a>
+                    <a class="nav-link text-white" href="home.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="association.php">Association</a>
+                    <a class="nav-link text-white" href="organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="espace-perso.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact</a>
+                    <a class="nav-link text-white" href="user.php">Espace personnel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#connexionModal">Connexion</button>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -74,10 +77,6 @@
                         <div class="form-group">
                             <label for="advertDateStart" class="text-white text-uppercase">Date de début</label>
                             <input type="date" class="form-control" id="advertDateStart" name="advertDateStart" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="advertDateEnd" class="text-white text-uppercase">Date de fin</label>
-                            <input type="date" class="form-control" id="advertDateEnd" name="advertDateEnd" required>
                         </div>
                         <div class="text-center">
                             <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">Poster</button>

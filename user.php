@@ -56,7 +56,7 @@
     <main>
         <div class="container-fluid">
             <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">login</div>
+                <div class="col text-uppercase h2 text-dark text-center">inscription</div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-6">
@@ -70,8 +70,60 @@
                             <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
                             <input type="password" class="form-control" id="userPassword" name="userPassword" required>
                         </div>
+                        <div class="form-group">
+                            <label for="userType" class="text-white text-uppercase">Status</label>
+                            <select class="form-control" id="userType" name="userType">
+                                <option>Association</option>
+                                <option>Bénévole</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="volunteerFirstname" class="text-white text-uppercase">Prénom</label>
+                            <input type="text" class="form-control" id="volunteerFirstname" name="volunteerFirstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="volunteerLastname" class="text-white text-uppercase">Nom</label>
+                            <input type="text" class="form-control" id="volunteerLastname" name="volunteerLastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="volunteerBirthdate" class="text-white text-uppercase">Date de naissance</label>
+                            <input type="date" class="form-control" id="volunteerBirthdate" name="volunteerBirthdate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
+                            <input type="text" class="form-control" id="oragnizationName" name="oragnizationName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
+                            <select class="form-control" id="activity" name="activity">
+                                <option>Culture</option>
+                                <option>Environnement</option>
+                                <option>Social</option>
+                                <option>Sport</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationAdress" class="text-white text-uppercase">Adresse</label>
+                            <input type="text" class="form-control" id="organizationAdress" name="organizationAdress" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationPhone" class="text-white text-uppercase">Téléphone</label>
+                            <input type="text" class="form-control" id="organizationPhone" name="organizationPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationMail" class="text-white text-uppercase">Mail de contact</label>
+                            <input type="email" class="form-control" id="organizationMail" name="organizationMail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationSiren" class="text-white text-uppercase">Numéro SIREN</label>
+                            <input type="text" class="form-control" id="organizationSiren" name="organizationSiren" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
+                            <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required></textarea>
+                        </div>
                         <div class="text-center">
-                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">S'identifier</button>
+                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
                         </div>
                     </form>
 
