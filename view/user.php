@@ -27,28 +27,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="home.php">Accueil</a>
+                    <a class="nav-link text-white" href="view\home.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="organization.php">Association</a>
+                    <a class="nav-link text-white" href="view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="advert.php">Annonces</a>
+                    <a class="nav-link text-white" href="view\advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="user.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="contact.php">Contact</a>
+                    <a class="nav-link text-white" href="view\contact.php">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="login.php" role="button">Connexion</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="register.php" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>

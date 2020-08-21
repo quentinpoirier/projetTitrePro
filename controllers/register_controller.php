@@ -11,6 +11,7 @@ $passwordRegex = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}
 
 
 if (isset($_POST['userMail'])) {
+    $Users = new Users();
     if (filter_var($_POST['organizationMail'], FILTER_VALIDATE_EMAIL) == false) {
         $error['userMail'] = 'Mauvais format';
     };
@@ -20,7 +21,6 @@ if (isset($_POST['userMail'])) {
 }
 
 if (isset($_POST['userPassword']) && isset($_POST['verifyPassword'])) {
-
     if (!preg_match($passwordRegex, $_POST['userPassword'])) {
         $error['userPassword'] = 'Mauvais Format';
     };
@@ -35,7 +35,7 @@ if (isset($_POST['userPassword']) && isset($_POST['verifyPassword'])) {
     };
 };
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['registerSubmit'])) {
     if (!array_key_exists('userType', $_POST)) {
         $error['userType'] = 'Veuillez renseigner le champ';
     };
@@ -76,7 +76,7 @@ if (isset($_POST['oragnizationName'])) {
     };
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['registerSubmit'])) {
     if (!array_key_exists('activity', $_POST)) {
         $error['activity'] = 'Veuillez renseigner le champ';
     };

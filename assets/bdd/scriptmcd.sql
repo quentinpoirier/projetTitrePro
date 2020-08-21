@@ -31,8 +31,8 @@ CREATE TABLE usertype(
 
 CREATE TABLE user(
         id_user             Int  Auto_increment  NOT NULL ,
-        user_password       Varchar (50) NOT NULL ,
         user_mail           Varchar (50) NOT NULL ,
+        user_password       Varchar (50) NOT NULL ,
         volunteer_firstname Varchar (50) ,
         volunteer_lastname  Varchar (50) ,
         volunteer_age       Varchar (50) ,
@@ -41,8 +41,9 @@ CREATE TABLE user(
         organization_phone  Varchar (50) ,
         organization_mail   Varchar (50) ,
         organization_siren  Varchar (50) ,
-        organization_desc   Varchar (50) ,
+        organization_desc   Text ,
         user_validation     TinyINT NOT NULL ,
+        user_reported       TinyINT NOT NULL ,
         id_usertypes        Int NOT NULL
 	,CONSTRAINT user_PK PRIMARY KEY (id_user)
 
@@ -57,10 +58,11 @@ CREATE TABLE user(
 CREATE TABLE advert(
         id_advert          Int  Auto_increment  NOT NULL ,
         advert_title       Varchar (50) NOT NULL ,
-        advert_date        Date NOT NULL ,
-        advert_description Varchar (50) NOT NULL ,
         advert_object      Varchar (50) NOT NULL ,
+        advert_description Text NOT NULL ,
+        advert_date_start  Date NOT NULL ,
         advert_validate    TinyINT NOT NULL ,
+        advert_report      TinyINT NOT NULL ,
         id_user            Int NOT NULL
 	,CONSTRAINT advert_PK PRIMARY KEY (id_advert)
 

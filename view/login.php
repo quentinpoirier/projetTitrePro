@@ -1,3 +1,9 @@
+<?php
+
+require_once 'assets\controllers\login_controller';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -27,28 +33,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="home.php">Accueil</a>
+                    <a class="nav-link text-white" href="view\home.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="organization.php">Association</a>
+                    <a class="nav-link text-white" href="view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="advert.php">Annonces</a>
+                    <a class="nav-link text-white" href="view\advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="user.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="contact.php">Contact</a>
+                    <a class="nav-link text-white" href="view\contact.php">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="login.php" role="button">Connexion</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="register.php" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -56,22 +62,27 @@
     <main>
         <div class="container-fluid">
             <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">contact</div>
+                <div class="col text-uppercase h2 text-dark text-center">login</div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
                     <form class="bg-dark p-4 rounded-lg" action="index.php" method="post" novalidate>
                         <div class="form-group">
-                            <label for="contactObjet" class="text-white text-uppercase">object</label>
-                            <input type="text" class="form-control" id="contactObjet" name="contactObjet" required>
+                            <label for="userMail" class="text-white text-uppercase">Mail</label>
+                            <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
+                            <span><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="contactClaim" class="text-white text-uppercase">réclamation</label>
-                            <textarea type="password" class="form-control" id="contactClaim" name="contactClaim" rows="3" required></textarea>
+                            <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
+                            <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
+                            <span><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">S'identifier</button>
+                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">se connecter</button>
+                        </div>
+                        <div>
+                            <a href="view\register.php" class="btn btn-light text-uppercase font-weight-bold mt-3">s'inscrire</a>
                         </div>
                     </form>
 
