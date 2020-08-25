@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets\controllers\contact_controller.php';
+require_once '..\controllers\contact_controller.php';
 
 ?>
 
@@ -11,7 +11,7 @@ require_once 'assets\controllers\contact_controller.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\css\styles.css">
+    <link rel="stylesheet" href="..\assets\css\styles.css">
     <title>Titre Pro</title>
     <style>
 
@@ -33,28 +33,28 @@ require_once 'assets\controllers\contact_controller.php';
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\home.php">Accueil</a>
+                    <a class="nav-link text-white" href="..\index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\organization.php">Association</a>
+                    <a class="nav-link text-white" href="..\view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\advert.php">Annonces</a>
+                    <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\user.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="..\view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\contact.php">Contact</a>
+                    <a class="nav-link text-white" href="">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="view\login.php" role="button">Connexion</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="view\register.php" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -67,19 +67,19 @@ require_once 'assets\controllers\contact_controller.php';
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
-                    <form class="bg-dark p-4 rounded-lg" action="index.php" method="post" novalidate>
+                    <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
                         <div class="form-group">
                             <label for="contactObjet" class="text-white text-uppercase">object</label>
                             <input type="text" class="form-control" id="contactObjet" name="contactObjet" value="<?= isset($_POST['contactObjet']) ? htmlspecialchars($_POST['contactObjet']) : '' ?>">
-                            <span><?= isset($error['contactObjet']) ? $error['contactObjet'] : '' ?></span>
+                            <span class="font-italic text-danger"><?= isset($error['contactObjet']) ? $error['contactObjet'] : '' ?></span>
                         </div>
                         <div class="form-group">
                             <label for="contactClaim" class="text-white text-uppercase">réclamation</label>
                             <textarea type="password" class="form-control" id="contactClaim" name="contactClaim" rows="3" value="<?= isset($_POST['contactClaim']) ? htmlspecialchars($_POST['contactClaim']) : '' ?>"></textarea>
-                            <span><?= isset($error['contactClaim']) ? $error['contactClaim'] : '' ?></span>
+                            <span class="font-italic text-danger"><?= isset($error['contactClaim']) ? $error['contactClaim'] : '' ?></span>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">S'identifier</button>
+                            <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">poster</button>
                         </div>
                     </form>
 

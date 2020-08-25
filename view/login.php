@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets\controllers\login_controller';
+require_once '..\controllers\login_controller.php';
 
 ?>
 
@@ -11,7 +11,7 @@ require_once 'assets\controllers\login_controller';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\css\styles.css">
+    <link rel="stylesheet" href="..\assets\css\styles.css">
     <title>Titre Pro</title>
     <style>
 
@@ -33,28 +33,28 @@ require_once 'assets\controllers\login_controller';
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\home.php">Accueil</a>
+                    <a class="nav-link text-white" href="..\index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\organization.php">Association</a>
+                    <a class="nav-link text-white" href="..\view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\advert.php">Annonces</a>
+                    <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\user.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="..\view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\contact.php">Contact</a>
+                    <a class="nav-link text-white" href="">Contact</a>
                 </li>
             </ul>
         </div>
         <form class="form-inline">
             <div class="form-group mx-sm-3">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="view\login.php" role="button">Connexion</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="view\register.php" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -67,22 +67,22 @@ require_once 'assets\controllers\login_controller';
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
-                    <form class="bg-dark p-4 rounded-lg" action="index.php" method="post" novalidate>
+                    <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
                         <div class="form-group">
                             <label for="userMail" class="text-white text-uppercase">Mail</label>
                             <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
-                            <span><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
+                            <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
                         </div>
                         <div class="form-group">
                             <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
                             <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
-                            <span><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
+                            <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">se connecter</button>
+                            <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">se connecter</button>
                         </div>
-                        <div>
-                            <a href="view\register.php" class="btn btn-light text-uppercase font-weight-bold mt-3">s'inscrire</a>
+                        <div class="text-center">
+                            <a href="..\view\register.php" class="btn btn-light text-uppercase font-weight-bold mt-3" role="button" aria-pressed="true">s'inscrire</a>
                         </div>
                     </form>
 

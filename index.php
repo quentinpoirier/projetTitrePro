@@ -27,19 +27,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\home.php">Accueil</a>
+                    <a class="nav-link text-white" href="..\index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\organization.php">Association</a>
+                    <a class="nav-link text-white" href="..\view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\advert.php">Annonces</a>
+                    <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\user.php">Espace personnel</a>
+                    <a class="nav-link text-white" href="..\view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="view\contact.php">Contact</a>
+                    <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -60,50 +60,50 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded">
+                    <div class="card w-100 shadow rounded bg-dark text-white">
                         <img src="assets\img\aquacaux.jpg" class="card-img-top" style="height: 18rem;" alt="aquacaux">
                         <div class="card-body">
                             <div class="card-title">Nom de l'association</div>
                             <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
+                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
+                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                            <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-light text-uppercase">site web</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded">
+                    <div class="card w-100 shadow rounded bg-dark text-white">
                         <img src="assets\img\graineEnMain.jpg" class="card-img-top" style="height: 18rem;" alt="graineenmain">
                         <div class="card-body">
                             <div class="card-title">Nom de l'association</div>
                             <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
+                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
+                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                            <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-light text-uppercase">site web</div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded">
+                    <div class="card w-100 shadow rounded bg-dark text-white">
                         <img src="assets\img\médiaction.jpg" class="card-img-top" style="height: 18rem;" alt="médiaction">
                         <div class="card-body">
                             <div class="card-title">Nom de l'association</div>
                             <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">aquacaux@gmail.com</li>
-                            <li class="list-group-item">02 22 33 44 55</li>
+                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
+                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
                         </ul>
                         <div class="card-body">
-                            <div href="#" class="btn btn-dark">site web</div>
+                            <div href="#" class="btn btn-light text-uppercase">site web</div>
                         </div>
                     </div>
                 </div>
