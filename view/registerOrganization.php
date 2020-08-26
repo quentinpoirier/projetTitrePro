@@ -1,6 +1,6 @@
 <?php
 
-require_once '..\controllers\register_controller.php';
+require_once '..\controllers\registerOrganization_controller.php';
 
 ?>
 
@@ -72,43 +72,52 @@ require_once '..\controllers\register_controller.php';
                         <div>
                             <h1>Bravo vous êtes inscris</h1>
                         </div>
-                        <?php
-                        if ($_POST['userType'] == '1') { ?>
-                            <div><a href="registerVolunteer.php" class="btn btn-light text-uppercase font-weight-bold">suivant</a></div>
-                        <?php
-                        } else { ?>
-                            <div>
-                                <a href="registerOrganization.php" class="btn btn-light text-uppercase font-weight-bold">suivant</a></div>
-                        <?php
-                        }
-                        ?>
+                        <div>
+                            <a href="index.php">Se connecter</a>
+                        </div>
                     <?php } else { ?>
-                        <form class="bg-dark p-4 rounded-lg" action="" method="POST" novalidate>
+                        <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
                             <div class="form-group">
-                                <label for="userMail" class="text-white text-uppercase">Mail</label>
-                                <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
+                                <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
+                                <input type="text" class="form-control" id="oragnizationName" name="oragnizationName" value="<?= isset($_POST['oragnizationName']) ? htmlspecialchars($_POST['oragnizationName']) : '' ?>">
+                                <span class="font-italic text-danger"><?= isset($error['oragnizationName']) ? $error['oragnizationName'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
-                                <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="verifyPassword" class="text-white text-uppercase">Vérification mot de passe</label>
-                                <input type="password" class="form-control" id="verifyPassword" name="verifyPassword" value="<?= isset($_POST['verifyPassword']) ? htmlspecialchars($_POST['verifyPassword']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['verifyPassword']) ? $error['verifyPassword'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="userType" class="text-white text-uppercase">Status</label>
-                                <select class="form-control" id="userType" name="userType" require>
+                                <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
+                                <select class="form-control" id="activity" name="activity">
                                     <option selected disabled>--</option>
-                                    <option value="1" <?= isset($_POST['userType']) && ($_POST['userType']) == '1'  ? 'selected' : '' ?>>Bénévole</option>
-                                    <option value="2" <?= isset($_POST['userType']) && ($_POST['userType']) == '2'  ? 'selected' : '' ?>>Association</option>
+                                    <option value="culture" <?= isset($_POST['activity']) && ($_POST['activity']) == 'volunteer'  ? 'selected' : '' ?>>Culture</option>
+                                    <option value="environment" <?= isset($_POST['activity']) && ($_POST['activity']) == 'organization'  ? 'selected' : '' ?>>Environnement</option>
+                                    <option value="social" <?= isset($_POST['activity']) && ($_POST['activity']) == 'volunteer'  ? 'selected' : '' ?>>Social</option>
+                                    <option value="sport" <?= isset($_POST['activity']) && ($_POST['activity']) == 'organization'  ? 'selected' : '' ?>>Sport</option>
                                 </select>
-                                <span class="font-italic text-danger"><?= isset($error['userType']) ? $error['userType'] : '' ?></span>
+                                <span class="font-italic text-danger"><?= isset($error['activity']) ? $error['activity'] : '' ?></span>
                             </div>
-                            <div class="g-recaptcha" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
+                            <div class="form-group">
+                                <label for="organizationAdress" class="text-white text-uppercase">Adresse</label>
+                                <input type="text" class="form-control" id="organizationAdress" name="organizationAdress" value="<?= isset($_POST['organizationAdress']) ? htmlspecialchars($_POST['organizationAdress']) : '' ?>">
+                                <span class="font-italic text-danger"><?= isset($error['organizationAdress']) ? $error['organizationAdress'] : '' ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="organizationPhone" class="text-white text-uppercase">Téléphone</label>
+                                <input type="text" class="form-control" id="organizationPhone" name="organizationPhone" value="<?= isset($_POST['organizationPhone']) ? htmlspecialchars($_POST['organizationPhone']) : '' ?>">
+                                <span class="font-italic text-danger"><?= isset($error['organizationPhone']) ? $error['organizationPhone'] : '' ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="organizationMail" class="text-white text-uppercase">Mail de contact</label>
+                                <input type="email" class="form-control" id="organizationMail" name="organizationMail" value="<?= isset($_POST['organizationMail']) ? htmlspecialchars($_POST['organizationMail']) : '' ?>">
+                                <span class="font-italic text-danger"><?= isset($error['organizationMail']) ? $error['organizationMail'] : '' ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="organizationSiren" class="text-white text-uppercase">Numéro SIREN</label>
+                                <input type="text" class="form-control" id="organizationSiren" name="organizationSiren" value="<?= isset($_POST['organizationSiren']) ? htmlspecialchars($_POST['organizationSiren']) : '' ?>">
+                                <span class="font-italic text-danger"><?= isset($error['organizationSiren']) ? $error['organizationSiren'] : '' ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
+                                <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required></textarea>
+                                <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
+                            </div>
                             <div class="text-center">
                                 <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
                             </div>

@@ -48,7 +48,18 @@ if (isset($_POST['registerSubmit'])) {
     };
 }
 
+if (isset($_POST['g-recaptcha-response'])) {
+    // clé captcha !!!
+    $key = "6Ld_ecMZAAAAAH3j9mtLj_fwybdIT9sBAgJDNI5G";
+    $captchaResponse = $_POST['g-recaptcha-response'];
+    $remoteip = $_SERVER['REMOTE_ADDR'];
+    $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $key . "&response=" . $captchaResponse . "&remoteip=" . $remoteip;
+    $decode = json_decode(file_get_contents($api_url), true);
+};
+
 if (isset($_POST['registerSubmit']) && count($error) == 0) {
+
+    if ($decode['success'] == true) {
 
         $user = new User();
 
@@ -60,4 +71,8 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
         $user->addUser($mail, $password, $idUsertypes);
         
         $registerSuccess = true;
+
+    } else {
+        $messageError = 'Erreur : Veuillez cochez le captcha pour vous inscrire';
+    };
 };
