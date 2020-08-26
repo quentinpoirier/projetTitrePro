@@ -1,6 +1,6 @@
 <?php
 
-class Users 
+class User 
 
 {
     private $bdd;
@@ -18,7 +18,7 @@ class Users
         }
     }
 
-    public function VerifyMailExist($mail)
+    public function verifyMailExist($mail)
     {
         $query = 'SELECT `user_mail` FROM user WHERE `user_mail` = :userMail ';
 
@@ -40,19 +40,16 @@ class Users
         }
     }
 
-    public function AddUsers($mail, $pseudo, $phone, $password, $birthdate)
+    public function addUser($mail, $password, $idUsertypes)
     {
 
-        $query = 'INSERT INTO user (users_mail, users_pseudo, users_phone, users_password, users_birthdate) VALUES (:users_mail, :users_pseudo, :users_phone, :users_password, :users_birthdate)';
+        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
 
         try {
-            // Permet de vérifier si le Mail est déja présent dans la base de donnée ou non //
             $resultQuery = $this->bdd->prepare($query);
-            $resultQuery->bindValue(':users_mail', $mail);
-            $resultQuery->bindValue(':users_pseudo', $pseudo);
-            $resultQuery->bindValue(':users_phone', $phone);
-            $resultQuery->bindValue(':users_password', $password);
-            $resultQuery->bindValue(':users_birthdate', $birthdate);
+            $resultQuery->bindValue(':user_mail', $mail);
+            $resultQuery->bindValue(':user_password', $password);
+            $resultQuery->bindValue(':id_usertypes', $idUsertypes);
             $resultQuery->execute();
             
         } catch (Exception $e) {

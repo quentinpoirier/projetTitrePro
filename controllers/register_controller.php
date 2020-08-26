@@ -1,5 +1,9 @@
 <?php
 
+require_once '..\model\model_user.php';
+
+$registerSuccess = false;
+
 $error = array();
 
 $nameRegex = '/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u';
@@ -11,8 +15,12 @@ $passwordRegex = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}
 
 
 if (isset($_POST['userMail'])) {
+    $user = new User();
     if (filter_var($_POST['userMail'], FILTER_VALIDATE_EMAIL) == false) {
         $error['userMail'] = 'Mauvais format';
+    };
+    if ($user->verifyMailExist($_POST['userMail'])) {
+        $error['userMail'] = 'Le mail " ' . $_POST['userMail'] . ' " existe déja';
     };
     if (empty($_POST['userMail'])) {
         $error['userMail'] = 'Veuillez renseigner le champ';
@@ -39,3 +47,18 @@ if (isset($_POST['registerSubmit'])) {
         $error['userType'] = 'Veuillez renseigner le champ';
     };
 }
+
+if (isset($_POST['registerSubmit']) && count($error) == 0) {
+
+        $user = new User();
+
+        $mail = htmlspecialchars($_POST['userMail']);
+        $password = password_hash($_POST['userPassword'], PASSWORD_BCRYPT);
+        $idUsertypes = htmlspecialchars($_POST['userType']);
+
+
+        $user->addUser($mail, $password, $idUsertypes);
+        
+        $registerSuccess = true;
+};
+var_dump(new User());

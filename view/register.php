@@ -92,6 +92,7 @@ require_once '..\controllers\register_controller.php';
                             </select>
                             <span class="font-italic text-danger"><?= isset($error['userType']) ? $error['userType'] : '' ?></span>
                         </div>
+                        <div class="g-recaptcha" data-sitekey="6LfCfMAZAAAAAJJ_sr8K8LJJWybh2YJG3feJV9Ip"></div>
                         <div class="text-center">
                             <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
                         </div>
