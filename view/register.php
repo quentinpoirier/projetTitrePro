@@ -87,8 +87,8 @@ require_once '..\controllers\register_controller.php';
                             <label for="userType" class="text-white text-uppercase">Status</label>
                             <select class="form-control" id="userType" name="userType" require>
                                 <option selected disabled>--</option>
-                                <option value="volunteer" <?= isset($_POST['userType']) && ($_POST['userType']) == 'volunteer'  ? 'selected' : '' ?>>Bénévole</option>
-                                <option value="organization" <?= isset($_POST['userType']) && ($_POST['userType']) == 'organization'  ? 'selected' : '' ?>>Association</option>
+                                <option value="1" <?= isset($_POST['userType']) && ($_POST['userType']) == '1'  ? 'selected' : '' ?>>Bénévole</option>
+                                <option value="2" <?= isset($_POST['userType']) && ($_POST['userType']) == '2'  ? 'selected' : '' ?>>Association</option>
                             </select>
                             <span class="font-italic text-danger"><?= isset($error['userType']) ? $error['userType'] : '' ?></span>
                         </div>

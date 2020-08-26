@@ -61,4 +61,3 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
         
         $registerSuccess = true;
 };
-var_dump(new User());
