@@ -69,8 +69,11 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
 
 
         $user->addUser($mail, $password, $idUsertypes);
-        
+
         $registerSuccess = true;
+
+        session_start();
+        $_SESSION['user'] = $user->GetUserInfos($mail);
 
     } else {
         $messageError = 'Erreur : Veuillez cochez le captcha pour vous inscrire';

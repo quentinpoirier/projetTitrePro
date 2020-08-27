@@ -1,6 +1,6 @@
 <?php
 
-class User 
+class User
 
 {
     private $bdd;
@@ -40,6 +40,31 @@ class User
         }
     }
 
+    public function VerifyLogin($mail, $password)
+    {
+
+        $query = 'SELECT `user_mail`, `user_password` FROM user WHERE `user_mail` = :user_mail ';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':user_mail', $mail);
+            $resultQuery->execute();
+
+            $resultUser = $resultQuery->fetch();
+
+            if ($resultUser) {
+
+                return password_verify($password, $resultUser['user_password']);
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
     public function addUser($mail, $password, $idUsertypes)
     {
 
@@ -51,9 +76,38 @@ class User
             $resultQuery->bindValue(':user_password', $password);
             $resultQuery->bindValue(':id_usertypes', $idUsertypes);
             $resultQuery->execute();
-            
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    public function GetUserInfos($mail)
+    {
+    
+        $query = 'SELECT * FROM user WHERE `user_mail` = :user_mail '; 
+
+        try {
+         
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':user_mail', $mail);
+            $resultQuery->execute();
+            
+            $resultUser = $resultQuery->fetch();
+            
+            if ($resultUser) {
+                
+             return $resultUser;
+               
+            } else {
+               
+               return false;
+
+            }
+
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+    }
+
 }
