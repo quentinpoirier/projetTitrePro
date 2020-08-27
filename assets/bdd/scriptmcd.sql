@@ -44,10 +44,12 @@ CREATE TABLE user(
         organization_desc   Text ,
         user_validation     TinyINT NOT NULL ,
         user_reported       TinyINT NOT NULL ,
+        id_activity         Int ,
         id_usertypes        Int NOT NULL
 	,CONSTRAINT user_PK PRIMARY KEY (id_user)
 
-	,CONSTRAINT user_usertype_FK FOREIGN KEY (id_usertypes) REFERENCES usertype(id_usertypes)
+	,CONSTRAINT user_activity_FK FOREIGN KEY (id_activity) REFERENCES activity(id_activity)
+	,CONSTRAINT user_usertype0_FK FOREIGN KEY (id_usertypes) REFERENCES usertype(id_usertypes)
 )ENGINE=InnoDB;
 
 
@@ -63,10 +65,12 @@ CREATE TABLE advert(
         advert_date_start  Date NOT NULL ,
         advert_validate    TinyINT NOT NULL ,
         advert_report      TinyINT NOT NULL ,
-        id_user            Int NOT NULL
+        id_user            Int NOT NULL ,
+        id_activity        Int NOT NULL
 	,CONSTRAINT advert_PK PRIMARY KEY (id_advert)
 
 	,CONSTRAINT advert_user_FK FOREIGN KEY (id_user) REFERENCES user(id_user)
+	,CONSTRAINT advert_activity0_FK FOREIGN KEY (id_activity) REFERENCES activity(id_activity)
 )ENGINE=InnoDB;
 
 
@@ -97,33 +101,5 @@ CREATE TABLE contact(
 	,CONSTRAINT contact_PK PRIMARY KEY (id)
 
 	,CONSTRAINT contact_user_FK FOREIGN KEY (id_user) REFERENCES user(id_user)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: haveactivity
-#------------------------------------------------------------
-
-CREATE TABLE haveactivity(
-        id_user     Int NOT NULL ,
-        id_activity Int NOT NULL
-	,CONSTRAINT haveactivity_PK PRIMARY KEY (id_user,id_activity)
-
-	,CONSTRAINT haveactivity_user_FK FOREIGN KEY (id_user) REFERENCES user(id_user)
-	,CONSTRAINT haveactivity_activity0_FK FOREIGN KEY (id_activity) REFERENCES activity(id_activity)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: haveadvert
-#------------------------------------------------------------
-
-CREATE TABLE haveadvert(
-        id_advert   Int NOT NULL ,
-        id_activity Int NOT NULL
-	,CONSTRAINT haveadvert_PK PRIMARY KEY (id_advert,id_activity)
-
-	,CONSTRAINT haveadvert_advert_FK FOREIGN KEY (id_advert) REFERENCES advert(id_advert)
-	,CONSTRAINT haveadvert_activity0_FK FOREIGN KEY (id_activity) REFERENCES activity(id_activity)
 )ENGINE=InnoDB;
 

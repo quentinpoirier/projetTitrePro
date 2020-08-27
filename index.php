@@ -7,8 +7,6 @@ if (!isset($_SESSION['user'])) {
 } else {
 }
 
-var_dump($_SESSION['user']);
-
 ?>
 
 <!DOCTYPE html>

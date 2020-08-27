@@ -68,9 +68,11 @@ class User
     public function addUser($mail, $password, $idUsertypes)
     {
 
-        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
+        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) 
+                  VALUES (:user_mail, :user_password, :id_usertypes, 0)';
 
         try {
+
             $resultQuery = $this->bdd->prepare($query);
             $resultQuery->bindValue(':user_mail', $mail);
             $resultQuery->bindValue(':user_password', $password);
@@ -81,33 +83,66 @@ class User
         }
     }
 
-    public function GetUserInfos($mail)
+    public function updateVolunteer($firstname, $lastname, $age, $idUser)
     {
-    
-        $query = 'SELECT * FROM user WHERE `user_mail` = :user_mail '; 
+        $query = 'UPDATE user SET `volunteer_firstname` = :volunteer_firstname,  `volunteer_lastname` = :volunteer_lastname, `volunteer_age` = :volunteer_age WHERE `id_user` = :id_user';
 
         try {
-         
+
             $resultQuery = $this->bdd->prepare($query);
-            $resultQuery->bindValue(':user_mail', $mail);
+            $resultQuery->bindValue(':volunteer_firstname', $firstname);
+            $resultQuery->bindValue(':volunteer_lastname', $lastname);
+            $resultQuery->bindValue(':volunteer_age', $age);
+            $resultQuery->bindValue(':id_user', $idUser);
             $resultQuery->execute();
-            
-            $resultUser = $resultQuery->fetch();
-            
-            if ($resultUser) {
-                
-             return $resultUser;
-               
-            } else {
-               
-               return false;
-
-            }
-
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
-
     }
 
+    public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
+    {
+        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress  `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity WHERE `id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':organization_name', $name);
+            $resultQuery->bindValue(':organization_adress', $adress);
+            $resultQuery->bindValue(':organization_phone', $phone);
+            $resultQuery->bindValue(':organization_mail', $orgaMail);
+            $resultQuery->bindValue(':organization_siren', $siren);
+            $resultQuery->bindValue(':organization_desc', $desc);
+            $resultQuery->bindValue(':id_activity', $activity);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function GetUserInfos($mail)
+    {
+
+        $query = 'SELECT * FROM user WHERE `user_mail` = :user_mail ';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':user_mail', $mail);
+            $resultQuery->execute();
+
+            $resultUser = $resultQuery->fetch();
+
+            if ($resultUser) {
+
+                return $resultUser;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }

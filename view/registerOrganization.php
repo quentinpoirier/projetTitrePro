@@ -61,7 +61,7 @@ require_once '..\controllers\registerOrganization_controller.php';
                 <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -74,15 +74,6 @@ require_once '..\controllers\registerOrganization_controller.php';
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
-                    <?php
-                    if ($registerSuccess) { ?>
-                        <div>
-                            <h1>Bravo vous êtes inscris</h1>
-                        </div>
-                        <div>
-                            <a href="index.php">Se connecter</a>
-                        </div>
-                    <?php } else { ?>
                         <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
                             <div class="form-group">
                                 <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
@@ -93,10 +84,10 @@ require_once '..\controllers\registerOrganization_controller.php';
                                 <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
                                 <select class="form-control" id="activity" name="activity">
                                     <option selected disabled>--</option>
-                                    <option value="culture" <?= isset($_POST['activity']) && ($_POST['activity']) == 'volunteer'  ? 'selected' : '' ?>>Culture</option>
-                                    <option value="environment" <?= isset($_POST['activity']) && ($_POST['activity']) == 'organization'  ? 'selected' : '' ?>>Environnement</option>
-                                    <option value="social" <?= isset($_POST['activity']) && ($_POST['activity']) == 'volunteer'  ? 'selected' : '' ?>>Social</option>
-                                    <option value="sport" <?= isset($_POST['activity']) && ($_POST['activity']) == 'organization'  ? 'selected' : '' ?>>Sport</option>
+                                    <option value="1" <?= isset($_POST['activity']) && ($_POST['activity']) == '1'  ? 'selected' : '' ?>>Culture</option>
+                                    <option value="2" <?= isset($_POST['activity']) && ($_POST['activity']) == '2'  ? 'selected' : '' ?>>Environnement</option>
+                                    <option value="3" <?= isset($_POST['activity']) && ($_POST['activity']) == '3'  ? 'selected' : '' ?>>Social</option>
+                                    <option value="4" <?= isset($_POST['activity']) && ($_POST['activity']) == '4'  ? 'selected' : '' ?>>Sport</option>
                                 </select>
                                 <span class="font-italic text-danger"><?= isset($error['activity']) ? $error['activity'] : '' ?></span>
                             </div>
@@ -129,7 +120,7 @@ require_once '..\controllers\registerOrganization_controller.php';
                                 <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
                             </div>
                         </form>
-                    <?php } ?>
+
                 </div>
             </div>
         </div>

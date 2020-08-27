@@ -7,8 +7,6 @@ if (!isset($_SESSION['user'])) {
 } else {
 }
 
-var_dump($_SESSION['user']);
-
 require_once '..\controllers\registerVolunteer_controller.php';
 
 ?>
@@ -63,7 +61,7 @@ require_once '..\controllers\registerVolunteer_controller.php';
                 <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="" role="button">Inscription</a>
+                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
             </div>
         </form>
     </nav>
@@ -76,36 +74,26 @@ require_once '..\controllers\registerVolunteer_controller.php';
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
-                    <?php
-                    if ($registerSuccess) { ?>
-                        <div>
-                            <h1>Bravo vous êtes inscris</h1>
+                    <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
+                        <div class="form-group">
+                            <label for="volunteerFirstname" class="text-white text-uppercase">Prénom</label>
+                            <input type="text" class="form-control" id="volunteerFirstname" name="volunteerFirstname" value="<?= isset($_POST['volunteerFirstname']) ? htmlspecialchars($_POST['volunteerFirstname']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['volunteerFirstname']) ? $error['volunteerFirstname'] : '' ?></span>
                         </div>
-                        <div>
-                            <a href="index.php">Se connecter</a>
+                        <div class="form-group">
+                            <label for="volunteerLastname" class="text-white text-uppercase">Nom</label>
+                            <input type="text" class="form-control" id="volunteerLastname" name="volunteerLastname" value="<?= isset($_POST['volunteerLastname']) ? htmlspecialchars($_POST['volunteerLastname']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['volunteerLastname']) ? $error['volunteerLastname'] : '' ?></span>
                         </div>
-                    <?php } else { ?>
-                        <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
-                            <div class="form-group">
-                                <label for="volunteerFirstname" class="text-white text-uppercase">Prénom</label>
-                                <input type="text" class="form-control" id="volunteerFirstname" name="volunteerFirstname" value="<?= isset($_POST['volunteerFirstname']) ? htmlspecialchars($_POST['volunteerFirstname']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['volunteerFirstname']) ? $error['volunteerFirstname'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="volunteerLastname" class="text-white text-uppercase">Nom</label>
-                                <input type="text" class="form-control" id="volunteerLastname" name="volunteerLastname" value="<?= isset($_POST['volunteerLastname']) ? htmlspecialchars($_POST['volunteerLastname']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['volunteerLastname']) ? $error['volunteerLastname'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="volunteerBirthdate" class="text-white text-uppercase">Date de naissance</label>
-                                <input type="date" class="form-control" id="volunteerBirthdate" name="volunteerBirthdate" value="<?= isset($_POST['volunteerBirthdate']) ? htmlspecialchars($_POST['volunteerBirthdate']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['volunteerBirthdate']) ? $error['volunteerBirthdate'] : '' ?></span>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
-                            </div>
-                        </form>
-                    <?php } ?>
+                        <div class="form-group">
+                            <label for="volunteerBirthdate" class="text-white text-uppercase">Date de naissance</label>
+                            <input type="date" class="form-control" id="volunteerBirthdate" name="volunteerBirthdate" value="<?= isset($_POST['volunteerBirthdate']) ? htmlspecialchars($_POST['volunteerBirthdate']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['volunteerBirthdate']) ? $error['volunteerBirthdate'] : '' ?></span>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
