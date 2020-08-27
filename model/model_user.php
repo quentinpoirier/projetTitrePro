@@ -102,7 +102,7 @@ class User
 
     public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
     {
-        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress  `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity WHERE `id_user` = :id_user';
+        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress,  `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity WHERE `id_user` = :id_user';
 
         try {
 

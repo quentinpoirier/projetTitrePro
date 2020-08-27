@@ -82,5 +82,7 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
 
 
     $user->updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser);
+
+    header('Location: ..\index.php');
     
 };
