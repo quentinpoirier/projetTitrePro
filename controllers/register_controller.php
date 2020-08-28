@@ -57,6 +57,7 @@ if (isset($_POST['g-recaptcha-response'])) {
     $decode = json_decode(file_get_contents($api_url), true);
 };
 
+$messageError =  '';
 if (isset($_POST['registerSubmit']) && count($error) == 0) {
 
     if ($decode['success'] == true) {
@@ -74,6 +75,12 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
 
         session_start();
         $_SESSION['user'] = $user->GetUserInfos($mail);
+
+        if ($_POST['userType'] == '1') {
+            header('Location: ..\view\registerVolunteer.php');
+        } else {
+            header('Location: ..\view\registerOrganization.php');
+        }
 
     } else {
         $messageError = 'Erreur : Veuillez cochez le captcha pour vous inscrire';

@@ -68,8 +68,7 @@ class User
     public function addUser($mail, $password, $idUsertypes)
     {
 
-        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) 
-                  VALUES (:user_mail, :user_password, :id_usertypes, 0)';
+        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
 
         try {
 
@@ -145,4 +144,6 @@ class User
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    
 }

@@ -67,53 +67,37 @@ require_once '..\controllers\register_controller.php';
             <div class="row justify-content-center">
                 <div class="col-sm-6">
 
-                    <?php
-                    if ($registerSuccess) { ?>
-                        <div>
-                            <h1>Bravo vous êtes inscris</h1>
+                    <form class="bg-dark p-4 rounded-lg" action="" method="POST" novalidate>
+                        <div class="form-group">
+                            <label for="userMail" class="text-white text-uppercase">Mail</label>
+                            <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
                         </div>
-                        <?php
-                        if ($_POST['userType'] == '1') { ?>
-                            <div><a href="registerVolunteer.php" class="btn btn-light text-uppercase font-weight-bold">suivant</a></div>
-                        <?php
-                        } else { ?>
-                            <div>
-                                <a href="registerOrganization.php" class="btn btn-light text-uppercase font-weight-bold">suivant</a></div>
-                        <?php
-                        }
-                        ?>
-                    <?php } else { ?>
-                        <form class="bg-dark p-4 rounded-lg" action="" method="POST" novalidate>
-                            <div class="form-group">
-                                <label for="userMail" class="text-white text-uppercase">Mail</label>
-                                <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
-                                <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="verifyPassword" class="text-white text-uppercase">Vérification mot de passe</label>
-                                <input type="password" class="form-control" id="verifyPassword" name="verifyPassword" value="<?= isset($_POST['verifyPassword']) ? htmlspecialchars($_POST['verifyPassword']) : '' ?>">
-                                <span class="font-italic text-danger"><?= isset($error['verifyPassword']) ? $error['verifyPassword'] : '' ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="userType" class="text-white text-uppercase">Status</label>
-                                <select class="form-control" id="userType" name="userType" require>
-                                    <option selected disabled>--</option>
-                                    <option value="1" <?= isset($_POST['userType']) && ($_POST['userType']) == '1'  ? 'selected' : '' ?>>Bénévole</option>
-                                    <option value="2" <?= isset($_POST['userType']) && ($_POST['userType']) == '2'  ? 'selected' : '' ?>>Association</option>
-                                </select>
-                                <span class="font-italic text-danger"><?= isset($error['userType']) ? $error['userType'] : '' ?></span>
-                            </div>
-                            <div class="g-recaptcha" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
-                            <div class="text-center">
-                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
-                            </div>
-                        </form>
-                    <?php } ?>
+                        <div class="form-group">
+                            <label for="userPassword" class="text-white text-uppercase">Mot de passe</label>
+                            <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="verifyPassword" class="text-white text-uppercase">Vérification mot de passe</label>
+                            <input type="password" class="form-control" id="verifyPassword" name="verifyPassword" value="<?= isset($_POST['verifyPassword']) ? htmlspecialchars($_POST['verifyPassword']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['verifyPassword']) ? $error['verifyPassword'] : '' ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="userType" class="text-white text-uppercase">Status</label>
+                            <select class="form-control" id="userType" name="userType" require>
+                                <option selected disabled>--</option>
+                                <option value="1" <?= isset($_POST['userType']) && ($_POST['userType']) == '1'  ? 'selected' : '' ?>>Bénévole</option>
+                                <option value="2" <?= isset($_POST['userType']) && ($_POST['userType']) == '2'  ? 'selected' : '' ?>>Association</option>
+                            </select>
+                            <span class="font-italic text-danger"><?= isset($error['userType']) ? $error['userType'] : '' ?></span>
+                        </div>
+                        <div class="g-recaptcha mt-3" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
+                        <span class="font-italic text-danger"><?= $messageError ?></span>
+                        <div class="text-center">
+                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">S'inscrire</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
