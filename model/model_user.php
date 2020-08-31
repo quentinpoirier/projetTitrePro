@@ -147,7 +147,7 @@ class User
 
     public function getUserInfos($idUser)
     {
-        $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `id_activity` FROM `user` WHERE `id_user` = :id_user';
+        $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_user` = :id_user';
 
         try {
 
@@ -168,5 +168,18 @@ class User
             die('Erreur : ' . $e->getMessage());
         }
     }
-    
+
+    public function deleteUserInfos($idUser)
+    {
+        $query = 'DELETE FROM `user` WHERE `id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }

@@ -111,6 +111,15 @@ if (isset($_SESSION['user'])) {
     var_dump($getUserArray);
 }
 
+if (isset($_POST['deleteUserSubmit'])) {
+
+    $user->deleteUserInfos($_SESSION['user']['id_user']);
+    
+    session_destroy();
+
+    header('Location: ..\index.php');
+}
+
 
 
 if (isset($_POST['updateUserSubmit']) && count($error) == 0) {

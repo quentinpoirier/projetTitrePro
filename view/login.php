@@ -49,7 +49,7 @@ require_once '..\controllers\login_controller.php';
                 </li>
             </ul>
         </div>
-        <form class="form-inline">
+        <form class="form-inline mb-1 mt-1">
             <div class="form-group mx-sm-3">
                 <a class="btn btn-light text-uppercase font-weight-bold" href="" role="button">Connexion</a>
             </div>

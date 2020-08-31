@@ -1,12 +1,5 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION['user'])) {
-    header('Location: ..\view\login.php');
-} else {
-}
-
 require_once '..\controllers\registerVolunteer_controller.php';
 
 ?>
@@ -56,7 +49,7 @@ require_once '..\controllers\registerVolunteer_controller.php';
                 </li>
             </ul>
         </div>
-        <form class="form-inline">
+        <form class="form-inline mb-1 mt-1">
             <div class="form-group mx-sm-3">
                 <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>

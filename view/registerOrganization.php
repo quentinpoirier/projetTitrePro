@@ -49,7 +49,7 @@ require_once '..\controllers\registerOrganization_controller.php';
                 </li>
             </ul>
         </div>
-        <form class="form-inline">
+        <form class="form-inline mb-1 mt-1">
             <div class="form-group mx-sm-3">
                 <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
@@ -106,7 +106,7 @@ require_once '..\controllers\registerOrganization_controller.php';
                             </div>
                             <div class="form-group">
                                 <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
-                                <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required></textarea>
+                                <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required><?= isset($_POST['organizationDesc']) ? htmlspecialchars($_POST['organizationDesc']) : '' ?></textarea>
                                 <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
                             </div>
                             <div class="text-center">

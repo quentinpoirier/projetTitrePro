@@ -49,7 +49,7 @@ require_once '..\controllers\user_controller.php';
                 </li>
             </ul>
         </div>
-        <form class="form-inline">
+        <form class="form-inline mb-1 mt-1">
             <div class="form-group mx-sm-3">
                 <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
@@ -102,7 +102,7 @@ require_once '..\controllers\user_controller.php';
                                     <div class="form-group">
                                         <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
                                         <select class="form-control" id="activity" name="activity">
-                                            <option selected disabled>--</option>
+                                            <option selected disabled><?= $getUserArray[0]['activity_name'] ?></option>
                                             <option value="1" <?= isset($_POST['activity']) && ($_POST['activity']) == '1'  ? 'selected' : '' ?>>Culture</option>
                                             <option value="2" <?= isset($_POST['activity']) && ($_POST['activity']) == '2'  ? 'selected' : '' ?>>Environnement</option>
                                             <option value="3" <?= isset($_POST['activity']) && ($_POST['activity']) == '3'  ? 'selected' : '' ?>>Social</option>
@@ -132,7 +132,7 @@ require_once '..\controllers\user_controller.php';
                                     </div>
                                     <div class="form-group">
                                         <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
-                                        <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required></textarea>
+                                        <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required><?= isset($_POST['organizationDesc']) ? htmlspecialchars($_POST['organizationDesc']) : $getUserArray[0]['organization_desc'] ?></textarea>
                                         <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
                                     </div>
                         <?php
@@ -141,7 +141,10 @@ require_once '..\controllers\user_controller.php';
                         }
                         ?>
                         <div class="text-center">
-                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
+                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="deleteUserSubmit" id="deleteUserSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">supprimer</button>
                         </div>
                     </form>
                 </div>
