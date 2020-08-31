@@ -4,8 +4,6 @@ require_once '..\model\model_user.php';
 
 $error = array();
 
-$passwordRegex = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/";
-
 if (isset($_POST['userMail'])) {
     if (empty($_POST['userMail'])) {
         $error['userMail'] = 'Veuillez Renseigner le champ';
@@ -28,7 +26,7 @@ if (isset($_POST['loginSubmit']) && count($error) == 0) {
     if ($loginUser->VerifyLogin($mail, $password)) {
 
         session_start();
-        $_SESSION['user'] = $loginUser->GetUserInfos($mail);
+        $_SESSION['user'] = $loginUser->getUserMail($mail);
         header('Location: ..\index.php');
 
     } else {

@@ -81,6 +81,7 @@ require_once '..\controllers\login_controller.php';
                         <div class="text-center">
                             <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">se connecter</button>
                         </div>
+                        <span class="font-italic text-danger"><?= (isset($error['login'])) ? $error['login'] : '' ?></span>
                         <div class="text-center">
                             <a href="..\view\register.php" class="btn btn-light text-uppercase font-weight-bold mt-3" role="button" aria-pressed="true">s'inscrire</a>
                         </div>

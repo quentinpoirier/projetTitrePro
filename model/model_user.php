@@ -43,7 +43,7 @@ class User
     public function VerifyLogin($mail, $password)
     {
 
-        $query = 'SELECT `user_mail`, `user_password` FROM user WHERE `user_mail` = :user_mail ';
+        $query = 'SELECT `user_mail`, `user_password` FROM `user` WHERE `user_mail` = :user_mail ';
 
         try {
 
@@ -101,7 +101,7 @@ class User
 
     public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
     {
-        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress,  `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity WHERE `id_user` = :id_user';
+        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity WHERE `id_user` = :id_user';
 
         try {
 
@@ -120,7 +120,7 @@ class User
         }
     }
 
-    public function GetUserInfos($mail)
+    public function getUserMail($mail)
     {
 
         $query = 'SELECT * FROM user WHERE `user_mail` = :user_mail ';
@@ -145,5 +145,28 @@ class User
         }
     }
 
+    public function getUserInfos($idUser)
+    {
+        $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `id_activity` FROM `user` WHERE `id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+
+            $resultVolunteerInfos = $resultQuery->fetchAll();
+
+            if ($resultVolunteerInfos) {
+
+                return $resultVolunteerInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
     
 }

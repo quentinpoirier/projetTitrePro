@@ -74,7 +74,7 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
         $registerSuccess = true;
 
         session_start();
-        $_SESSION['user'] = $user->GetUserInfos($mail);
+        $_SESSION['user'] = $user->getUserMail($mail);
 
         if ($_POST['userType'] == '1') {
             header('Location: ..\view\registerVolunteer.php');
