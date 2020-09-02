@@ -155,11 +155,34 @@ class User
             $resultQuery->bindValue(':id_user', $idUser);
             $resultQuery->execute();
 
-            $resultVolunteerInfos = $resultQuery->fetchAll();
+            $resultUserInfos = $resultQuery->fetchAll();
 
-            if ($resultVolunteerInfos) {
+            if ($resultUserInfos) {
 
-                return $resultVolunteerInfos;
+                return $resultUserInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function getOrgaInfos()
+    {
+        $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_usertypes` = 2';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->execute();
+
+            $resultOrgaInfos = $resultQuery->fetchAll();
+
+            if ($resultOrgaInfos) {
+
+                return $resultOrgaInfos;
             } else {
 
                 return false;

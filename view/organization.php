@@ -63,71 +63,85 @@ require_once '..\controllers\organization_controller.php'
             </div>
             <div class="row justify-content-center mb-3 pb-1">
                 <div class="col-sm-4 card w-100 shadow rounded">
-                    <form class="mb-3 bg-light p-5" action="index.php" method="post" novalidate>
+
+                    <form class="mb-3 bg-light p-5" action="" method="post" novalidate>
                         <div class="form-group">
                             <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
                             <select class="form-control" id="activity" name="activity">
-                                <option>culture</option>
-                                <option>environnement</option>
-                                <option>social</option>
-                                <option>sport</option>
+                                <option selected disabled></option>
+                                <?php
+                                foreach ($getActivityArray as $activity) {
+                                ?>
+                                    <option value="<?= $activity['activity_name'] ?>"><?= $activity['activity_name'] ?></option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="text-center">
-                            <a href="association.php" class="btn btn-secondary" role="button">Rechercher</a>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
                         </div>
                     </form>
+
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded bg-dark text-white">
-                        <img src="..\assets\img\aquacaux.jpg" class="card-img-top" style="height: 18rem;" alt="aquacaux">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
+                <?php
+                if (isset($_POST['selectOrgaSubmit'])) {
+                    foreach ($getOrgaArray as $user) {
+                        if ($user['activity_name'] == $_POST['activity']) { ?>
+                            <div class="col-sm-4 mb-4">
+                                <div class="card w-100 shadow rounded bg-dark text-white">
+                                    <div class="text-center mt-2">
+                                        <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
+                                        </svg>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title"><?= $user['organization_name'] ?></div>
+                                        <div class="card-text"><?= $user['organization_desc'] ?></div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-dark"><?= $user['organization_mail'] ?></li>
+                                        <li class="list-group-item bg-dark"><?= $user['organization_phone'] ?></li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                    }
+                } else {
+                    foreach ($getOrgaArray as $user) {
+                        ?>
+                        <div class="col-sm-4 mb-4">
+                            <div class="card w-100 shadow rounded bg-dark text-white">
+                                <div class="text-center mt-2">
+                                    <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                        <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
+                                    </svg>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title"><?= $user['organization_name'] ?></div>
+                                    <div class="card-text"><?= $user['organization_desc'] ?></div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-dark"><?= $user['organization_mail'] ?></li>
+                                    <li class="list-group-item bg-dark"><?= $user['organization_phone'] ?></li>
+                                </ul>
+                                <div class="card-body">
+                                    <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                </div>
+                            </div>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
-                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                            <div href="#" class="btn btn-light text-uppercase">site web</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card w-100 shadow rounded bg-dark text-white">
-                        <img src="..\assets\img\graineEnMain.jpg" class="card-img-top" style="height: 18rem;" alt="graineenmain">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
-                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                            <div href="#" class="btn btn-light text-uppercase">site web</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card bg-dark text-white w-100 shadow rounded">
-                        <img src="..\assets\img\médiaction.jpg" class="card-img-top" style="height: 18rem;" alt="médiaction">
-                        <div class="card-body">
-                            <div class="card-title">Nom de l'association</div>
-                            <div class="card-text">Une description rapide de l'association afin de se faire une idée de ses activités</div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-dark">aquacaux@gmail.com</li>
-                            <li class="list-group-item bg-dark">02 22 33 44 55</li>
-                        </ul>
-                        <div class="card-body">
-                            <div href="#" class="btn btn-light text-uppercase">site web</div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                }
+                ?>
             </div>
         </div>
     </main>

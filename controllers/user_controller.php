@@ -8,9 +8,6 @@ if (!isset($_SESSION['user'])) {
 
 require_once '..\model\model_user.php';
 
-var_dump($_SESSION['user']);
-
-
 $error = array();
 
 $nameRegex = '/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u';
@@ -107,14 +104,13 @@ $user = new User();
 
 if (isset($_SESSION['user'])) {
 
-    $getUserArray = $user->getUserInfos($_SESSION['user']['id_user']); 
-    var_dump($getUserArray);
+    $getUserArray = $user->getUserInfos($_SESSION['user']['id_user']);
 }
 
 if (isset($_POST['deleteUserSubmit'])) {
 
     $user->deleteUserInfos($_SESSION['user']['id_user']);
-    
+
     session_destroy();
 
     header('Location: ..\index.php');
@@ -128,25 +124,23 @@ if (isset($_POST['updateUserSubmit']) && count($error) == 0) {
 
     if ($_SESSION['user']['id_usertypes'] == '1') {
 
-    $firstname = htmlspecialchars($_POST['volunteerFirstname']);
-    $lastname = htmlspecialchars($_POST['volunteerLastname']);
-    $age = htmlspecialchars($_POST['volunteerBirthdate']);
-    $idUser = $_SESSION['user']['id_user'];
+        $firstname = htmlspecialchars($_POST['volunteerFirstname']);
+        $lastname = htmlspecialchars($_POST['volunteerLastname']);
+        $age = htmlspecialchars($_POST['volunteerBirthdate']);
+        $idUser = $_SESSION['user']['id_user'];
 
-    $user->updateVolunteer($firstname, $lastname, $age, $idUser);
-
+        $user->updateVolunteer($firstname, $lastname, $age, $idUser);
     } else {
 
-    $name = htmlspecialchars($_POST['oragnizationName']);
-    $adress = htmlspecialchars($_POST['organizationAdress']);
-    $phone = htmlspecialchars($_POST['organizationPhone']);
-    $orgaMail = htmlspecialchars($_POST['organizationMail']);
-    $siren = htmlspecialchars($_POST['organizationSiren']);
-    $desc = htmlspecialchars($_POST['organizationDesc']);
-    $activity = htmlspecialchars($_POST['activity']);
-    $idUser = $_SESSION['user']['id_user'];
+        $name = htmlspecialchars($_POST['oragnizationName']);
+        $adress = htmlspecialchars($_POST['organizationAdress']);
+        $phone = htmlspecialchars($_POST['organizationPhone']);
+        $orgaMail = htmlspecialchars($_POST['organizationMail']);
+        $siren = htmlspecialchars($_POST['organizationSiren']);
+        $desc = htmlspecialchars($_POST['organizationDesc']);
+        $activity = htmlspecialchars($_POST['activity']);
+        $idUser = $_SESSION['user']['id_user'];
 
-    $user->updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser);
-        var_dump($user);
-    }  
+        $user->updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser);
+    }
 };
