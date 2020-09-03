@@ -68,7 +68,6 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
         $password = password_hash($_POST['userPassword'], PASSWORD_BCRYPT);
         $idUsertypes = htmlspecialchars($_POST['userType']);
 
-
         $user->addUser($mail, $password, $idUsertypes);
 
         $registerSuccess = true;

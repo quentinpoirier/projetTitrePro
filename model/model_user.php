@@ -82,6 +82,22 @@ class User
         }
     }
 
+    public function addContact($object, $claim, $userId) 
+    {
+        $query = 'INSERT INTO `contact` (contact_object, contact_claim, id_user) VALUES (:contact_object, :contact_claim, :id_user)';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':contact_object', $object);
+            $resultQuery->bindValue(':contact_claim', $claim);
+            $resultQuery->bindValue(':id_user', $userId);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
     public function updateVolunteer($firstname, $lastname, $age, $idUser)
     {
         $query = 'UPDATE user SET `volunteer_firstname` = :volunteer_firstname,  `volunteer_lastname` = :volunteer_lastname, `volunteer_age` = :volunteer_age WHERE `id_user` = :id_user';
@@ -183,6 +199,29 @@ class User
             if ($resultOrgaInfos) {
 
                 return $resultOrgaInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function getContactInfos()
+    {
+        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim` FROM `contact` LEFT JOIN `user` ON `contact`.`id_user` = `user`.`id_user`';
+        
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->execute();
+
+            $resultContactInfos = $resultQuery->fetchAll();
+
+            if ($resultContactInfos) {
+
+                return $resultContactInfos;
             } else {
 
                 return false;

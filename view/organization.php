@@ -42,7 +42,7 @@ require_once '..\controllers\organization_controller.php'
                     <a class="nav-link text-white" href="..\view\user.php">Espace personnel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="">Contact</a>
+                    <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
                 </li>
             </ul>
         </div>
