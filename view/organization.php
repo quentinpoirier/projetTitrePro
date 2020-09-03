@@ -1,6 +1,7 @@
 <?php
 
-require_once '..\controllers\organization_controller.php'
+require_once '..\controllers\organization_controller.php';
+var_dump($getOrgaArray);
 
 ?>
 
@@ -68,7 +69,6 @@ require_once '..\controllers\organization_controller.php'
                         <div class="form-group">
                             <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
                             <select class="form-control" id="activity" name="activity">
-                                <option selected disabled></option>
                                 <?php
                                 foreach ($getActivityArray as $activity) {
                                 ?>
@@ -105,6 +105,7 @@ require_once '..\controllers\organization_controller.php'
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item bg-dark"><?= $user['organization_mail'] ?></li>
                                         <li class="list-group-item bg-dark"><?= $user['organization_phone'] ?></li>
+                                        <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                                     </ul>
                                     <div class="card-body">
                                         <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
@@ -132,9 +133,10 @@ require_once '..\controllers\organization_controller.php'
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item bg-dark"><?= $user['organization_mail'] ?></li>
                                     <li class="list-group-item bg-dark"><?= $user['organization_phone'] ?></li>
+                                    <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                                 </ul>
                                 <div class="card-body">
-                                    <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                    <button type="button" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
                                 </div>
                             </div>
                         </div>

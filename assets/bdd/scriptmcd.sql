@@ -32,7 +32,7 @@ CREATE TABLE usertype(
 CREATE TABLE user(
         id_user             Int  Auto_increment  NOT NULL ,
         user_mail           Varchar (50) NOT NULL ,
-        user_password       Varchar (50) NOT NULL ,
+        user_password       Varchar (250) NOT NULL ,
         volunteer_firstname Varchar (50) ,
         volunteer_lastname  Varchar (50) ,
         volunteer_age       Varchar (50) ,
@@ -66,7 +66,7 @@ CREATE TABLE advert(
         advert_validate    TinyINT NOT NULL ,
         advert_report      TinyINT NOT NULL ,
         id_user            Int NOT NULL ,
-        id_activity        Int NOT NULL
+        id_activity        Int
 	,CONSTRAINT advert_PK PRIMARY KEY (id_advert)
 
 	,CONSTRAINT advert_user_FK FOREIGN KEY (id_user) REFERENCES user(id_user)

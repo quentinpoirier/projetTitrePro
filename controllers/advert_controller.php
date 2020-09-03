@@ -7,11 +7,13 @@ if (!isset($_SESSION['user'])) {
 } else {
 }
 
-require_once '..\model\model_user.php';
+require_once '..\model\model_advert.php';
+
+var_dump($_SESSION['user']);
 
 $error = array();
 
-$longString = '/^[a-zA-ZéèêëiîïôöüäçÉÀÂÛÔÎÙÈÊ\" -,!.;:?()]{20,500}$/';
+$longString = '/^[a-zA-ZéèêëiîïôöüäçÉÀÂÛÔÎÙÈÊ\" -,!.;:?()]{0,20}$/';
 $DateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";
 
 if (isset($_POST['advertTitle'])) {
@@ -38,11 +40,25 @@ if (isset($_POST['advertDesc'])) {
     };
 }
 
-if (isset($_POST['advertDateStart'])) {
-    if (preg_match($DateRegex, $_POST['advertDateStart']) == false) {
-        $error['advertDateStart'] = 'Mauvais format';
+if (isset($_POST['advertDate'])) {
+    if (preg_match($DateRegex, $_POST['advertDate']) == false) {
+        $error['advertDate'] = 'Mauvais format';
     };
-    if (empty($_POST['advertDateStart'])) {
-        $error['advertDateStart'] = 'Veuillez renseigner le champ';
+    if (empty($_POST['advertDate'])) {
+        $error['advertDate'] = 'Veuillez renseigner le champ';
     };
+}
+
+if (isset($_POST['advertSubmit']) && count($error) == 0) {
+
+    $advert = new Advert();
+
+        $title = htmlspecialchars($_POST['advertTitle']);
+        $object = htmlspecialchars($_POST['advertObject']);
+        $desc = htmlspecialchars($_POST['advertDesc']);
+        $date = htmlspecialchars($_POST['advertDate']);
+        $user = htmlspecialchars($_SESSION['user']['id_user']);
+
+        $advert->addAdvert($title, $object, $desc, $date, $user);
+
 }

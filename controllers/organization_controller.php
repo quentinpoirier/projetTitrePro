@@ -24,3 +24,7 @@ if (isset($_SESSION['user'])) {
     $getActivityArray = $activity->getActivityInfos();
 }
 
+if (isset($_GET['orgaZoomSubmit'])) {
+
+    header('Location: ..\view\zoomOrga.php');
+}

@@ -85,8 +85,8 @@ require_once '..\controllers\advert_controller.php';
                         </div>
                         <div class="form-group">
                             <label for="advertDateStart" class="text-white text-uppercase">Date de début</label>
-                            <input type="date" class="form-control" id="advertDateStart" name="advertDateStart" value="<?= isset($_POST['advertDateStart']) ? htmlspecialchars($_POST['advertDateStart']) : '' ?>">
-                            <span class="font-italic text-danger"><?= isset($error['advertDateStart']) ? $error['advertDateStart'] : '' ?></span>
+                            <input type="date" class="form-control" id="advertDate" name="advertDate" value="<?= isset($_POST['advertDate']) ? htmlspecialchars($_POST['advertDate']) : '' ?>">
+                            <span class="font-italic text-danger"><?= isset($error['advertDate']) ? $error['advertDate'] : '' ?></span>
                         </div>
                         <div class="text-center">
                             <button type="submit" name="advertSubmit" id="advertSubmit" class="btn btn-light text-uppercase font-weight-bold">Poster</button>
