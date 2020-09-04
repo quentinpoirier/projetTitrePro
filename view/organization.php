@@ -1,7 +1,6 @@
 <?php
 
 require_once '..\controllers\organization_controller.php';
-var_dump($getOrgaArray);
 
 ?>
 
@@ -64,7 +63,6 @@ var_dump($getOrgaArray);
             </div>
             <div class="row justify-content-center mb-3 pb-1">
                 <div class="col-sm-4 card w-100 shadow rounded">
-
                     <form class="mb-3 bg-light p-5" action="" method="post" novalidate>
                         <div class="form-group">
                             <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
@@ -82,7 +80,6 @@ var_dump($getOrgaArray);
                             <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
                         </div>
                     </form>
-
                 </div>
             </div>
             <div class="row">
@@ -111,7 +108,7 @@ var_dump($getOrgaArray);
                                         <!-- <form action="..\view\zoomOrga.php" method="post">
                                             <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" value="<?= $user['id_user'] ?>" class="btn btn-light text-uppercase font-weight-bold">détail</button>
                                         </form> -->
-                                        <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?annonces=<?= $user['id_user'] ?>">Détails</a>
+                                        <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +139,7 @@ var_dump($getOrgaArray);
                                     <!-- <form action="..\view\zoomOrga.php" method="get">
                                         <button type="button" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
                                     </form> -->
-                                    <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?annonces=<?= $user['id_user'] ?>">Détails</a>
+                                    <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                 </div>
                             </div>
                         </div>
