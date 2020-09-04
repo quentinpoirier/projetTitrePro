@@ -208,6 +208,30 @@ class User
         }
     }
 
+    public function getOrgaInfosById($idUser)
+    {
+        $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_user` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_usertypes` = 2 AND id_user = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue('id_user', $idUser);
+            $resultQuery->execute();
+
+            $resultOrgaInfos = $resultQuery->fetchAll();
+
+            if ($resultOrgaInfos) {
+
+                return $resultOrgaInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
     public function getContactInfos()
     {
         $query = 'SELECT `user_mail`, `contact_object`, `contact_claim` FROM `contact` LEFT JOIN `user` ON `contact`.`id_user` = `user`.`id_user`';

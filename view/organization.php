@@ -12,7 +12,7 @@ var_dump($getOrgaArray);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\css\styles.css">
+    <link rel="stylesheet" href="..\assets\css\styles.css">
     <title>Titre Pro</title>
 </head>
 
@@ -108,7 +108,10 @@ var_dump($getOrgaArray);
                                         <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                        <!-- <form action="..\view\zoomOrga.php" method="post">
+                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" value="<?= $user['id_user'] ?>" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                        </form> -->
+                                        <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?annonces=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +139,10 @@ var_dump($getOrgaArray);
                                     <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                                 </ul>
                                 <div class="card-body">
-                                    <button type="button" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                    <!-- <form action="..\view\zoomOrga.php" method="get">
+                                        <button type="button" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                    </form> -->
+                                    <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?annonces=<?= $user['id_user'] ?>">Détails</a>
                                 </div>
                             </div>
                         </div>

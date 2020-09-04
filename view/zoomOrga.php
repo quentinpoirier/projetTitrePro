@@ -1,6 +1,7 @@
 <?php
 
-require_once '..\controllers\zoomOrga_controller.php'
+require_once '..\controllers\zoomOrga_controller.php';
+var_dump($getOrgaArray);
 
 ?>
 
@@ -10,6 +11,8 @@ require_once '..\controllers\zoomOrga_controller.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="..\assets\css\styles.css">
     <title>Document</title>
 </head>
 
@@ -31,7 +34,7 @@ require_once '..\controllers\zoomOrga_controller.php'
                     <a class="nav-link text-white" href="..\index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="">Association</a>
+                    <a class="nav-link text-white" href="..\view\organization.php">Association</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
@@ -55,6 +58,10 @@ require_once '..\controllers\zoomOrga_controller.php'
     </nav>
 
     <div class="row">
+        <?php
+        if (isset($_GET['annonces'])) {
+        foreach ($getOrgaById as $user) {
+        ?>
         <div class="col-sm-4 mb-4">
             <div class="card w-100 shadow rounded bg-dark text-white">
                 <div class="text-center mt-2">
@@ -74,6 +81,10 @@ require_once '..\controllers\zoomOrga_controller.php'
                 </ul>
             </div>
         </div>
+        <?php
+        } 
+    }
+        ?>
     </div>
 
     <footer class="d-flex flex-row align-items-center justify-content-center bg-dark header mt-5">

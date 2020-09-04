@@ -36,4 +36,32 @@ class Advert
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    public function getAdvert()
+    {
+        $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`
+        FROM `advert`
+        LEFT JOIN `user`
+        ON `advert`.`id_user` = `user`.`id_user`
+        LEFT JOIN `activity`
+        ON `user`.`id_activity` = `activity`.`id_activity`';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->execute();
+
+            $resultAdvertInfos = $resultQuery->fetchAll();
+
+            if ($resultAdvertInfos) {
+
+                return $resultAdvertInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }

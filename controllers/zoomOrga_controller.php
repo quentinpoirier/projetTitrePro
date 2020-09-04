@@ -10,4 +10,14 @@ if (!isset($_SESSION['user'])) {
 require_once '..\model\model_user.php';
 require_once '..\model\model_activity.php';
 
-var_dump($_POST['orgaZoomSubmit']);
+$user = new User();
+
+if (isset($_SESSION['user'])) {
+
+    $getOrgaArray = $user->getOrgaInfos();
+    
+}
+
+if (isset($_GET['annonces'])) {
+    $getOrgaById = $user->getOrgaInfosById(htmlspecialchars($_GET['annonces']));
+}

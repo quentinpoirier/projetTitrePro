@@ -9,8 +9,6 @@ if (!isset($_SESSION['user'])) {
 
 require_once '..\model\model_advert.php';
 
-var_dump($_SESSION['user']);
-
 $error = array();
 
 $longString = '/^[a-zA-ZéèêëiîïôöüäçÉÀÂÛÔÎÙÈÊ\" -,!.;:?()]{0,20}$/';
@@ -61,4 +59,11 @@ if (isset($_POST['advertSubmit']) && count($error) == 0) {
 
         $advert->addAdvert($title, $object, $desc, $date, $user);
 
+}
+$advert = new Advert();
+
+if (isset($_SESSION['user'])) {
+
+    $getAdvertArray = $advert->getAdvert();
+    var_dump($getAdvertArray);
 }
