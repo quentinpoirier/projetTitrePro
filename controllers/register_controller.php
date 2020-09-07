@@ -42,7 +42,7 @@ if (isset($_POST['userPassword']) && isset($_POST['verifyPassword'])) {
     };
 };
 
-if (isset($_POST['registerSubmit'])) {
+if (isset($_POST['registerContinue'])) {
     if (!array_key_exists('userType', $_POST)) {
         $error['userType'] = 'Veuillez renseigner le champ';
     };
@@ -58,7 +58,7 @@ if (isset($_POST['g-recaptcha-response'])) {
 };
 
 $messageError =  '';
-if (isset($_POST['registerSubmit']) && count($error) == 0) {
+if (isset($_POST['registerContinue']) && count($error) == 0) {
 
     if ($decode['success'] == true) {
 

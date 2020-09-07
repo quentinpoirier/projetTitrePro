@@ -53,6 +53,6 @@ if (isset($_POST['registerSubmit']) && count($error) == 0) {
 
         $user->updateVolunteer($firstname, $lastname, $age, $idUser);
 
-        header('Location: ..\index.php');
+        header('Location: ..\view\waiting.php');
         
 };

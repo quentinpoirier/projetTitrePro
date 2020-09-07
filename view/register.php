@@ -59,7 +59,7 @@ require_once '..\controllers\register_controller.php';
                         <div class="g-recaptcha mt-3" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
                         <span class="font-italic text-danger"><?= $messageError ?></span>
                         <div class="text-center">
-                            <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">S'inscrire</button>
+                            <button type="submit" name="registerContinue" id="registerContinue" class="btn btn-light text-uppercase font-weight-bold mt-3">S'inscrire</button>
                         </div>
                     </form>
                 </div>

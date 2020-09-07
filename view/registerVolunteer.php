@@ -20,7 +20,7 @@ require_once '..\controllers\registerVolunteer_controller.php';
 
 <body>
     <?php include '..\include\include_header.php' ?>
-    
+
     <?php include '..\include\include_navbar.php' ?>
 
     <main>

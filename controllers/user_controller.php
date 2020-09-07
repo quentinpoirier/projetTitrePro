@@ -104,7 +104,7 @@ $user = new User();
 
 if (isset($_SESSION['user'])) {
 
-    $getUserArray = $user->getUserInfos($_SESSION['user']['id_user']);
+    $getUserArray = $user->getUserInfosById($_SESSION['user']['id_user']);
 }
 
 if (isset($_POST['deleteUserSubmit'])) {

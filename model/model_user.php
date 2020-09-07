@@ -161,7 +161,30 @@ class User
         }
     }
 
-    public function getUserInfos($idUser)
+    public function getUserInfos()
+    {
+        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->execute();
+
+            $resultUserInfos = $resultQuery->fetchAll();
+
+            if ($resultUserInfos) {
+
+                return $resultUserInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function getUserInfosById($idUser)
     {
         $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_user` = :id_user';
 
