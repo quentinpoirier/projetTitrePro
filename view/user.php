@@ -19,45 +19,9 @@ require_once '..\controllers\user_controller.php';
 </head>
 
 <body>
-    <header class="d-flex flex-row align-items-center justify-content-center bg-white header">
-        <div class="d-flex">
-            <div class="text-dark h2">TITRE & LOGO</div>
-        </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-3">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="font-italic text-danger" class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="..\index.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="..\view\organization.php">Association</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="">Espace personnel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <form class="form-inline mb-1 mt-1">
-            <div class="form-group mx-sm-3">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
-            </div>
-            <div class="form-group">
-                <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
-            </div>
-        </form>
-    </nav>
+    <?php include '..\include\include_header.php' ?>
+    
+    <?php include '..\include\include_navbar.php' ?>
 
     <main>
         <div class="container-fluid">
@@ -152,11 +116,7 @@ require_once '..\controllers\user_controller.php';
         </div>
     </main>
 
-    <footer class="d-flex flex-row align-items-center justify-content-center bg-dark header mt-5">
-        <div class="d-flex">
-            <div class="text-white h4">mentions légales / contact / acceuil</div>
-        </div>
-    </footer>
+    <?php include '..\include\include_footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
