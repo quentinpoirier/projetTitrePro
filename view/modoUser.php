@@ -42,7 +42,8 @@ require_once '..\controllers\modoUser_controller.php';
                             <li class="list-group-item bg-dark"><?= $user['volunteer_age'] ?></li>
                         </ul>
                         <div class="card-body">
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
+                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
                         </div>
                     </div>
                 </div>
@@ -70,7 +71,8 @@ require_once '..\controllers\modoUser_controller.php';
                             <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                         </ul>
                         <div class="card-body">
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
+                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
                         </div>
                     </div>
                 </div>
@@ -81,6 +83,10 @@ require_once '..\controllers\modoUser_controller.php';
     </div>
 
     <?php include '..\include\include_footer.php' ?>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
 

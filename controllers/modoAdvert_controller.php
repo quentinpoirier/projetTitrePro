@@ -15,3 +15,10 @@ if (isset($_SESSION['user'])) {
 
     $getAdvertArray = $advert->getAdvert();
 }
+
+if (isset($_POST['validateSubmit'])) {
+
+    $idAdvert = htmlspecialchars($_POST['validateSubmit']);
+
+    $advert->updateAdvertValidate($idAdvert);
+}

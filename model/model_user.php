@@ -68,7 +68,7 @@ class User
     public function addUser($mail, $password, $idUsertypes)
     {
 
-        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validation) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
+        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validate) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
 
         try {
 
@@ -129,6 +129,20 @@ class User
             $resultQuery->bindValue(':organization_siren', $siren);
             $resultQuery->bindValue(':organization_desc', $desc);
             $resultQuery->bindValue(':id_activity', $activity);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function updateUserValidate($idUser)
+    {
+        $query = 'UPDATE user SET `user_validate` = 1 WHERE `id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
             $resultQuery->bindValue(':id_user', $idUser);
             $resultQuery->execute();
         } catch (Exception $e) {

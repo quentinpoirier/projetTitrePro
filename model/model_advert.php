@@ -94,4 +94,18 @@ class Advert
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    public function updateAdvertValidate($idAdvert)
+    {
+        $query = 'UPDATE advert SET `advert_validate` = 1 WHERE `id_advert` = :id_advert';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_advert', $idAdvert);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }
