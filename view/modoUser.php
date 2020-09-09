@@ -1,6 +1,7 @@
 <?php
 
 require_once '..\controllers\modoUser_controller.php';
+var_dump($_SESSION);
 
 ?>
 
@@ -42,8 +43,17 @@ require_once '..\controllers\modoUser_controller.php';
                             <li class="list-group-item bg-dark"><?= $user['volunteer_age'] ?></li>
                         </ul>
                         <div class="card-body">
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                            <form method="post" action="">
+                                <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $user['id_user'] ?>">valider</button>
+                                <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $user['id_user'] ?>">supprimer</button>
+                                <?php
+                                if ($_SESSION['user']['user_moderator'] == 2) {
+                                ?>
+                                <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
+                                <?php
+                                }
+                                ?>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -71,8 +81,17 @@ require_once '..\controllers\modoUser_controller.php';
                             <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
                         </ul>
                         <div class="card-body">
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
-                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                            <form method="post" action="">
+                                <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $user['id_user'] ?>">valider</button>
+                                <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $user['id_user'] ?>">supprimer</button>
+                                <?php
+                                if ($_SESSION['user']['user_moderator'] == 2) {
+                                ?>
+                                <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
+                                <?php
+                                }
+                                ?>
+                            </form>
                         </div>
                     </div>
                 </div>

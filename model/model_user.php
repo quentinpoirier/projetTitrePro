@@ -150,6 +150,20 @@ class User
         }
     }
 
+    public function updateUserModerator($idUser)
+    {
+        $query = 'UPDATE user SET `user_moderator` = 1 WHERE `id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
     public function getUserMail($mail)
     {
 
@@ -177,7 +191,7 @@ class User
 
     public function getUserInfos()
     {
-        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
+        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user`, `user_moderator` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
 
         try {
 
@@ -260,29 +274,6 @@ class User
             if ($resultOrgaInfos) {
 
                 return $resultOrgaInfos;
-            } else {
-
-                return false;
-            }
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
-    }
-
-    public function getContactInfos()
-    {
-        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim` FROM `contact` LEFT JOIN `user` ON `contact`.`id_user` = `user`.`id_user`';
-        
-        try {
-
-            $resultQuery = $this->bdd->prepare($query);
-            $resultQuery->execute();
-
-            $resultContactInfos = $resultQuery->fetchAll();
-
-            if ($resultContactInfos) {
-
-                return $resultContactInfos;
             } else {
 
                 return false;

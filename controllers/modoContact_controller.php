@@ -7,11 +7,19 @@ if (!isset($_SESSION['user'])) {
 } else {
 }
 
-require_once '..\model\model_user.php';
+require_once '..\model\model_contact.php';
 
-$user = new User();
+$contact = new Contact();
 
 if (isset($_SESSION['user'])) {
 
-    $getContactArray = $user->getContactInfos();
+    $getContactArray = $contact->getContactInfos();
+}
+
+if (isset($_POST['deleteSubmit'])) {
+
+    $idContact = ($_POST['deleteSubmit']);
+
+    $contact->deleteContact($idContact);
+    header('Location: ..\view\modoContact.php');
 }

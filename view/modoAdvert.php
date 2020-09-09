@@ -1,8 +1,6 @@
 <?php
 
 require_once '..\controllers\modoAdvert_controller.php';
-var_dump($getAdvertArray);
-var_dump($_POST);
 
 ?>
 
@@ -57,7 +55,7 @@ var_dump($_POST);
                                 <div class="card-body">
                                 <form method="post" action="">
                                     <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">valider</button>
-                                    <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                                    <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">supprimer</button>
                                 </form>
                                 </div>
                             </div>
@@ -97,7 +95,7 @@ var_dump($_POST);
                                 <div class="card-body">
                                     <form method="post" action="">
                                         <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">valider</button>
-                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">supprimer</button>
                                     </form>
                                 </div>
                             </div>

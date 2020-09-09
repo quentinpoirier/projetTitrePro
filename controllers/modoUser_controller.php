@@ -15,3 +15,25 @@ if (isset($_SESSION['user'])) {
 
     $getUserArray = $user->getUserInfos();
 }
+
+if (isset($_POST['validateSubmit'])) {
+
+    $idUser = htmlspecialchars($_POST['validateSubmit']);
+
+    $user->updateUserValidate($idUser);
+}
+
+if (isset($_POST['modoSubmit'])) {
+
+    $idUser = htmlspecialchars($_POST['modoSubmit']);
+
+    $user->updateUserModerator($idUser);
+}
+
+if (isset($_POST['deleteSubmit'])) {
+
+    $idUser = ($_POST['deleteSubmit']);
+
+    $user->deleteUserInfos($idUser);
+    header('Location: ..\view\modoUser.php');
+}

@@ -1,6 +1,8 @@
 <?php
 
 require_once '..\controllers\modoContact_controller.php';
+var_dump($getContactArray);
+var_dump($_POST);
 
 ?>
 
@@ -22,7 +24,7 @@ require_once '..\controllers\modoContact_controller.php';
 
     <div class="row">
         <?php
-        foreach ($getContactArray as $user) {
+        foreach ($getContactArray as $contact) {
         ?>
             <div class="col-sm-4 mb-4">
                 <div class="card w-100 shadow rounded bg-dark text-white">
@@ -33,15 +35,17 @@ require_once '..\controllers\modoContact_controller.php';
                         </svg>
                     </div>
                     <div class="card-body">
-                        <div class="card-title"><?= $user['user_mail'] ?></div>
+                        <div class="card-title"><?= $contact['user_mail'] ?></div>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-dark"><?= $user['contact_object'] ?></li>
-                        <li class="list-group-item bg-dark"><?= $user['contact_claim'] ?></li>
+                        <li class="list-group-item bg-dark"><?= $contact['contact_object'] ?></li>
+                        <li class="list-group-item bg-dark"><?= $contact['contact_claim'] ?></li>
                     </ul>
                     <div class="card-body">
-                        <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
-                        <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                        <form method="post" action="">
+                            <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $contact['id_contact'] ?>">valider</button>
+                            <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $contact['id_contact'] ?>">supprimer</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -22,3 +22,11 @@ if (isset($_POST['validateSubmit'])) {
 
     $advert->updateAdvertValidate($idAdvert);
 }
+
+if (isset($_POST['deleteSubmit'])) {
+
+    $idAdvert = ($_POST['deleteSubmit']);
+
+    $advert->deleteAdvert($idAdvert);
+    header('Location: ..\view\modoAdvert.php');
+}

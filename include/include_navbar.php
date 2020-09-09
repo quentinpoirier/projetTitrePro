@@ -20,6 +20,10 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
             </li>
+            <?php
+            if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['user_moderator'] >= 1) {
+            ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Modération
@@ -30,15 +34,31 @@
                     <a class="dropdown-item" href="..\view\modoContact.php">Contacts</a>
                 </div>
             </li>
+            <?php
+                }
+            }
+            ?>
         </ul>
 
     </div>
     <form class="form-inline">
+        <?php
+        if (isset($_SESSION['user'])) {
+        ?>
+        <div class="form-group">
+            <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\disconnect.php" role="button">Se déconnecter</a>
+        </div>
+        <?php
+        } else {
+        ?>
         <div class="form-group mx-sm-3">
-            <a class="btn btn-light text-uppercase font-weight-bold" href="view\login.php" role="button">Connexion</a>
+            <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
         </div>
         <div class="form-group">
-            <a class="btn btn-light text-uppercase font-weight-bold" href="view\register.php" role="button">Inscription</a>
+            <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
         </div>
+        <?php
+        }
+        ?>
     </form>
 </nav>

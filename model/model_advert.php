@@ -108,4 +108,18 @@ class Advert
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+    public function deleteAdvert($idAdvert)
+    {
+        $query = 'DELETE FROM `advert` WHERE `id_advert` = :id_advert';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_advert', $idAdvert);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }
