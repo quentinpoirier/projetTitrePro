@@ -28,7 +28,7 @@ require_once '..\controllers\advert_controller.php';
             <div class="row justify-content-center mb-3">
                 <div class="col text-uppercase h2 text-dark text-center">annonces</div>
             </div>
-            <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\createAdvert.php">créer annonce</a>
+            <a class="btn btn-dark text-white" href="..\view\createAdvert.php">créer annonce</a>
 
             <div class="row justify-content-center mb-3 pb-1">
                 <div class="col-sm-4 card w-100 shadow rounded">

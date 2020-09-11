@@ -14,11 +14,14 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="..\view\user.php">Espace personnel</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Espace personnel
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="..\view\user.php">Mon profil</a>
+                    <a class="dropdown-item" href="..\view\userAdvert.php">Mes annonces</a>
+                </div>
             </li>
             <?php
             if (isset($_SESSION['user'])) {
@@ -33,6 +36,9 @@
                     <a class="dropdown-item" href="..\view\modoAdvert.php">Annonces</a>
                     <a class="dropdown-item" href="..\view\modoContact.php">Contacts</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
             </li>
             <?php
                 }

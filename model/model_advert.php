@@ -95,6 +95,56 @@ class Advert
         }
     }
 
+    public function getAdvertByUser($idUser)
+    {
+        $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`
+        FROM `advert`
+        LEFT JOIN `user`
+        ON `advert`.`id_user` = `user`.`id_user`
+        LEFT JOIN `activity`
+        ON `user`.`id_activity` = `activity`.`id_activity`
+        WHERE `advert`.`id_user` = :id_user';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':id_user', $idUser);
+            $resultQuery->execute();
+
+            $resultAdvertInfos = $resultQuery->fetchAll();
+
+            if ($resultAdvertInfos) {
+
+                return $resultAdvertInfos;
+            } else {
+
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function updateAdvert($title, $object, $desc, $date, $idAdvert)
+    {
+        $query = 'UPDATE advert 
+        SET `advert_title` = :advert_title, `advert_object` = :advert_object, `advert_desc` = :advert_desc, `advert_date` = :advert_date
+        WHERE `advert`.`id_advert` = :id_advert';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':advert_title', $title);
+            $resultQuery->bindValue(':advert_object', $object);
+            $resultQuery->bindValue(':advert_desc', $desc);
+            $resultQuery->bindValue(':advert_date', $date);
+            $resultQuery->bindValue(':id_advert', $idAdvert);
+            $resultQuery->execute();
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
     public function updateAdvertValidate($idAdvert)
     {
         $query = 'UPDATE advert SET `advert_validate` = 1 WHERE `id_advert` = :id_advert';
@@ -111,7 +161,7 @@ class Advert
 
     public function deleteAdvert($idAdvert)
     {
-        $query = 'DELETE FROM `advert` WHERE `id_advert` = :id_advert';
+        $query = 'DELETE FROM `advert` WHERE `advert`.`id_advert` = :id_advert';
 
         try {
 

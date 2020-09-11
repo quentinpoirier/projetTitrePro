@@ -1,7 +1,6 @@
 <?php
 
 require_once '..\controllers\disconnect_controller.php';
-var_dump($_SESSION);
 
 ?>
 

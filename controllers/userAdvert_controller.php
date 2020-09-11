@@ -1,10 +1,8 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['user'])) {
     header('Location: ..\view\login.php');
-} else {
 }
 
 require_once '..\model\model_advert.php';
@@ -48,17 +46,28 @@ if (isset($_POST['advertDate'])) {
     };
 }
 
-if (isset($_POST['advertSubmit']) && count($error) == 0) {
+$advert = new Advert();
 
-    $advert = new Advert();
+if (isset($_SESSION['user'])) {
 
-        $title = htmlspecialchars($_POST['advertTitle']);
-        $object = htmlspecialchars($_POST['advertObject']);
-        $desc = htmlspecialchars($_POST['advertDesc']);
-        $date = htmlspecialchars($_POST['advertDate']);
-        $user = htmlspecialchars($_SESSION['user']['id_user']);
+    $getAdvertArray = $advert->getAdvertByUser($_SESSION['user']['id_user']);
+}
 
-        $advert->addAdvert($title, $object, $desc, $date, $user);
-        header('location: ..\view\userAdvert.php');
 
+if (isset($_POST['updateAdvertSubmit']) && count($error) == 0) {
+
+    $title = htmlspecialchars($_POST['advertTitle']);
+    $object = htmlspecialchars($_POST['advertObject']);
+    $desc = htmlspecialchars($_POST['advertDesc']);
+    $date = htmlspecialchars($_POST['advertDate']);
+    $idAdvert = htmlspecialchars($_POST['updateAdvertSubmit']);
+
+    $advert->updateAdvert($title, $object, $desc, $date, $idAdvert);
+}
+
+if (isset($_POST['deleteAdvertSubmit'])) {
+
+    $idAdvert = $_POST['deleteAdvertSubmit'];
+    $advert->deleteAdvert($idAdvert);
+    header('location: ..\view\userAdvert.php');
 }

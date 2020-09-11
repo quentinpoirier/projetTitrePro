@@ -105,10 +105,8 @@ require_once '..\controllers\user_controller.php';
                         }
                         ?>
                         <div class="text-center">
-                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" name="deleteUserSubmit" id="deleteUserSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">supprimer</button>
+                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light text-uppercase font-weight-bold mr-3">modifier</button>
+                            <button type="submit" name="deleteUserSubmit" id="deleteUserSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
                         </div>
                     </form>
                 </div>
