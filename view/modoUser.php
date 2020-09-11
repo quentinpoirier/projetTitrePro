@@ -1,7 +1,6 @@
 <?php
 
 require_once '..\controllers\modoUser_controller.php';
-var_dump($_SESSION);
 
 ?>
 
@@ -12,7 +11,7 @@ var_dump($_SESSION);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\css\styles.css">
+    <link rel="stylesheet" href="..\assets\css\styles.css">
     <title>Document</title>
 </head>
 
@@ -22,9 +21,12 @@ var_dump($_SESSION);
     <?php include '..\include\include_navbar.php' ?>
 
     <div class="row">
+        <div class="col text-uppercase h4 text-dark text-center">bénévoles</div>
+    </div>
+    <div class="row">
         <?php
         foreach ($getUserArray as $user) {
-            if ($user['id_usertypes'] == 1) {
+            if ($user['id_usertypes'] == 1 && $user['user_validate'] == 0) {
         ?>
                 <div class="col-sm-4 mb-4">
                     <div class="card w-100 shadow rounded bg-dark text-white">
@@ -49,7 +51,7 @@ var_dump($_SESSION);
                                 <?php
                                 if ($_SESSION['user']['user_moderator'] == 2) {
                                 ?>
-                                <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
+                                    <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
                                 <?php
                                 }
                                 ?>
@@ -57,9 +59,20 @@ var_dump($_SESSION);
                         </div>
                     </div>
                 </div>
-            <?php
-            } else {
-            ?>
+        <?php
+            }
+        }
+        ?>
+    </div>
+
+    <div class="row">
+        <div class="col text-uppercase h4 text-dark text-center">associations</div>
+    </div>
+    <div class="row">
+        <?php
+        foreach ($getUserArray as $user) {
+            if ($user['id_usertypes'] == 2 && $user['user_validate'] == 0) {
+        ?>
                 <div class="col-sm-4 mb-4">
                     <div class="card w-100 shadow rounded bg-dark text-white">
                         <div class="text-center mt-2">
@@ -87,7 +100,7 @@ var_dump($_SESSION);
                                 <?php
                                 if ($_SESSION['user']['user_moderator'] == 2) {
                                 ?>
-                                <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
+                                    <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $user['id_user'] ?>">modérateur</button>
                                 <?php
                                 }
                                 ?>

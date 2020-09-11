@@ -21,6 +21,7 @@ if (isset($_POST['validateSubmit'])) {
     $idAdvert = htmlspecialchars($_POST['validateSubmit']);
 
     $advert->updateAdvertValidate($idAdvert);
+    header('Location: ..\view\modoAdvert.php');
 }
 
 if (isset($_POST['deleteSubmit'])) {

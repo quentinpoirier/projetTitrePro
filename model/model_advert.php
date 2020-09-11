@@ -39,7 +39,7 @@ class Advert
 
     public function getAdvert()
     {
-        $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`
+        $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`, `advert_validate`
         FROM `advert`
         LEFT JOIN `user`
         ON `advert`.`id_user` = `user`.`id_user`

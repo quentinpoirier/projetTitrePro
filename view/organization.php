@@ -1,7 +1,6 @@
 <?php
 
 require_once '..\controllers\organization_controller.php';
-var_dump($getOrgaArray);
 
 ?>
 

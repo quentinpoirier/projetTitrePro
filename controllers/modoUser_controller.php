@@ -21,6 +21,7 @@ if (isset($_POST['validateSubmit'])) {
     $idUser = htmlspecialchars($_POST['validateSubmit']);
 
     $user->updateUserValidate($idUser);
+    header('Location: ..\view\modoUser.php');
 }
 
 if (isset($_POST['modoSubmit'])) {
@@ -28,6 +29,7 @@ if (isset($_POST['modoSubmit'])) {
     $idUser = htmlspecialchars($_POST['modoSubmit']);
 
     $user->updateUserModerator($idUser);
+    header('Location: ..\view\modoUser.php');
 }
 
 if (isset($_POST['deleteSubmit'])) {

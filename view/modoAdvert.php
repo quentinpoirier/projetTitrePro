@@ -32,7 +32,7 @@ require_once '..\controllers\modoAdvert_controller.php';
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {
-                    if ($advert['id_usertypes'] == 2) {
+                    if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 0) {
                 ?>
                         <div class="col-sm-4 mb-4">
                             <div class="card w-100 shadow rounded bg-dark text-white">
@@ -72,7 +72,7 @@ require_once '..\controllers\modoAdvert_controller.php';
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {
-                    if ($advert['id_usertypes'] == 1) {
+                    if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 0) {
                 ?>
                         <div class="col-sm-4 mb-4">
                             <div class="card w-100 shadow rounded bg-dark text-white">

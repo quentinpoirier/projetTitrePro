@@ -68,7 +68,7 @@ class User
     public function addUser($mail, $password, $idUsertypes)
     {
 
-        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validate) VALUES (:user_mail, :user_password, :id_usertypes, 0)';
+        $query = 'INSERT INTO user (user_mail, user_password, id_usertypes, user_validate, user_moderator) VALUES (:user_mail, :user_password, :id_usertypes, 0, 0)';
 
         try {
 
@@ -152,7 +152,7 @@ class User
 
     public function updateUserModerator($idUser)
     {
-        $query = 'UPDATE user SET `user_moderator` = 1 WHERE `id_user` = :id_user';
+        $query = 'UPDATE `user` SET `user_moderator` = 1 WHERE `user`.`id_user` = :id_user';
 
         try {
 
@@ -191,7 +191,7 @@ class User
 
     public function getUserInfos()
     {
-        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user`, `user_moderator` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
+        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user`, `user_validate`, `user_moderator` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
 
         try {
 

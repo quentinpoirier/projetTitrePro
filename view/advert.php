@@ -58,7 +58,7 @@ require_once '..\controllers\advert_controller.php';
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
                     foreach ($getAdvertArray as $advert) {
-                        if ($advert['id_usertypes'] == 2) {
+                        if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             if ($advert['activity_name'] == $_POST['activity']) {
                 ?>
                                 <div class="col-sm-4 mb-4">
@@ -91,7 +91,7 @@ require_once '..\controllers\advert_controller.php';
                     }
                 } else {
                     foreach ($getAdvertArray as $advert) {
-                        if ($advert['id_usertypes'] == 2) {
+                        if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             ?>
                             <div class="col-sm-4 mb-4">
                                 <div class="card w-100 shadow rounded bg-dark text-white">
@@ -130,7 +130,7 @@ require_once '..\controllers\advert_controller.php';
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {
-                    if ($advert['id_usertypes'] == 1) {
+                    if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
                 ?>
                         <div class="col-sm-4 mb-4">
                             <div class="card w-100 shadow rounded bg-dark text-white">
