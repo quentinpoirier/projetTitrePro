@@ -2,3 +2,30 @@
     height: 170px;
     width: auto;
 }
+
+.containerBg {
+    background-color: #ececec;
+}
+
+.navBg {
+    background-color: #142d4c;
+}
+
+.navText {
+    color: #142d4c;
+}
+
+.navTextButton {
+    color: #142d4c;
+    font-weight: bold;
+}
+
+.cardCustom {
+    background-color: #4e89ae;
+    border-color: #4e89ae;
+    color: #ececec;
+}
+
+.cardText {
+    color: #4e89ae;
+}
