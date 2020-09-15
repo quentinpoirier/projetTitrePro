@@ -128,7 +128,7 @@ class Advert
     public function updateAdvert($title, $object, $desc, $date, $idAdvert)
     {
         $query = 'UPDATE advert 
-        SET `advert_title` = :advert_title, `advert_object` = :advert_object, `advert_desc` = :advert_desc, `advert_date` = :advert_date
+        SET `advert_title` = :advert_title, `advert_object` = :advert_object, `advert_desc` = :advert_desc, `advert_date` = :advert_date, `advert_validate` = 0
         WHERE `advert`.`id_advert` = :id_advert';
 
         try {

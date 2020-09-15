@@ -23,20 +23,22 @@ require_once '../controllers/userAdvert_controller.php';
 
     <?php include '..\include\include_navbar.php' ?>
 
-    <div class="container-fluid">
-    <a class="btn btn-dark text-white" href="..\view\createAdvert.php">créer annonce</a>
-        <div class="row justify-content-center mb-3">
-            <div class="col text-uppercase h2 text-dark text-center">annonces</div>
+    <div class="container-fluid pb-4 containerBg">
+        <div class="row justify-content-end">
+            <a class="btn navBg text-white mt-2 mr-4" href="..\view\createAdvert.php">Créer annonce</a>
+        </div>
+        <div class="row justify-content-center pb-1 pt-5">
+            <div class="col h2 navText text-center">Mes annonces</div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center pb-5">
             <?php
             if (isset($_SESSION['user'])) {
                 if (($getAdvertArray) == true) {
                     foreach ($getAdvertArray as $advert) {
             ?>
                         <div class="col-sm-4">
-                            <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
+                            <form class="navBg p-4 rounded-lg" action="" method="post" novalidate>
                                 <div class="form-group">
                                     <label for="advertTitle" class="text-white text-uppercase">Titre</label>
                                     <input type="text" class="form-control " id="advertTitle" name="advertTitle" value="<?= isset($_POST['advertTitle']) ? htmlspecialchars($_POST['advertTitle']) : $advert['advert_title'] ?>">

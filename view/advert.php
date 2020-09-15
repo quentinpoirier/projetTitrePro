@@ -24,29 +24,25 @@ require_once '..\controllers\advert_controller.php';
     <?php include '..\include\include_navbar.php' ?>
 
     <main>
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">annonces</div>
-            </div>
-            <a class="btn btn-dark text-white" href="..\view\createAdvert.php">créer annonce</a>
-
-            <div class="row justify-content-center mb-3 pb-1">
-                <div class="col-sm-4 card w-100 shadow rounded">
-                    <form class="mb-3 bg-light p-5" action="" method="post" novalidate>
+        <div class="container-fluid containerBg">
+            <div class="row justify-content-start pt-3">
+                <div class="col-sm-3 card w-100 shadow rounded ml-3">
+                    <form class="cardText pb-2 pt-2" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
-                            <select class="form-control" id="activity" name="activity">
+                            <label for="activity" class="navText text-center h6 font-weight-bold">Domaine d'activité</label>
+                            <select class="form-control navText" id="activity" name="activity">
                                 <?php
                                 foreach ($getActivityArray as $activity) {
                                 ?>
-                                    <option value="<?= $activity['activity_name'] ?>"><?= $activity['activity_name'] ?></option>
+                                    <option class="navText" value="<?= $activity['activity_name'] ?>"><?= $activity['activity_name'] ?></option>
                                 <?php
                                 }
                                 ?>
                             </select>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
+                        <div>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn navBg text-white mr-2">Rechercher</button>
+                            <a class="btn navBg text-white" href="..\view\createAdvert.php">créer annonce</a>
                         </div>
                     </form>
                 </div>
@@ -54,6 +50,7 @@ require_once '..\controllers\advert_controller.php';
             <div class="row">
                 <div class="col text-uppercase h4 text-dark text-center">associations</div>
             </div>
+            <hr>
             <div class="row">
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
@@ -127,6 +124,7 @@ require_once '..\controllers\advert_controller.php';
             <div class="row">
                 <div class="col text-uppercase h4 text-dark text-center">bénévoles</div>
             </div>
+            <hr>
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {

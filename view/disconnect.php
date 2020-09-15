@@ -22,18 +22,15 @@ require_once '..\controllers\disconnect_controller.php';
 
     <main>
         <div class="row justify-content-center">
-            <div class="col-sm-4 mb-4">
-                <div class="card w-100 shadow rounded bg-dark text-white">
-                    <div class="card-body">
-                        <div class="card-title text-uppercase">déconnection</div>
-                        <div class="card-subtitle">Se déconnecter ?</div>
+            <div class="col-sm-2 pt-5 pb-5">
+                <div class="card w-100 shadow rounded navBg text-white">
+                    <div class="card-body text-center">
+                        <div class="h4">Déconnection</div>
                     </div>
-                    <div class="card-body">
-                        <form method="post" action="">
-                            <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2">valider</button>
-                            <button type="submit" name="declineSubmit" id="declineSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
-                        </form>
-                    </div>
+                    <form method="post" action="" class="text-center mb-3">
+                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light navText font-weight-bold mr-2">Oui</button>
+                        <button type="submit" name="declineSubmit" id="declineSubmit" class="btn btn-light navText font-weight-bold">Non</button>
+                    </form>
                 </div>
             </div>
         </div>

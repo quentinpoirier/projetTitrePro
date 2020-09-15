@@ -18,9 +18,9 @@
                 <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Espace personnel
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item navText" href="..\view\user.php">Mon profil</a>
-                    <a class="dropdown-item navText" href="..\view\userAdvert.php">Mes annonces</a>
+                <div class="dropdown-menu navBg" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item navBg text-white" href="..\view\user.php">Mon profil</a>
+                    <a class="dropdown-item navBg text-white" href="..\view\userAdvert.php">Mes annonces</a>
                 </div>
             </li>
             <?php
@@ -31,10 +31,10 @@
                         <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Modération
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item navText" href="..\view\modoUser.php">Utilisateurs</a>
-                            <a class="dropdown-item navText" href="..\view\modoAdvert.php">Annonces</a>
-                            <a class="dropdown-item navText" href="..\view\modoContact.php">Contacts</a>
+                        <div class="dropdown-menu navBg" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item navBg text-white" href="..\view\modoUser.php">Utilisateurs</a>
+                            <a class="dropdown-item navBg text-white" href="..\view\modoAdvert.php">Annonces</a>
+                            <a class="dropdown-item navBg text-white" href="..\view\modoContact.php">Contacts</a>
                         </div>
                     </li>
                     <li class="nav-item">

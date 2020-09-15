@@ -13,7 +13,7 @@ if (isset($_POST['validateSubmit'])) {
     header('Location: ..\index.php');
 }
 
-if (isset($_POST['validateSubmit'])) {
+if (isset($_POST['declineSubmit'])) {
 
     header('Location: ..\index.php');
 }

@@ -22,14 +22,15 @@ require_once '..\controllers\organization_controller.php';
 
     <main>
         <div class="container-fluid containerBg">
-            <div class="row justify-content-center pt-3 mb-1">
-                <div class="col text-uppercase h2 cardText text-center">Liste des structures</div>
+            <div class="row justify-content-center pt-3">
+                <div class="col h2 nav-text text-center">Liste des structures</div>
             </div>
+            <hr>
             <div class="row justify-content-center pb-3">
-                <div class="col-sm-6 card w-100 shadow rounded">
-                    <form class=" bg-light p-5" action="" method="post" novalidate>
+                <div class="col-sm-3 card w-100 shadow rounded">
+                    <form class="cardText p-2" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="activity" class="text-secondary text-center font-weight-bold">Domaine d'activité</label>
+                            <label for="activity" class="navText text-center font-weight-bold">Domaine d'activité</label>
                             <select class="form-control" id="activity" name="activity">
                                 <?php
                                 foreach ($getActivityArray as $activity) {
@@ -40,12 +41,13 @@ require_once '..\controllers\organization_controller.php';
                                 ?>
                             </select>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn btn-light text-uppercase font-weight-bold">modifier</button>
+                        <div class="">
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn font-weight-bold navBg text-white">Rechercher</button>
                         </div>
                     </form>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
@@ -69,9 +71,6 @@ require_once '..\controllers\organization_controller.php';
                                         <li class="list-group-item cardText"><?= $user['activity_name'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <!-- <form action="..\view\zoomOrga.php" method="post">
-                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" value="<?= $user['id_user'] ?>" class="btn btn-light text-uppercase font-weight-bold">détail</button>
-                                        </form> -->
                                         <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
@@ -101,9 +100,6 @@ require_once '..\controllers\organization_controller.php';
                                         <li class="list-group-item cardText"><?= $user['activity_name'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <!-- <form action="..\view\zoomOrga.php" method="get">
-                                        <button type="button" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
-                                    </form> -->
                                         <a class="btn btn-light text-primary" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
