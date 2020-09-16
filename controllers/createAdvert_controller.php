@@ -2,6 +2,8 @@
 
 session_start();
 
+setlocale(LC_TIME, 'fr_fr');
+
 if (!isset($_SESSION['user'])) {
     header('Location: ..\view\login.php');
 } else {
@@ -39,15 +41,6 @@ if (isset($_POST['advertDesc'])) {
     };
 }
 
-if (isset($_POST['advertDate'])) {
-    if (preg_match($DateRegex, $_POST['advertDate']) == false) {
-        $error['advertDate'] = 'Mauvais format';
-    };
-    if (empty($_POST['advertDate'])) {
-        $error['advertDate'] = 'Veuillez renseigner le champ';
-    };
-}
-
 if (isset($_POST['advertSubmit']) && count($error) == 0) {
 
     $advert = new Advert();
@@ -55,7 +48,7 @@ if (isset($_POST['advertSubmit']) && count($error) == 0) {
         $title = htmlspecialchars($_POST['advertTitle']);
         $object = htmlspecialchars($_POST['advertObject']);
         $desc = htmlspecialchars($_POST['advertDesc']);
-        $date = htmlspecialchars($_POST['advertDate']);
+        $date = htmlspecialchars(strftime('%Y-%m-%d', strtotime(date('d-m-Y'))));
         $user = htmlspecialchars($_SESSION['user']['id_user']);
 
         $advert->addAdvert($title, $object, $desc, $date, $user);

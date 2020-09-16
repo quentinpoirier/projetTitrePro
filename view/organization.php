@@ -22,15 +22,11 @@ require_once '..\controllers\organization_controller.php';
 
     <main>
         <div class="container-fluid containerBg">
-            <div class="row justify-content-center pt-3">
-                <div class="col h2 nav-text text-center">Liste des structures</div>
-            </div>
-            <hr>
-            <div class="row justify-content-center pb-3">
-                <div class="col-sm-3 card w-100 shadow rounded">
-                    <form class="cardText p-2" action="" method="post" novalidate>
+            <div class="row justify-content-start pt-3 pb-3">
+                <div class="col-sm-3 card w-100 shadow rounded-0 ml-3">
+                    <form class="pb-2 pt-2" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="activity" class="navText text-center font-weight-bold">Domaine d'activité</label>
+                            <label for="activity" class="text-center h6 font-weight-bold textFont">Domaine d'activité</label>
                             <select class="form-control" id="activity" name="activity">
                                 <?php
                                 foreach ($getActivityArray as $activity) {
@@ -42,19 +38,18 @@ require_once '..\controllers\organization_controller.php';
                             </select>
                         </div>
                         <div class="">
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn font-weight-bold navBg text-white">Rechercher</button>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn font-weight-bold cardOrga textFont">Rechercher</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <hr>
             <div class="row">
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
                     foreach ($getOrgaArray as $user) {
                         if ($user['activity_name'] == $_POST['activity'] && $user['user_validate'] == 1) { ?>
                             <div class="col-sm-4 mb-4">
-                                <div class="card w-100 shadow rounded cardCustom">
+                                <div class="card w-100 shadow rounded-0 cardOrga">
                                     <div class="text-center mt-2">
                                         <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -62,16 +57,15 @@ require_once '..\controllers\organization_controller.php';
                                         </svg>
                                     </div>
                                     <div class="card-body">
-                                        <div class="card-title"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text"><?= $user['organization_desc'] ?></div>
+                                        <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
+                                        <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item cardText"><?= $user['organization_mail'] ?></li>
-                                        <li class="list-group-item cardText"><?= $user['organization_phone'] ?></li>
-                                        <li class="list-group-item cardText"><?= $user['activity_name'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $user['organization_mail'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <a class="btn btn-light text-uppercase font-weight-bold" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
+                                        <a class="btn btn-light font-weight-bold textFont" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +77,7 @@ require_once '..\controllers\organization_controller.php';
                         if ($user['user_validate'] == 1) {
                         ?>
                             <div class="col-sm-4 mb-4">
-                                <div class="card w-100 shadow rounded cardCustom">
+                                <div class="card w-100 shadow rounded-0 cardOrga">
                                     <div class="text-center mt-2">
                                         <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -92,15 +86,14 @@ require_once '..\controllers\organization_controller.php';
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text"><?= $user['organization_desc'] ?></div>
+                                        <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item cardText"><?= $user['organization_mail'] ?></li>
-                                        <li class="list-group-item cardText"><?= $user['organization_phone'] ?></li>
-                                        <li class="list-group-item cardText"><?= $user['activity_name'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $user['organization_mail'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <a class="btn btn-light text-primary" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
+                                        <a class="btn btn-light font-weight-bold textFont" href="../view/zoomOrga.php?organization=<?= $user['id_user'] ?>">Détails</a>
                                     </div>
                                 </div>
                             </div>

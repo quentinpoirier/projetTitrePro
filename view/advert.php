@@ -26,11 +26,11 @@ require_once '..\controllers\advert_controller.php';
     <main>
         <div class="container-fluid containerBg">
             <div class="row justify-content-start pt-3">
-                <div class="col-sm-3 card w-100 shadow rounded ml-3">
-                    <form class="cardText pb-2 pt-2" action="" method="post" novalidate>
+                <div class="col-sm-3 card w-100 shadow rounded-0 ml-3">
+                    <form class="pb-2 pt-2" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="activity" class="navText text-center h6 font-weight-bold">Domaine d'activité</label>
-                            <select class="form-control navText" id="activity" name="activity">
+                            <label for="activity" class="text-center h6 font-weight-bold textFont">Domaine d'activité</label>
+                            <select class="form-control" id="activity" name="activity">
                                 <?php
                                 foreach ($getActivityArray as $activity) {
                                 ?>
@@ -41,8 +41,8 @@ require_once '..\controllers\advert_controller.php';
                             </select>
                         </div>
                         <div>
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn navBg text-white mr-2">Rechercher</button>
-                            <a class="btn navBg text-white" href="..\view\createAdvert.php">créer annonce</a>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn cardOrga font-weight-bold mr-2 textFont">Rechercher</button>
+                            <a class="btn cardOrga font-weight-bold textFont" href="..\view\createAdvert.php">créer annonce</a>
                         </div>
                     </form>
                 </div>
@@ -59,7 +59,7 @@ require_once '..\controllers\advert_controller.php';
                             if ($advert['activity_name'] == $_POST['activity']) {
                 ?>
                                 <div class="col-sm-4 mb-4">
-                                    <div class="card w-100 shadow rounded bg-dark text-white">
+                                    <div class="card w-100 shadow rounded-0 cardOrga">
                                         <div class="text-center mt-2">
                                             <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -67,18 +67,17 @@ require_once '..\controllers\advert_controller.php';
                                             </svg>
                                         </div>
                                         <div class="card-body">
-                                            <div class="card-title"><?= $advert['advert_title'] ?></div>
-                                            <div class="card-subtitle"><?= $advert['advert_object'] ?></div>
-                                            <div class="card-text"><?= $advert['advert_desc'] ?></div>
+                                            <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                            <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                            <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                         </div>
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item bg-dark"><?= $advert['advert_date'] ?></li>
-                                            <li class="list-group-item bg-dark"><?= $advert['organization_mail'] ?></li>
-                                            <li class="list-group-item bg-dark"><?= $advert['organization_name'] ?></li>
-                                            <li class="list-group-item bg-dark"><?= $advert['activity_name'] ?></li>
+                                            <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
+                                            <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                            <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                         </ul>
                                         <div class="card-body">
-                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
+                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light font-weight-bold textFont">détail</button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +90,7 @@ require_once '..\controllers\advert_controller.php';
                         if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             ?>
                             <div class="col-sm-4 mb-4">
-                                <div class="card w-100 shadow rounded bg-dark text-white">
+                                <div class="card w-100 shadow rounded-0 cardOrga">
                                     <div class="text-center mt-2">
                                         <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -99,18 +98,17 @@ require_once '..\controllers\advert_controller.php';
                                         </svg>
                                     </div>
                                     <div class="card-body">
-                                        <div class="card-title"><?= $advert['advert_title'] ?></div>
-                                        <div class="card-subtitle"><?= $advert['advert_object'] ?></div>
-                                        <div class="card-text"><?= $advert['advert_desc'] ?></div>
+                                        <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                        <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                        <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item bg-dark"><?= $advert['advert_date'] ?></li>
-                                        <li class="list-group-item bg-dark"><?= $advert['organization_mail'] ?></li>
-                                        <li class="list-group-item bg-dark"><?= $advert['organization_name'] ?></li>
-                                        <li class="list-group-item bg-dark"><?= $advert['activity_name'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                        <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
+                                        <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +129,7 @@ require_once '..\controllers\advert_controller.php';
                     if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
                 ?>
                         <div class="col-sm-4 mb-4">
-                            <div class="card w-100 shadow rounded bg-dark text-white">
+                            <div class="card w-100 shadow rounded-0 cardVolunteer">
                                 <div class="text-center mt-2">
                                     <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -139,17 +137,17 @@ require_once '..\controllers\advert_controller.php';
                                     </svg>
                                 </div>
                                 <div class="card-body">
-                                    <div class="card-title"><?= $advert['advert_title'] ?></div>
-                                    <div class="card-subtitle"><?= $advert['advert_object'] ?></div>
-                                    <div class="card-text"><?= $advert['advert_desc'] ?></div>
+                                    <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                    <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                    <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-dark"><?= $advert['advert_date'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['user_mail'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['user_mail'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
                                 </ul>
                                 <div class="card-body">
-                                    <a class="btn btn-light text-uppercase font-weight-bold" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
+                                    <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
                                 </div>
                             </div>
                         </div>

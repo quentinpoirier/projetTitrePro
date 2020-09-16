@@ -42,11 +42,6 @@ require_once '..\controllers\createAdvert_controller.php';
                         <textarea type="text" class="form-control" id="advertDesc" name="advertDesc" rows="3" value="<?= isset($_POST['advertDesc']) ? htmlspecialchars($_POST['advertDesc']) : '' ?>"></textarea>
                         <span class="font-italic text-danger"><?= isset($error['advertDesc']) ? $error['advertDesc'] : '' ?></span>
                     </div>
-                    <div class="form-group">
-                        <label for="advertDateStart" class="text-white text-uppercase">Date de début</label>
-                        <input type="date" class="form-control" id="advertDate" name="advertDate" value="<?= isset($_POST['advertDate']) ? htmlspecialchars($_POST['advertDate']) : '' ?>">
-                        <span class="font-italic text-danger"><?= isset($error['advertDate']) ? $error['advertDate'] : '' ?></span>
-                    </div>
                     <div class="text-center">
                         <button type="submit" name="advertSubmit" id="advertSubmit" class="btn btn-light text-uppercase font-weight-bold">Poster</button>
                     </div>

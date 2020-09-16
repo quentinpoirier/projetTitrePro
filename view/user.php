@@ -26,27 +26,27 @@ require_once '..\controllers\user_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 navText text-center">Mon espace</div>
+                <div class="col h2 text-center textFont">Mon espace</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-                    <form class="navBg p-4 rounded-lg" action="" method="post" novalidate>
+                    <form class="navBg p-4 rounded-lg rounded-0 textFont" action="" method="post" novalidate>
                         <?php
                         if (isset($_SESSION['user'])) {
                             if ($_SESSION['user']['id_usertypes'] == '1') {
                                 foreach ($getUserArray as $user) { ?>
                                     <div class="form-group">
-                                        <label for="volunteerFirstname" class="text-white text-uppercase">Prénom</label>
+                                        <label for="volunteerFirstname" class="text-white ">Prénom</label>
                                         <input type="text" class="form-control" id="volunteerFirstname" name="volunteerFirstname" value="<?= isset($_POST['volunteerFirstname']) ? htmlspecialchars($_POST['volunteerFirstname']) : $getUserArray[0]['volunteer_firstname'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['volunteerFirstname']) ? $error['volunteerFirstname'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="volunteerLastname" class="text-white text-uppercase">Nom</label>
+                                        <label for="volunteerLastname" class="text-white ">Nom</label>
                                         <input type="text" class="form-control" id="volunteerLastname" name="volunteerLastname" value="<?= isset($_POST['volunteerLastname']) ? htmlspecialchars($_POST['volunteerLastname']) : $getUserArray[0]['volunteer_lastname'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['volunteerLastname']) ? $error['volunteerLastname'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="volunteerBirthdate" class="text-white text-uppercase">Date de naissance</label>
+                                        <label for="volunteerBirthdate" class="text-white ">Date de naissance</label>
                                         <input type="date" class="form-control" id="volunteerBirthdate" name="volunteerBirthdate" value="<?= isset($_POST['volunteerBirthdate']) ? htmlspecialchars($_POST['volunteerBirthdate']) : $getUserArray[0]['volunteer_age'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['volunteerBirthdate']) ? $error['volunteerBirthdate'] : '' ?></span>
                                     </div>
@@ -57,12 +57,12 @@ require_once '..\controllers\user_controller.php';
                                 foreach ($getUserArray as $user) {
                                 ?>
                                     <div class="form-group">
-                                        <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
+                                        <label for="oragnizationName" class="text-white ">Nom de la structure</label>
                                         <input type="text" class="form-control" id="oragnizationName" name="oragnizationName" value="<?= isset($_POST['oragnizationName']) ? htmlspecialchars($_POST['oragnizationName']) : $getUserArray[0]['organization_name'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['oragnizationName']) ? $error['oragnizationName'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
+                                        <label for="activity" class="text-white ">Domaine d'activité</label>
                                         <select class="form-control" id="activity" name="activity">
                                             <option selected disabled><?= $getUserArray[0]['activity_name'] ?></option>
                                             <option value="1" <?= isset($_POST['activity']) && ($_POST['activity']) == '1'  ? 'selected' : '' ?>>Culture</option>
@@ -73,27 +73,27 @@ require_once '..\controllers\user_controller.php';
                                         <span class="font-italic text-danger"><?= isset($error['activity']) ? $error['activity'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="organizationAdress" class="text-white text-uppercase">Adresse</label>
+                                        <label for="organizationAdress" class="text-white ">Adresse</label>
                                         <input type="text" class="form-control" id="organizationAdress" name="organizationAdress" value="<?= isset($_POST['organizationAdress']) ? htmlspecialchars($_POST['organizationAdress']) : $getUserArray[0]['organization_adress'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['organizationAdress']) ? $error['organizationAdress'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="organizationPhone" class="text-white text-uppercase">Téléphone</label>
+                                        <label for="organizationPhone" class="text-white ">Téléphone</label>
                                         <input type="text" class="form-control" id="organizationPhone" name="organizationPhone" value="<?= isset($_POST['organizationPhone']) ? htmlspecialchars($_POST['organizationPhone']) : $getUserArray[0]['organization_phone'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['organizationPhone']) ? $error['organizationPhone'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="organizationMail" class="text-white text-uppercase">Mail de contact</label>
+                                        <label for="organizationMail" class="text-white ">Mail de contact</label>
                                         <input type="email" class="form-control" id="organizationMail" name="organizationMail" value="<?= isset($_POST['organizationMail']) ? htmlspecialchars($_POST['organizationMail']) : $getUserArray[0]['organization_mail'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['organizationMail']) ? $error['organizationMail'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="organizationSiren" class="text-white text-uppercase">Numéro SIREN</label>
+                                        <label for="organizationSiren" class="text-white ">Numéro SIREN</label>
                                         <input type="text" class="form-control" id="organizationSiren" name="organizationSiren" value="<?= isset($_POST['organizationSiren']) ? htmlspecialchars($_POST['organizationSiren']) : $getUserArray[0]['organization_siren'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['organizationSiren']) ? $error['organizationSiren'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
+                                        <label for="organizationDesc" class="text-white ">Description de la structure</label>
                                         <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required><?= isset($_POST['organizationDesc']) ? htmlspecialchars($_POST['organizationDesc']) : $getUserArray[0]['organization_desc'] ?></textarea>
                                         <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
                                     </div>
@@ -103,8 +103,8 @@ require_once '..\controllers\user_controller.php';
                         }
                         ?>
                         <div class="text-center">
-                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light text-uppercase font-weight-bold mr-3">modifier</button>
-                            <button type="submit" name="deleteUserSubmit" id="deleteUserSubmit" class="btn btn-light text-uppercase font-weight-bold">supprimer</button>
+                            <button type="submit" name="updateUserSubmit" id="updateUserSubmit" class="btn btn-light font-weight-bold mr-3">Modifier</button>
+                            <button type="submit" name="deleteUserSubmit" id="deleteUserSubmit" class="btn btn-light font-weight-bold">Supprimer</button>
                         </div>
                     </form>
                 </div>

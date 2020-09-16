@@ -28,7 +28,7 @@ require_once '../controllers/userAdvert_controller.php';
             <a class="btn navBg text-white mt-2 mr-4" href="..\view\createAdvert.php">Créer annonce</a>
         </div>
         <div class="row justify-content-center pb-1 pt-5">
-            <div class="col h2 navText text-center">Mes annonces</div>
+            <div class="col h2 text-center textFont">Mes annonces</div>
         </div>
 
         <div class="row justify-content-center pb-5">
@@ -38,30 +38,25 @@ require_once '../controllers/userAdvert_controller.php';
                     foreach ($getAdvertArray as $advert) {
             ?>
                         <div class="col-sm-4">
-                            <form class="navBg p-4 rounded-lg" action="" method="post" novalidate>
+                            <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
                                 <div class="form-group">
-                                    <label for="advertTitle" class="text-white text-uppercase">Titre</label>
+                                    <label for="advertTitle" class="text-white">Titre</label>
                                     <input type="text" class="form-control " id="advertTitle" name="advertTitle" value="<?= isset($_POST['advertTitle']) ? htmlspecialchars($_POST['advertTitle']) : $advert['advert_title'] ?>">
                                     <span class="font-italic text-danger"><?= isset($error['advertTitle']) ? $error['advertTitle'] : '' ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="advertObject" class="text-white text-uppercase">Objet</label>
+                                    <label for="advertObject" class="text-white">Objet</label>
                                     <input type="text" class="form-control " id="advertObject" name="advertObject" value="<?= isset($_POST['advertObject']) ? htmlspecialchars($_POST['advertObject']) : $advert['advert_object'] ?>">
                                     <span class="font-italic text-danger"><?= isset($error['advertObject']) ? $error['advertObject'] : '' ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="advertDesc" class="text-white text-uppercase">Description</label>
+                                    <label for="advertDesc" class="text-white">Description</label>
                                     <textarea type="text" class="form-control" id="advertDesc" name="advertDesc" rows="3" value="<?= isset($_POST['advertDesc']) ? htmlspecialchars($_POST['advertDesc']) : '' ?>"><?= $advert['advert_desc'] ?></textarea>
                                     <span class="font-italic text-danger"><?= isset($error['advertDesc']) ? $error['advertDesc'] : '' ?></span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="advertDateStart" class="text-white text-uppercase">Date de début</label>
-                                    <input type="date" class="form-control" id="advertDate" name="advertDate" value="<?= isset($_POST['advertDate']) ? htmlspecialchars($_POST['advertDate']) : $advert['advert_date'] ?>">
-                                    <span class="font-italic text-danger"><?= isset($error['advertDate']) ? $error['advertDate'] : '' ?></span>
-                                </div>
                                 <div class="text-center">
-                                    <button type="submit" name="updateAdvertSubmit" id="updateAdvertSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">modifier</button>
-                                    <button type="submit" name="deleteAdvertSubmit" id="deleteAdvertSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">supprimer</button>
+                                    <button type="submit" name="updateAdvertSubmit" id="updateAdvertSubmit" class="btn btn-light font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">Modifier</button>
+                                    <button type="submit" name="deleteAdvertSubmit" id="deleteAdvertSubmit" class="btn btn-light font-weight-bold" value="<?= $advert['id_advert'] ?>">Supprimer</button>
                                 </div>
                             </form>
                         </div>

@@ -3,7 +3,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse textFont" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link text-white" href="..\index.php">Accueil</a>
@@ -47,21 +47,21 @@
         </ul>
 
     </div>
-    <form class="form-inline">
+    <form class="form-inline textFont">
         <?php
         if (isset($_SESSION['user'])) {
         ?>
             <div class="form-group">
-                <a class="btn btn-light navText" href="..\view\disconnect.php" role="button">Se déconnecter</a>
+                <a class="btn btn-light navText font-weight-bold" href="..\view\disconnect.php" role="button">Se déconnecter</a>
             </div>
         <?php
         } else {
         ?>
             <div class="form-group mx-sm-3">
-                <a class="btn btn-light navText" href="..\view\login.php" role="button">Connexion</a>
+                <a class="btn btn-light navText font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">
-                <a class="btn btn-light navText" href="..\view\register.php" role="button">Inscription</a>
+                <a class="btn btn-light navText font-weight-bold" href="..\view\register.php" role="button">Inscription</a>
             </div>
         <?php
         }
