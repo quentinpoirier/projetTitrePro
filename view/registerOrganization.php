@@ -24,14 +24,14 @@ require_once '..\controllers\registerOrganization_controller.php';
     <?php include '..\include\include_navbar.php' ?>
 
     <main>
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">inscription</div>
+        <div class="container-fluid pb-4 containerBg">
+            <div class="row justify-content-center pb-1 pt-5">
+                <div class="col h2 text-center text-uppercase textFont">Inscription</div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-6">
+            <div class="row justify-content-center pb-5">
+                <div class="col-sm-4">
 
-                        <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
+                        <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
                             <div class="form-group">
                                 <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
                                 <input type="text" class="form-control" id="oragnizationName" name="oragnizationName" value="<?= isset($_POST['oragnizationName']) ? htmlspecialchars($_POST['oragnizationName']) : '' ?>">
@@ -74,7 +74,7 @@ require_once '..\controllers\registerOrganization_controller.php';
                                 <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light text-uppercase font-weight-bold">S'inscrire</button>
+                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light font-weight-bold">S'inscrire</button>
                             </div>
                         </form>
 

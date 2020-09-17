@@ -18,12 +18,12 @@ require_once '..\controllers\disconnect_controller.php';
 <body>
     <?php include '..\include\include_header.php' ?>
 
-    <?php include '..\include\include_navbar.php' ?>
+   
 
     <main>
         <div class="row justify-content-center">
             <div class="col-sm-2 pt-5 pb-5">
-                <div class="card w-100 shadow rounded navBg text-white">
+                <div class="card w-100 shadow rounded navBg text-white textFont">
                     <div class="card-body text-center">
                         <div class="h4">Déconnection</div>
                     </div>
@@ -36,7 +36,7 @@ require_once '..\controllers\disconnect_controller.php';
         </div>
     </main>
 
-    <?php include '..\include\include_footer.php' ?>
+
 
 </body>
 

@@ -8,7 +8,7 @@
 }
 
 .footer {
-    height: 100px;
+    height: 200px;
     width: auto;
     background-color: #413C58
 }
@@ -41,6 +41,15 @@
 
 .textVolunteer {
     color:  #BFD7B5;
+}
+
+.cardContact {
+    border-color: #EDD182;
+    background-color: #EDD182;
+}
+
+.textContact {
+    color:  #EDD182;
 }
 
 .bi-images {

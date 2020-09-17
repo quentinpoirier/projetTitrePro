@@ -37,7 +37,7 @@ require_once '../controllers/userAdvert_controller.php';
                 if (($getAdvertArray) == true) {
                     foreach ($getAdvertArray as $advert) {
             ?>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
                                 <div class="form-group">
                                     <label for="advertTitle" class="text-white">Titre</label>

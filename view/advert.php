@@ -48,7 +48,7 @@ require_once '..\controllers\advert_controller.php';
                 </div>
             </div>
             <div class="row">
-                <div class="col text-uppercase h4 text-dark text-center">associations</div>
+                <div class="col text-uppercase h4 text-center textFont">associations</div>
             </div>
             <hr>
             <div class="row">
@@ -58,7 +58,7 @@ require_once '..\controllers\advert_controller.php';
                         if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             if ($advert['activity_name'] == $_POST['activity']) {
                 ?>
-                                <div class="col-sm-4 mb-4">
+                                <div class="col-sm-3 mb-4">
                                     <div class="card w-100 shadow rounded-0 cardOrga">
                                         <div class="text-center mt-2">
                                             <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,13 @@ require_once '..\controllers\advert_controller.php';
                                             <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                         </ul>
                                         <div class="card-body">
-                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light font-weight-bold textFont">détail</button>
+                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light font-weight-bold textFont">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                                                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                                                </svg>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +95,7 @@ require_once '..\controllers\advert_controller.php';
                     foreach ($getAdvertArray as $advert) {
                         if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             ?>
-                            <div class="col-sm-4 mb-4">
+                            <div class="col-sm-3 mb-4">
                                 <div class="card w-100 shadow rounded-0 cardOrga">
                                     <div class="text-center mt-2">
                                         <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +114,13 @@ require_once '..\controllers\advert_controller.php';
                                         <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                     </ul>
                                     <div class="card-body">
-                                        <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
+                                        <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                                <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                                                <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +132,7 @@ require_once '..\controllers\advert_controller.php';
             </div>
 
             <div class="row">
-                <div class="col text-uppercase h4 text-dark text-center">bénévoles</div>
+                <div class="col text-uppercase h4 text-center textFont">bénévoles</div>
             </div>
             <hr>
             <div class="row">
@@ -128,7 +140,7 @@ require_once '..\controllers\advert_controller.php';
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
                 ?>
-                        <div class="col-sm-4 mb-4">
+                        <div class="col-sm-3 mb-4">
                             <div class="card w-100 shadow rounded-0 cardVolunteer">
                                 <div class="text-center mt-2">
                                     <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +159,13 @@ require_once '..\controllers\advert_controller.php';
                                     <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
                                 </ul>
                                 <div class="card-body">
-                                    <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">Détails</a>
+                                    <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-in" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                            <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                                            <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>

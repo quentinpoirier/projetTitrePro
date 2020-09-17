@@ -26,11 +26,11 @@ require_once '..\controllers\login_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 text-dark text-center">Login</div>
+                <div class="col h2 text-center text-uppercase textFont">Login</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-                    <form class="navBg p-4 rounded-lg" action="" method="post" novalidate>
+                    <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
                         <div class="form-group">
                             <label for="userMail" class="text-white">Mail</label>
                             <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
@@ -43,8 +43,8 @@ require_once '..\controllers\login_controller.php';
                         </div>
                         <span class="font-italic text-danger"><?= (isset($error['login'])) ? $error['login'] : '' ?></span>
                         <div class="text-center">
-                            <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3 mr-2">se connecter</button>
-                            <a href="..\view\register.php" class="btn btn-light text-uppercase font-weight-bold mt-3" role="button" aria-pressed="true">s'inscrire</a>
+                            <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-light font-weight-bold mt-3 mr-2">Se connecter</button>
+                            <a href="..\view\register.php" class="btn btn-light font-weight-bold mt-3" role="button" aria-pressed="true">S'inscrire</a>
                         </div>
                     </form>
                 </div>

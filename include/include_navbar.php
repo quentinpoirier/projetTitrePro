@@ -14,7 +14,10 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="..\view\advert.php">Annonces</a>
             </li>
-            <li class="nav-item dropdown">
+            
+            <?php
+            if (isset($_SESSION['user'])) { ?>
+                <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Espace personnel
                 </a>
@@ -24,7 +27,6 @@
                 </div>
             </li>
             <?php
-            if (isset($_SESSION['user'])) {
                 if ($_SESSION['user']['user_moderator'] >= 1) {
             ?>
                     <li class="nav-item dropdown">

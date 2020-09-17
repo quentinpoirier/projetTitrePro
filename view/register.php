@@ -26,11 +26,11 @@ require_once '..\controllers\register_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 navText text-center">Inscription</div>
+                <div class="col h2 text-center text-uppercase textFont">Inscription</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-                    <form class="navBg p-4 rounded-lg" action="" method="POST" novalidate>
+                    <form class="navBg p-4 rounded-0 textFont" action="" method="POST" novalidate>
                         <div class="form-group">
                             <label for="userMail" class="text-white">Mail</label>
                             <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
@@ -58,7 +58,7 @@ require_once '..\controllers\register_controller.php';
                         <div class="g-recaptcha pt-2" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
                         <span class="font-italic text-danger"><?= $messageError ?></span>
                         <div class="text-center">
-                            <button type="submit" name="registerContinue" id="registerContinue" class="btn btn-light text-uppercase font-weight-bold mt-3">S'inscrire</button>
+                            <button type="submit" name="registerContinue" id="registerContinue" class="btn btn-light font-weight-bold mt-3">Suivant</button>
                         </div>
                     </form>
                 </div>

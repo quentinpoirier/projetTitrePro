@@ -21,21 +21,17 @@ require_once '..\controllers\modoAdvert_controller.php';
     <?php include '..\include\include_navbar.php' ?>
 
     <main>
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">annonces</div>
-            </div>
-
+        <div class="container-fluid containerBg">
             <div class="row">
-                <div class="col text-uppercase h4 text-dark text-center">associations</div>
+                <div class="col text-uppercase h4 textFont text-center pt-5">associations</div>
             </div>
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 0) {
                 ?>
-                        <div class="col-sm-4 mb-4">
-                            <div class="card w-100 shadow rounded bg-dark text-white">
+                        <div class="col-sm-3 mb-4">
+                            <div class="card w-100 shadow rounded-0 cardOrga">
                                 <div class="text-center mt-2">
                                     <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -43,20 +39,20 @@ require_once '..\controllers\modoAdvert_controller.php';
                                     </svg>
                                 </div>
                                 <div class="card-body">
-                                    <div class="card-title"><?= $advert['advert_title'] ?></div>
-                                    <div class="card-subtitle"><?= $advert['advert_object'] ?></div>
-                                    <div class="card-text"><?= $advert['advert_desc'] ?></div>
+                                    <div class="card-title h4 textFont"><?= $advert['advert_title'] ?></div>
+                                    <div class="card-subtitle h5 textFont"><?= $advert['advert_object'] ?></div>
+                                    <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-dark"><?= $advert['advert_date'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['organization_mail'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['organization_name'] . ' ' . $advert['activity_name'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['organization_name'] . ' ' . $advert['activity_name'] ?></li>
                                 </ul>
                                 <div class="card-body">
-                                <form method="post" action="">
-                                    <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">valider</button>
-                                    <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">supprimer</button>
-                                </form>
+                                    <form method="post" action="">
+                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light font-weight-bold textFont mr-2" value="<?= $advert['id_advert'] ?>">Valider</button>
+                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $advert['id_advert'] ?>">Supprimer</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -65,17 +61,17 @@ require_once '..\controllers\modoAdvert_controller.php';
                 }
                 ?>
             </div>
-
+            <hr>
             <div class="row">
-                <div class="col text-uppercase h4 text-dark text-center">bénévoles</div>
+                <div class="col text-uppercase h4 textFont text-center">bénévoles</div>
             </div>
             <div class="row">
                 <?php
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 0) {
                 ?>
-                        <div class="col-sm-4 mb-4">
-                            <div class="card w-100 shadow rounded bg-dark text-white">
+                        <div class="col-sm-3 mb-4">
+                            <div class="card w-100 shadow rounded-0 cardVolunteer">
                                 <div class="text-center mt-2">
                                     <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -83,19 +79,19 @@ require_once '..\controllers\modoAdvert_controller.php';
                                     </svg>
                                 </div>
                                 <div class="card-body">
-                                    <div class="card-title"><?= $advert['advert_title'] ?></div>
-                                    <div class="card-subtitle"><?= $advert['advert_object'] ?></div>
-                                    <div class="card-text"><?= $advert['advert_desc'] ?></div>
+                                    <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                    <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                    <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-dark"><?= $advert['advert_date'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['user_mail'] ?></li>
-                                    <li class="list-group-item bg-dark"><?= $advert['volunteer_firstname'] . ' ' . $advert['volunteer_lastname'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['user_mail'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . ' ' . $advert['volunteer_lastname'] ?></li>
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
-                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light text-uppercase font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">valider</button>
-                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light text-uppercase font-weight-bold" value="<?= $advert['id_advert'] ?>">supprimer</button>
+                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light font-weight-bold textFont mr-2" value="<?= $advert['id_advert'] ?>">Valider</button>
+                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $advert['id_advert'] ?>">Supprimer</button>
                                     </form>
                                 </div>
                             </div>
