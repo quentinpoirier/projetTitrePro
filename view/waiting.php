@@ -12,13 +12,18 @@
 <body onload="init()">
     <?php include '..\include\include_header.php' ?>
 
-    <div class="container">
-        <div class="row justify-content-center bg-dark">
-            <div class="col-sm-6 text-white"> Vous serez redirigé dans <span id="countdown">5 s</span></div>
+    <main>
+        <div class="row justify-content-center">
+            <div class="col-sm-3 pt-5 pb-5">
+                <div class="card w-100 shadow rounded-0 navBg text-white textFont">
+                    <div class="card-body text-center">
+                        <div class="text-white mb-3">Validation de votre inscription sous 24h</div>
+                        <div class="text-white">Vous serez redirigé dans <span id="countdown">5 s</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <?php include '..\include\include_footer.php' ?>
+    </main>
 
     <script src="..\assets\js\script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
