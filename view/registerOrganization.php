@@ -26,19 +26,18 @@ require_once '..\controllers\registerOrganization_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 text-center text-uppercase textFont">Inscription</div>
+                <div class="col h2 text-center textFont">Inscription</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-
-                        <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
+                        <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                             <div class="form-group">
-                                <label for="oragnizationName" class="text-white text-uppercase">Nom de la structure</label>
+                                <label for="oragnizationName" class="navText ">Nom de la structure</label>
                                 <input type="text" class="form-control" id="oragnizationName" name="oragnizationName" value="<?= isset($_POST['oragnizationName']) ? htmlspecialchars($_POST['oragnizationName']) : '' ?>">
                                 <span class="font-italic text-danger"><?= isset($error['oragnizationName']) ? $error['oragnizationName'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="activity" class="text-white text-uppercase">Domaine d'activité</label>
+                                <label for="activity" class="navText ">Domaine d'activité</label>
                                 <select class="form-control" id="activity" name="activity">
                                     <option selected disabled>--</option>
                                     <option value="1" <?= isset($_POST['activity']) && ($_POST['activity']) == '1'  ? 'selected' : '' ?>>Culture</option>
@@ -49,32 +48,32 @@ require_once '..\controllers\registerOrganization_controller.php';
                                 <span class="font-italic text-danger"><?= isset($error['activity']) ? $error['activity'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="organizationAdress" class="text-white text-uppercase">Adresse</label>
+                                <label for="organizationAdress" class="navText ">Adresse</label>
                                 <input type="text" class="form-control" id="organizationAdress" name="organizationAdress" value="<?= isset($_POST['organizationAdress']) ? htmlspecialchars($_POST['organizationAdress']) : '' ?>">
                                 <span class="font-italic text-danger"><?= isset($error['organizationAdress']) ? $error['organizationAdress'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="organizationPhone" class="text-white text-uppercase">Téléphone</label>
+                                <label for="organizationPhone" class="navText ">Téléphone</label>
                                 <input type="text" class="form-control" id="organizationPhone" name="organizationPhone" value="<?= isset($_POST['organizationPhone']) ? htmlspecialchars($_POST['organizationPhone']) : '' ?>">
                                 <span class="font-italic text-danger"><?= isset($error['organizationPhone']) ? $error['organizationPhone'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="organizationMail" class="text-white text-uppercase">Mail de contact</label>
+                                <label for="organizationMail" class="navText ">Mail de contact</label>
                                 <input type="email" class="form-control" id="organizationMail" name="organizationMail" value="<?= isset($_POST['organizationMail']) ? htmlspecialchars($_POST['organizationMail']) : '' ?>">
                                 <span class="font-italic text-danger"><?= isset($error['organizationMail']) ? $error['organizationMail'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="organizationSiren" class="text-white text-uppercase">Numéro SIREN</label>
+                                <label for="organizationSiren" class="navText ">Numéro SIREN</label>
                                 <input type="text" class="form-control" id="organizationSiren" name="organizationSiren" value="<?= isset($_POST['organizationSiren']) ? htmlspecialchars($_POST['organizationSiren']) : '' ?>">
                                 <span class="font-italic text-danger"><?= isset($error['organizationSiren']) ? $error['organizationSiren'] : '' ?></span>
                             </div>
                             <div class="form-group">
-                                <label for="organizationDesc" class="text-white text-uppercase">Description de la structure</label>
+                                <label for="organizationDesc" class="navText ">Description de la structure</label>
                                 <textarea type="text" class="form-control" id="organizationDesc" name="organizationDesc" rows="3" required><?= isset($_POST['organizationDesc']) ? htmlspecialchars($_POST['organizationDesc']) : '' ?></textarea>
                                 <span class="font-italic text-danger"><?= isset($error['organizationDesc']) ? $error['organizationDesc'] : '' ?></span>
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-light font-weight-bold">S'inscrire</button>
+                                <button type="submit" name="registerSubmit" id="registerSubmit" class="btn btn-block navBg text-white font-weight-bold">S'inscrire</button>
                             </div>
                         </form>
 

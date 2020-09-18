@@ -59,7 +59,7 @@
         <?php
         } else {
         ?>
-            <div class="form-group mx-sm-3">
+            <div class="form-group mx-sm-2">
                 <a class="btn btn-light navText font-weight-bold" href="..\view\login.php" role="button">Connexion</a>
             </div>
             <div class="form-group">

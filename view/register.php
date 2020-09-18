@@ -26,28 +26,28 @@ require_once '..\controllers\register_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 text-center text-uppercase textFont">Inscription</div>
+                <div class="col h2 text-center textFont">Inscription</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-                    <form class="navBg p-4 rounded-0 textFont" action="" method="POST" novalidate>
+                    <form class="p-4 rounded-0 textFont border" action="" method="POST" novalidate>
                         <div class="form-group">
-                            <label for="userMail" class="text-white">Mail</label>
+                            <label for="userMail" class="navText">Mail</label>
                             <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="userPassword" class="text-white">Mot de passe</label>
+                            <label for="userPassword" class="navText">Mot de passe</label>
                             <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="verifyPassword" class="text-white">Vérification mot de passe</label>
+                            <label for="verifyPassword" class="navText">Vérification mot de passe</label>
                             <input type="password" class="form-control" id="verifyPassword" name="verifyPassword" value="<?= isset($_POST['verifyPassword']) ? htmlspecialchars($_POST['verifyPassword']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['verifyPassword']) ? $error['verifyPassword'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="userType" class="text-white">Status</label>
+                            <label for="userType" class="navText">Status</label>
                             <select class="form-control" id="userType" name="userType" require>
                                 <option selected disabled>--</option>
                                 <option value="1" <?= isset($_POST['userType']) && ($_POST['userType']) == '1'  ? 'selected' : '' ?>>Bénévole</option>
@@ -58,7 +58,7 @@ require_once '..\controllers\register_controller.php';
                         <div class="g-recaptcha pt-2" data-sitekey="6Ld_ecMZAAAAAMMrBBuJAJ7PNBFAqtJgN_lsPfk0"></div>
                         <span class="font-italic text-danger"><?= $messageError ?></span>
                         <div class="text-center">
-                            <button type="submit" name="registerContinue" id="registerContinue" class="btn btn-light font-weight-bold mt-3">Suivant</button>
+                            <button type="submit" name="registerContinue" id="registerContinue" class="btn btn-block navBg text-white font-weight-bold mt-3">Suivant</button>
                         </div>
                     </form>
                 </div>

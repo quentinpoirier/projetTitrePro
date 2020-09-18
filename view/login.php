@@ -26,25 +26,25 @@ require_once '..\controllers\login_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 text-center text-uppercase textFont">Login</div>
+                <div class="col h2 text-center textFont">Login</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-                    <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
+                    <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="userMail" class="text-white">Mail</label>
+                            <label for="userMail" class="navText">Mail</label>
                             <input type="email" class="form-control" id="userMail" name="userMail" value="<?= isset($_POST['userMail']) ? htmlspecialchars($_POST['userMail']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['userMail']) ? $error['userMail'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="userPassword" class="text-white">Mot de passe</label>
+                            <label for="userPassword" class="navText">Mot de passe</label>
                             <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
                         </div>
                         <span class="font-italic text-danger"><?= (isset($error['login'])) ? $error['login'] : '' ?></span>
                         <div class="text-center">
-                            <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-light font-weight-bold mt-3 mr-2">Se connecter</button>
-                            <a href="..\view\register.php" class="btn btn-light font-weight-bold mt-3" role="button" aria-pressed="true">S'inscrire</a>
+                            <button type="submit" name="loginSubmit" id="loginSubmit" class="btn btn-block navBg text-white font-weight-bold mt-3 mr-2">Se connecter</button>
+                            <a href="..\view\register.php" class="btn btn-block font-weight-bold navBg text-white mt-3" role="button" aria-pressed="true">S'inscrire</a>
                         </div>
                     </form>
                 </div>
