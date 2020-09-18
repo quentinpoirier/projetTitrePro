@@ -24,26 +24,26 @@ require_once '..\controllers\contact_controller.php';
     <?php include '..\include\include_navbar.php' ?>
 
     <main>
-        <div class="container-fluid">
-            <div class="row justify-content-center mb-3">
-                <div class="col text-uppercase h2 text-dark text-center">contact</div>
+        <div class="container-fluid pb-4 containerBg">
+            <div class="row justify-content-center pb-1 pt-5">
+                <div class="col h2 text-center textFont">Contact</div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-6">
+            <div class="row justify-content-center pb-5">
+                <div class="col-sm-4">
 
-                    <form class="bg-dark p-4 rounded-lg" action="" method="post" novalidate>
+                    <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="contactObjet" class="text-white text-uppercase">object</label>
+                            <label for="contactObjet" class="navText">object</label>
                             <input type="text" class="form-control" id="contactObjet" name="contactObjet" value="<?= isset($_POST['contactObjet']) ? htmlspecialchars($_POST['contactObjet']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['contactObjet']) ? $error['contactObjet'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="contactClaim" class="text-white text-uppercase">réclamation</label>
+                            <label for="contactClaim" class="navText">réclamation</label>
                             <textarea type="password" class="form-control" id="contactClaim" name="contactClaim" rows="3" value="<?= isset($_POST['contactClaim']) ? htmlspecialchars($_POST['contactClaim']) : '' ?>"></textarea>
                             <span class="font-italic text-danger"><?= isset($error['contactClaim']) ? $error['contactClaim'] : '' ?></span>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-light text-uppercase font-weight-bold mt-3">poster</button>
+                            <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-block navBg text-white font-weight-bold mt-3">poster</button>
                         </div>
                     </form>
 

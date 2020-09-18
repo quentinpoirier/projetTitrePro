@@ -22,29 +22,30 @@ require_once '..\controllers\createAdvert_controller.php';
 
     <div class="container-fluid pb-4 containerBg">
         <div class="row justify-content-center pb-1 pt-5">
-            <div class="col h2 navText text-center">Annonce</div>
+            <div class="col h2 text-center textFont">Annonce</div>
         </div>
         <div class="row justify-content-center pb-5">
             <div class="col-sm-4">
-                <form class="navBg p-4 rounded-lg" action="" method="post" novalidate>
+                <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                     <div class="form-group">
-                        <label for="advertTitle" class="text-white text-uppercase">Titre</label>
+                        <label for="advertTitle" class="navText">Titre</label>
                         <input type="text" class="form-control " id="advertTitle" name="advertTitle" value="<?= isset($_POST['advertTitle']) ? htmlspecialchars($_POST['advertTitle']) : '' ?>">
                         <span class="font-italic text-danger"><?= isset($error['advertTitle']) ? $error['advertTitle'] : '' ?></span>
                     </div>
                     <div class="form-group">
-                        <label for="advertObject" class="text-white text-uppercase">Objet</label>
+                        <label for="advertObject" class="navText">Objet</label>
                         <input type="text" class="form-control " id="advertObject" name="advertObject" value="<?= isset($_POST['advertObject']) ? htmlspecialchars($_POST['advertObject']) : '' ?>">
                         <span class="font-italic text-danger"><?= isset($error['advertObject']) ? $error['advertObject'] : '' ?></span>
                     </div>
                     <div class="form-group">
-                        <label for="advertDesc" class="text-white text-uppercase">Description</label>
+                        <label for="advertDesc" class="navText">Description</label>
                         <textarea type="text" class="form-control" id="advertDesc" name="advertDesc" rows="3" value="<?= isset($_POST['advertDesc']) ? htmlspecialchars($_POST['advertDesc']) : '' ?>"></textarea>
                         <span class="font-italic text-danger"><?= isset($error['advertDesc']) ? $error['advertDesc'] : '' ?></span>
                     </div>
                     <div class="text-center">
-                        <button type="submit" name="advertSubmit" id="advertSubmit" class="btn btn-light text-uppercase font-weight-bold">Poster</button>
+                        <button type="submit" name="advertSubmit" id="advertSubmit" class="btn btn-block navBg text-white font-weight-bold mb-2">Poster</button>
                     </div>
+                    <span class="navText text-center">Validation de l'annonce sous 24h</span>
                 </form>
             </div>
         </div>

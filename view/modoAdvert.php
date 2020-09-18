@@ -70,7 +70,7 @@ require_once '..\controllers\modoAdvert_controller.php';
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 0) {
                 ?>
-                        <div class="col-sm-3 mb-4">
+                        <div class="col-sm-2 mb-4">
                             <div class="card w-100 shadow rounded-0 cardVolunteer">
                                 <div class="text-center mt-2">
                                     <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -90,8 +90,16 @@ require_once '..\controllers\modoAdvert_controller.php';
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
-                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light font-weight-bold textFont mr-2" value="<?= $advert['id_advert'] ?>">Valider</button>
-                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $advert['id_advert'] ?>">Supprimer</button>
+                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light font-weight-bold textFont mr-2" value="<?= $advert['id_advert'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                        </button>
+                                        <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $advert['id_advert'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                            </svg>
+                                        </button>
                                     </form>
                                 </div>
                             </div>
