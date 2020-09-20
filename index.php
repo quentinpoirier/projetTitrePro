@@ -23,9 +23,57 @@ session_start();
 
     <?php include 'include\include_navbar.php' ?>
 
-    <main>
+    <main class="container-fluid containerBg">
+        <div class="row justify-content-center pt-3 pb-1">
+            <div class="card col-md-8 shadow cardVolunteer mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-2">
+                        <img src="..." class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
+                            <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-1 pb-1">
+            <div class="card col-md-8 shadow cardOrga mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-2">
+                        <img src="..." class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
+                            <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-1 pb-1">
+            <div class="card col-md-8 shadow cardContact mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-2">
+                        <img src="..." class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
+                            <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-            
+
 
     <?php include 'include\include_footer.php' ?>
 

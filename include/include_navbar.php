@@ -3,7 +3,7 @@
     <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="..\assets\img\logocouleur.png" class="navImg mr-1" alt="Responsive image">
+    <img src="..\assets\img\logocouleur.png" class="navImg mr-3" alt="Responsive image">
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
