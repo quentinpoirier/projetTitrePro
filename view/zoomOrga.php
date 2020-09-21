@@ -17,38 +17,38 @@ require_once '..\controllers\zoomOrga_controller.php';
 
 <body>
     <?php include '..\include\include_header.php' ?>
-    
+
     <?php include '..\include\include_navbar.php' ?>
 
-    <div class="row">
-        <?php
-        if (isset($_GET['organization'])) {
-        foreach ($getOrgaById as $user) {
-        ?>
-        <div class="col-sm-4 mb-4">
-            <div class="card w-100 shadow rounded border-info text-info">
-                <div class="text-center mt-2">
-                    <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
-                    </svg>
-                </div>
-                <div class="card-body">
-                    <div class="card-title"><?= $user['organization_name'] ?></div>
-                    <div class="card-text"><?= $user['organization_desc'] ?></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark"><?= $user['organization_mail'] ?></li>
-                    <li class="list-group-item bg-dark"><?= $user['organization_phone'] ?></li>
-                    <li class="list-group-item bg-dark"><?= $user['activity_name'] ?></li>
-                </ul>
+    <main>
+        <div class="container-fluid containerBg">
+            <div class="row justify-content-center pt-3 pb-3">
+                <?php
+                if (isset($_GET['organization'])) {
+                    foreach ($getOrgaById as $user) {
+                ?>
+                        <div class="col-sm-8 mb-4">
+                            <div class="card w-100 shadow rounded-0 cardOrga">
+                                <div class="card-body">
+                                    <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
+                                    <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item font-italic"><?= $user['organization_mail'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $user['organization_adress'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $user['organization_siren'] ?></li>
+                                    <li class="list-group-item font-italic"><?= $user['activity_name'] ?></li>
+                                </ul>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
             </div>
         </div>
-        <?php
-        } 
-    }
-        ?>
-    </div>
+    </main>
 
     <?php include '..\include\include_footer.php' ?>
 

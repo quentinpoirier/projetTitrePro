@@ -45,7 +45,7 @@ require_once '..\controllers\advert_controller.php';
                             <?php
                             if (isset($_SESSION['user'])) {
                             ?>
-                            <a class="btn cardOrga font-weight-bold textFont" href="..\view\createAdvert.php">créer annonce</a>
+                                <a class="btn cardOrga font-weight-bold textFont" href="..\view\createAdvert.php">créer annonce</a>
                             <?php
                             }
                             ?>
@@ -75,12 +75,10 @@ require_once '..\controllers\advert_controller.php';
                                         <div class="card-body">
                                             <div class="card-title h4"><?= $advert['advert_title'] ?></div>
                                             <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
-                                            <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
                                             <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
-                                            <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                         </ul>
                                         <div class="card-body">
                                             <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light font-weight-bold textFont">
@@ -112,12 +110,10 @@ require_once '..\controllers\advert_controller.php';
                                     <div class="card-body">
                                         <div class="card-title h4"><?= $advert['advert_title'] ?></div>
                                         <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
-                                        <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
                                         <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $advert['organization_mail'] ?></li>
                                     </ul>
                                     <div class="card-body">
                                         <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
@@ -157,11 +153,9 @@ require_once '..\controllers\advert_controller.php';
                                 <div class="card-body">
                                     <div class="card-title h4"><?= $advert['advert_title'] ?></div>
                                     <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
-                                    <div class="card-text textFont"><?= $advert['advert_desc'] ?></div>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
-                                    <li class="list-group-item font-italic"><?= $advert['user_mail'] ?></li>
                                     <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
                                 </ul>
                                 <div class="card-body">

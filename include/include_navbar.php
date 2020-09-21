@@ -3,7 +3,6 @@
     <button class="navbar-toggler btn btn-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img src="..\assets\img\logocouleur.png" class="navImg mr-3" alt="Responsive image">
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -39,7 +38,7 @@
                             <?php
                             if ($_SESSION['user']['user_moderator'] == 2) {
                             ?>
-                            <a class="dropdown-item navBg text-white" href="..\view\moderator.php">Modérateurs</a>
+                                <a class="dropdown-item navBg text-white" href="..\view\moderator.php">Modérateurs</a>
                             <?php
                             }
                             ?>
@@ -55,7 +54,6 @@
             }
             ?>
         </ul>
-
     </div>
     <form class="form-inline textFont">
         <?php
@@ -82,4 +80,5 @@
         }
         ?>
     </form>
+
 </nav>

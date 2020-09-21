@@ -21,6 +21,12 @@
     color: #413C58;
 }
 
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus {
+    color:  #413C58!important;
+}
+
 .cardOrga {
     border-color: #A3C4BC;
     background-color: #A3C4BC;
