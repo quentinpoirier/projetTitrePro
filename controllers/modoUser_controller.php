@@ -24,14 +24,6 @@ if (isset($_POST['validateSubmit'])) {
     header('Location: ..\view\modoUser.php');
 }
 
-if (isset($_POST['modoSubmit'])) {
-
-    $idUser = htmlspecialchars($_POST['modoSubmit']);
-
-    $user->updateUserModerator($idUser);
-    header('Location: ..\view\modoUser.php');
-}
-
 if (isset($_POST['deleteSubmit'])) {
 
     $idUser = ($_POST['deleteSubmit']);

@@ -1,11 +1,11 @@
 <?php
 
-require_once '..\controllers\modoUser_controller.php';
+require_once '..\controllers\moderator_controller.php';
 
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -23,12 +23,12 @@ require_once '..\controllers\modoUser_controller.php';
     <main>
         <div class="container-fluid containerBg">
             <div class="row">
-                <div class="col h4 mt-4 text-dark text-center">En attente</div>
+                <div class="col h4 mt-4 text-dark text-center">Modérateurs</div>
             </div>
             <div class="row mt-2">
                 <?php
                 foreach ($getUserArray as $user) {
-                    if ($user['user_validate'] == 0) {
+                    if ($user['id_usertypes'] == 1 && $user['user_validate'] == 1 && $user['user_moderator'] == 1) {
                 ?>
                         <div class="col-sm-2 mb-4">
                             <div class="card w-100 shadow rounded-0 cardVolunteer">
@@ -39,30 +39,20 @@ require_once '..\controllers\modoUser_controller.php';
                                     </svg>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <?php
-                                    if ($user['id_usertypes'] == 1) {
-                                    ?>
                                     <li class="list-group-item textFont"><?= $user['volunteer_firstname'] ?></li>
                                     <li class="list-group-item textFont"><?= $user['volunteer_lastname'] ?></li>
-                                    <?php
-                                    } else {
-                                    ?>
-                                    <li class="list-group-item textFont"><?= $user['organization_name'] ?></li>
-                                    <li class="list-group-item textFont"><?= $user['activity_name'] ?></li>
-                                    <?php
-                                    }
-                                    ?>
+                                    <li class="list-group-item textFont"><?= $user['volunteer_age'] ?></li>
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
-                                        <button type="submit" name="validateSubmit" id="validateSubmit" class="btn btn-light font-weight-bold textFont mr-1" value="<?= $user['id_user'] ?>">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                            </svg>
-                                        </button>
                                         <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont mr-1" value="<?= $user['id_user'] ?>">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                            </svg>
+                                        </button>
+                                        <button type="submit" name="modoLessSubmit" id="modoLessSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-x-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm2.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />
                                             </svg>
                                         </button>
                                     </form>
@@ -75,13 +65,13 @@ require_once '..\controllers\modoUser_controller.php';
                 ?>
             </div>
             <hr>
-            <div class="row mt-2">
-                <div class="col h4 text-dark text-center">Valider</div>
-            </div>
             <div class="row">
-            <?php
+                <div class="col h4 text-dark text-center">Utilisateurs</div>
+            </div>
+            <div class="row mt-2">
+                <?php
                 foreach ($getUserArray as $user) {
-                    if ($user['user_validate'] == 1) {
+                    if ($user['id_usertypes'] == 1 && $user['user_validate'] == 1 && $user['user_moderator'] == 0) {
                 ?>
                         <div class="col-sm-2 mb-4">
                             <div class="card w-100 shadow rounded-0 cardVolunteer">
@@ -92,25 +82,20 @@ require_once '..\controllers\modoUser_controller.php';
                                     </svg>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <?php
-                                    if ($user['id_usertypes'] == 1) {
-                                    ?>
                                     <li class="list-group-item textFont"><?= $user['volunteer_firstname'] ?></li>
                                     <li class="list-group-item textFont"><?= $user['volunteer_lastname'] ?></li>
-                                    <?php
-                                    } else {
-                                    ?>
-                                    <li class="list-group-item textFont"><?= $user['organization_name'] ?></li>
-                                    <li class="list-group-item textFont"><?= $user['activity_name'] ?></li>
-                                    <?php
-                                    }
-                                    ?>
+                                    <li class="list-group-item textFont"><?= $user['volunteer_age'] ?></li>
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
                                         <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light font-weight-bold textFont mr-1" value="<?= $user['id_user'] ?>">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                            </svg>
+                                        </button>
+                                        <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm4.5 4.5a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z" />
                                             </svg>
                                         </button>
                                     </form>

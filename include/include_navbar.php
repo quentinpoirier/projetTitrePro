@@ -36,6 +36,13 @@
                         </a>
                         <div class="dropdown-menu navBg" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item navBg text-white" href="..\view\modoUser.php">Utilisateurs</a>
+                            <?php
+                            if ($_SESSION['user']['user_moderator'] == 2) {
+                            ?>
+                            <a class="dropdown-item navBg text-white" href="..\view\moderator.php">Modérateurs</a>
+                            <?php
+                            }
+                            ?>
                             <a class="dropdown-item navBg text-white" href="..\view\modoAdvert.php">Annonces</a>
                             <a class="dropdown-item navBg text-white" href="..\view\modoContact.php">Contacts</a>
                         </div>
