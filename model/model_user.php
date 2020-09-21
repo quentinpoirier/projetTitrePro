@@ -100,7 +100,7 @@ class User
 
     public function updateVolunteer($firstname, $lastname, $age, $idUser)
     {
-        $query = 'UPDATE user SET `volunteer_firstname` = :volunteer_firstname,  `volunteer_lastname` = :volunteer_lastname, `volunteer_age` = :volunteer_age, `user_validate` = 0
+        $query = 'UPDATE user SET `volunteer_firstname` = :volunteer_firstname,  `volunteer_lastname` = :volunteer_lastname, `volunteer_age` = :volunteer_age
         WHERE `id_user` = :id_user';
 
         try {
@@ -118,7 +118,7 @@ class User
 
     public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
     {
-        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity, `user_validate` = 0 
+        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity 
         WHERE `id_user` = :id_user';
 
         try {

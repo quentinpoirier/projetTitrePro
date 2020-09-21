@@ -42,7 +42,13 @@ require_once '..\controllers\advert_controller.php';
                         </div>
                         <div>
                             <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn cardOrga font-weight-bold mr-2 textFont">Rechercher</button>
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                            ?>
                             <a class="btn cardOrga font-weight-bold textFont" href="..\view\createAdvert.php">créer annonce</a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </form>
                 </div>

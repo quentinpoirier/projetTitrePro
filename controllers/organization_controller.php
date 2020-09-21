@@ -7,14 +7,9 @@ require_once '..\model\model_activity.php';
 
 $user = new User();
 
-if (isset($_SESSION['user'])) {
+$getOrgaArray = $user->getOrgaInfos();
 
-    $getOrgaArray = $user->getOrgaInfos();
-}
 
 $activity = new Activity();
 
-if (isset($_SESSION['user'])) {
-
-    $getActivityArray = $activity->getActivityInfos();
-}
+$getActivityArray = $activity->getActivityInfos();

@@ -5,7 +5,7 @@ require_once '..\controllers\organization_controller.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
