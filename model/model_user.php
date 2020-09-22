@@ -230,7 +230,11 @@ class User
 
     public function getUserInfosById($idUser)
     {
-        $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_user` = :id_user';
+        $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` 
+        FROM `user` 
+        LEFT JOIN `activity` 
+        ON `user`.`id_activity` = `activity`.`id_activity` 
+        WHERE `id_user` = :id_user';
 
         try {
 
@@ -254,7 +258,11 @@ class User
 
     public function getOrgaInfos()
     {
-        $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_user`, `user_validate` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_usertypes` = 2';
+        $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_user`, `user_validate` 
+        FROM `user` 
+        LEFT JOIN `activity`
+        ON `user`.`id_activity` = `activity`.`id_activity` 
+        WHERE `id_usertypes` = 2';
 
         try {
 
@@ -275,9 +283,13 @@ class User
         }
     }
 
-    public function getOrgaInfosById($idUser)
+    public function getInfosById($idUser)
     {
-        $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_user` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity` WHERE `id_usertypes` = 2 AND id_user = :id_user';
+        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user` 
+        FROM `user`
+        LEFT JOIN `activity` 
+        ON `user`.`id_activity` = `activity`.`id_activity`
+        WHERE id_user = :id_user';
 
         try {
 

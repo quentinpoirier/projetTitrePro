@@ -65,9 +65,6 @@ require_once '..\controllers\zoomAdvert_controller.php';
                                         <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
                                         <li class="list-group-item font-italic"><?= $advert['activity_name'] ?></li>
                                     </ul>
-                                    <div class="card-body">
-                                        <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light text-uppercase font-weight-bold">détail</button>
-                                    </div>
                                 </div>
                             </div>
 

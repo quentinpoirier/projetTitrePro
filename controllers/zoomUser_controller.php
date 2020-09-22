@@ -8,6 +8,6 @@ $user = new User();
 
 $getOrgaArray = $user->getOrgaInfos();
 
-if (isset($_GET['organization'])) {
-    $getOrgaById = $user->getOrgaInfosById(htmlspecialchars($_GET['organization']));
+if (isset($_GET['user'])) {
+    $getUserById = $user->getInfosById(htmlspecialchars($_GET['user']));
 }
