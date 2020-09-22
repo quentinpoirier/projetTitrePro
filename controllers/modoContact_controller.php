@@ -11,10 +11,9 @@ require_once '..\model\model_contact.php';
 
 $contact = new Contact();
 
-if (isset($_SESSION['user'])) {
 
-    $getContactArray = $contact->getContactInfos();
-}
+$getContactArray = $contact->getContactInfos();
+
 
 if (isset($_POST['deleteSubmit'])) {
 
