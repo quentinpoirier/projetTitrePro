@@ -58,10 +58,10 @@ require_once '..\controllers\organization_controller.php';
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
+                                        <div class="card-text textFont text-truncate"><?= $user['organization_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic"><?= $user['organization_mail'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $user['organization_mail'] ?></li>
                                         <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
                                     </ul>
                                     <div class="card-body">
@@ -92,7 +92,7 @@ require_once '..\controllers\organization_controller.php';
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
+                                        <div class="card-text textFont text-truncate"><?= $user['organization_desc'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item font-italic"><?= $user['organization_mail'] ?></li>

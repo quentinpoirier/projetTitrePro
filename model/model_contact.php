@@ -20,7 +20,7 @@ class Contact
 
     public function getContactInfos()
     {
-        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `id_user` 
+        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `contact`.`id_user` 
         FROM `contact`
         LEFT JOIN `user` 
         ON `contact`.`id_user` = `user`.`id_user`';
@@ -46,7 +46,7 @@ class Contact
 
     public function getContactInfoById($idContact)
     {
-        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `id_user` 
+        $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `contact`.`id_user` 
         FROM `contact`
         LEFT JOIN `user` 
         ON `contact`.`id_user` = `user`.`id_user`

@@ -11,12 +11,12 @@ require_once '..\model\model_user.php';
 
 $error = array();
 
-$nameRegex = '/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u';
+$nameRegex = '/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s-]{0,18}+$/u';
 $birthDateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";
 
 
 if (isset($_POST['volunteerFirstname'])) {
-    if (preg_match($nameRegex, $_POST['volunteerFirstname']) == false) {
+    if (!preg_match($nameRegex, $_POST['volunteerFirstname'])) {
         $error['volunteerFirstname'] = 'Mauvais format';
     };
     if (empty($_POST['volunteerFirstname'])) {
@@ -25,7 +25,7 @@ if (isset($_POST['volunteerFirstname'])) {
 }
 
 if (isset($_POST['volunteerLastname'])) {
-    if (preg_match($nameRegex, $_POST['volunteerLastname']) == false) {
+    if (!preg_match($nameRegex, $_POST['volunteerLastname'])) {
         $error['volunteerLastname'] = 'Mauvais format';
     };
     if (empty($_POST['volunteerLastname'])) {

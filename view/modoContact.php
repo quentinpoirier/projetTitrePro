@@ -35,13 +35,19 @@ require_once '..\controllers\modoContact_controller.php';
                             </div>
                             <div class="card-body">
                                 <div class="card-title h5"><?= $contact['contact_object'] ?></div>
-                                <div class="card-text textFont"><?= $contact['contact_claim'] ?></div>
+                                <div class="card-text textFont text-truncate"><?= $contact['contact_claim'] ?></div>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item font-italic"><?= $contact['user_mail'] ?></li>
                             </ul>
                             <div class="card-body">
                                 <form method="post" action="">
+                                    <a class="btn btn-light" href="..\view\zoomContact.php?contact=<?= $contact['id_contact'] ?>">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                        </svg>
+                                    </a>
                                     <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light" value="<?= $contact['id_contact'] ?>">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />

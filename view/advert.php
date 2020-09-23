@@ -74,7 +74,7 @@ require_once '..\controllers\advert_controller.php';
                                         </div>
                                         <div class="card-body">
                                             <div class="card-title h4"><?= $advert['advert_title'] ?></div>
-                                            <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                            <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
@@ -108,7 +108,7 @@ require_once '..\controllers\advert_controller.php';
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title h4"><?= $advert['advert_title'] ?></div>
-                                        <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                        <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
@@ -150,7 +150,7 @@ require_once '..\controllers\advert_controller.php';
                                 </div>
                                 <div class="card-body">
                                     <div class="card-title h4"><?= $advert['advert_title'] ?></div>
-                                    <div class="card-subtitle h5"><?= $advert['advert_object'] ?></div>
+                                    <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>

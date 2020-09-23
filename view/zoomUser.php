@@ -29,7 +29,7 @@ require_once '..\controllers\zoomUser_controller.php';
                         if ($user['id_usertypes'] == 2) {
                 ?>
                             <div class="col-sm-8 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardOrga">
+                                <div class="card w-100 shadow rounded-0 cardContact">
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
                                         <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
