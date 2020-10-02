@@ -30,23 +30,21 @@ require_once '..\controllers\contact_controller.php';
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">
-
                     <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                         <div class="form-group">
-                            <label for="contactObjet" class="navText">object</label>
+                            <label for="contactObjet" class="navText">Object</label>
                             <input type="text" class="form-control" id="contactObjet" name="contactObjet" value="<?= isset($_POST['contactObjet']) ? htmlspecialchars($_POST['contactObjet']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['contactObjet']) ? $error['contactObjet'] : '' ?></span>
                         </div>
                         <div class="form-group">
-                            <label for="contactClaim" class="navText">réclamation</label>
+                            <label for="contactClaim" class="navText">Demande/Remarque</label>
                             <textarea type="password" class="form-control" id="contactClaim" name="contactClaim" rows="3" value="<?= isset($_POST['contactClaim']) ? htmlspecialchars($_POST['contactClaim']) : '' ?>"></textarea>
                             <span class="font-italic text-danger"><?= isset($error['contactClaim']) ? $error['contactClaim'] : '' ?></span>
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-block navBg text-white font-weight-bold mt-3">poster</button>
+                            <button type="submit" name="contactSubmit" id="contactSubmit" class="btn btn-block navBg text-white font-weight-bold mt-3">Poster</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>

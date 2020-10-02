@@ -34,11 +34,11 @@ require_once '..\controllers\modoContact_controller.php';
                                 </svg>
                             </div>
                             <div class="card-body">
-                                <div class="card-title h5"><?= $contact['contact_object'] ?></div>
+                                <div class="card-title h4 text-truncate"><?= $contact['contact_object'] ?></div>
                                 <div class="card-text textFont text-truncate"><?= $contact['contact_claim'] ?></div>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item font-italic"><?= $contact['user_mail'] ?></li>
+                                <li class="list-group-item font-italic text-truncate"><?= $contact['user_mail'] ?></li>
                             </ul>
                             <div class="card-body">
                                 <form method="post" action="">

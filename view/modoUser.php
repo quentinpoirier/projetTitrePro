@@ -43,12 +43,12 @@ require_once '..\controllers\modoUser_controller.php';
                                     <?php
                                     if ($user['id_usertypes'] == 1) {
                                     ?>
-                                        <li class="list-group-item textFont"><?= $user['volunteer_firstname'] ?></li>
-                                        <li class="list-group-item textFont"><?= $user['volunteer_lastname'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['volunteer_firstname'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['volunteer_lastname'] ?></li>
                                     <?php
                                     } else {
                                     ?>
-                                        <li class="list-group-item textFont"><?= $user['organization_name'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['organization_name'] ?></li>
                                         <li class="list-group-item textFont"><?= $user['activity_name'] ?></li>
                                     <?php
                                     }
@@ -103,12 +103,12 @@ require_once '..\controllers\modoUser_controller.php';
                                     <?php
                                     if ($user['id_usertypes'] == 1) {
                                     ?>
-                                        <li class="list-group-item textFont"><?= $user['volunteer_firstname'] ?></li>
-                                        <li class="list-group-item textFont"><?= $user['volunteer_lastname'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['volunteer_firstname'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['volunteer_lastname'] ?></li>
                                     <?php
                                     } else {
                                     ?>
-                                        <li class="list-group-item textFont"><?= $user['organization_name'] ?></li>
+                                        <li class="list-group-item textFont text-truncate"><?= $user['organization_name'] ?></li>
                                         <li class="list-group-item textFont"><?= $user['activity_name'] ?></li>
                                     <?php
                                     }

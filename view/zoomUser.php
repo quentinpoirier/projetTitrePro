@@ -29,7 +29,7 @@ require_once '..\controllers\zoomUser_controller.php';
                         if ($user['id_usertypes'] == 2) {
                 ?>
                             <div class="col-sm-8 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardContact">
+                                <div class="card w-100 shadow rounded-0 cardOrga">
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $user['organization_name'] ?></div>
                                         <div class="card-text textFont"><?= $user['organization_desc'] ?></div>
@@ -41,13 +41,18 @@ require_once '..\controllers\zoomUser_controller.php';
                                         <li class="list-group-item font-italic"><?= $user['organization_siren'] ?></li>
                                         <li class="list-group-item font-italic"><?= $user['activity_name'] ?></li>
                                     </ul>
+                                    <a href="mailto:<?= $user['organization_mail'] ?>" class="btn btn-light textOrga">
+                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chat-square-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         <?php
                         } else {
                         ?>
                             <div class="col-sm-8 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardOrga">
+                                <div class="card w-100 shadow rounded-0 cardVolunteer">
                                     <div class="card-body">
                                         <div class="card-text textFont"><?= $user['volunteer_firstname'] . ' ' . $user['volunteer_lastname'] ?></div>
                                     </div>
@@ -55,6 +60,11 @@ require_once '..\controllers\zoomUser_controller.php';
                                         <li class="list-group-item font-italic"><?= $user['user_mail'] ?></li>
                                         <li class="list-group-item font-italic"><?= $user['volunteer_age'] ?></li>
                                     </ul>
+                                    <a href="mailto:<?= $user['user_mail'] ?>" class="btn btn-light textOrga">
+                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chat-square-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                 <?php

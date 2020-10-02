@@ -41,6 +41,11 @@ require_once '..\controllers\zoomAdvert_controller.php';
                                         <li class="list-group-item font-italic"><?= $advert['user_mail'] ?></li>
                                         <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
                                     </ul>
+                                    <a href="mailto:<?= $advert['user_mail'] ?>" class="btn btn-light textOrga">
+                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chat-square-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         <?php
@@ -48,12 +53,6 @@ require_once '..\controllers\zoomAdvert_controller.php';
                         ?>
                             <div class="col-sm-8 mb-4">
                                 <div class="card w-100 shadow rounded-0 cardOrga">
-                                    <div class="text-center mt-2">
-                                        <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                            <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
-                                        </svg>
-                                    </div>
                                     <div class="card-body">
                                         <div class="card-title text-uppercase font-weight-bold"><?= $advert['advert_title'] ?></div>
                                         <div class="card-subtitle textFont font-weight-bold"><?= $advert['advert_object'] ?></div>

@@ -38,25 +38,25 @@ require_once '../controllers/userAdvert_controller.php';
                     foreach ($getAdvertArray as $advert) {
             ?>
                         <div class="col-sm-3">
-                            <form class="navBg p-4 rounded-0 textFont" action="" method="post" novalidate>
+                            <form class="p-4 rounded-0 textFont border" action="" method="post" novalidate>
                                 <div class="form-group">
-                                    <label for="advertTitle" class="text-white">Titre</label>
+                                    <label for="advertTitle" class="navText">Titre</label>
                                     <input type="text" class="form-control " id="advertTitle" name="advertTitle" value="<?= isset($_POST['advertTitle']) ? htmlspecialchars($_POST['advertTitle']) : $advert['advert_title'] ?>">
                                     <span class="font-italic text-danger"><?= isset($error['advertTitle']) ? $error['advertTitle'] : '' ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="advertObject" class="text-white">Objet</label>
+                                    <label for="advertObject" class="navText">Objet</label>
                                     <input type="text" class="form-control " id="advertObject" name="advertObject" value="<?= isset($_POST['advertObject']) ? htmlspecialchars($_POST['advertObject']) : $advert['advert_object'] ?>">
                                     <span class="font-italic text-danger"><?= isset($error['advertObject']) ? $error['advertObject'] : '' ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="advertDesc" class="text-white">Description</label>
+                                    <label for="advertDesc" class="navText">Description</label>
                                     <textarea type="text" class="form-control" id="advertDesc" name="advertDesc" rows="3" value="<?= isset($_POST['advertDesc']) ? htmlspecialchars($_POST['advertDesc']) : '' ?>"><?= $advert['advert_desc'] ?></textarea>
                                     <span class="font-italic text-danger"><?= isset($error['advertDesc']) ? $error['advertDesc'] : '' ?></span>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" name="updateAdvertSubmit" id="updateAdvertSubmit" class="btn btn-light font-weight-bold mr-2" value="<?= $advert['id_advert'] ?>">Modifier</button>
-                                    <button type="submit" name="deleteAdvertSubmit" id="deleteAdvertSubmit" class="btn btn-light font-weight-bold" value="<?= $advert['id_advert'] ?>">Supprimer</button>
+                                    <button type="submit" name="updateAdvertSubmit" id="updateAdvertSubmit" class="btn btn-block navBg text-white font-weight-bold mt-3" value="<?= $advert['id_advert'] ?>">Modifier</button>
+                                    <button type="submit" name="deleteAdvertSubmit" id="deleteAdvertSubmit" class="btn btn-block navBg text-white font-weight-bold" value="<?= $advert['id_advert'] ?>">Supprimer</button>
                                 </div>
                             </form>
                         </div>
