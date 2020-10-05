@@ -25,8 +25,9 @@ require_once '..\controllers\modoAdvert_controller.php';
             <div class="row">
                 <div class="col text-uppercase h4 textFont text-center pt-5">En attente</div>
             </div>
-            <div class="row">
+            <div class="row mt-2 justify-content-center">
                 <?php
+                if (($getAdvertArray) == true) {
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['advert_validate'] == 0) {
                 ?>
@@ -88,14 +89,20 @@ require_once '..\controllers\modoAdvert_controller.php';
                 <?php
                     }
                 }
+            } else {
+                ?>
+                <div class="mb-3">Aucune annonce en attente de validation</div>
+                <?php
+                }
                 ?>
             </div>
             <hr>
             <div class="row">
                 <div class="col text-uppercase h4 textFont text-center">Validés</div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <?php
+                if (($getAdvertArray) == true) {
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['advert_validate'] == 1) {
                 ?>
@@ -152,12 +159,15 @@ require_once '..\controllers\modoAdvert_controller.php';
                 <?php
                     }
                 }
+            } else {
+                ?>
+                    <div class="mb-4">Aucune annonce validées</div>
+                <?php
+                }
                 ?>
             </div>
         </div>
     </main>
-
-    <?php include '..\include\include_footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -23,9 +23,9 @@ require_once '..\controllers\moderator_controller.php';
     <main>
         <div class="container-fluid containerBg">
             <div class="row">
-                <div class="col h4 mt-4 text-dark text-center">Modérateurs</div>
+                <div class="col h4 textFont text-center text-uppercase pt-5">Modérateurs</div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 justify-content-center">
                 <?php
                 foreach ($getUserArray as $user) {
                     if ($user['id_usertypes'] == 1 && $user['user_validate'] == 1 && $user['user_moderator'] == 1) {
@@ -44,7 +44,7 @@ require_once '..\controllers\moderator_controller.php';
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
-                                    <button type="submit" name="modoLessSubmit" id="modoLessSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
+                                        <button type="submit" name="modoLessSubmit" id="modoLessSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-x-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm2.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />
                                             </svg>
@@ -53,11 +53,15 @@ require_once '..\controllers\moderator_controller.php';
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
                                             </svg>
-                                        </button>    
+                                        </button>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                    <?php
+                    } else {
+                    ?>
+                        <div class="mb-3">Aucun modérateur</div>
                 <?php
                     }
                 }
@@ -65,9 +69,9 @@ require_once '..\controllers\moderator_controller.php';
             </div>
             <hr>
             <div class="row">
-                <div class="col h4 text-dark text-center">Utilisateurs</div>
+                <div class="col h4 textFont text-center text-uppercase">Utilisateurs</div>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 justify-content-center">
                 <?php
                 foreach ($getUserArray as $user) {
                     if ($user['id_usertypes'] == 1 && $user['user_validate'] == 1 && $user['user_moderator'] == 0) {
@@ -87,7 +91,7 @@ require_once '..\controllers\moderator_controller.php';
                                 </ul>
                                 <div class="card-body">
                                     <form method="post" action="">
-                                    <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
+                                        <button type="submit" name="modoSubmit" id="modoSubmit" class="btn btn-light font-weight-bold textFont" value="<?= $user['id_user'] ?>">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm4.5 4.5a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z" />
                                             </svg>
@@ -101,6 +105,10 @@ require_once '..\controllers\moderator_controller.php';
                                 </div>
                             </div>
                         </div>
+                    <?php
+                    } else {
+                    ?>
+                        <div class="mb-3">Aucun utilisateur inscrit</div>
                 <?php
                     }
                 }
@@ -108,8 +116,6 @@ require_once '..\controllers\moderator_controller.php';
             </div>
         </div>
     </main>
-
-    <?php include '..\include\include_footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

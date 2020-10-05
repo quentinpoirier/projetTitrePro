@@ -31,7 +31,6 @@ session_start();
                         <div class="card-body">
                             <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
                             <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
@@ -44,7 +43,6 @@ session_start();
                         <div class="card-body">
                             <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
                             <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
@@ -57,7 +55,6 @@ session_start();
                         <div class="card-body">
                             <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
                             <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>

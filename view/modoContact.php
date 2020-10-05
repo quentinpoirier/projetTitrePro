@@ -21,8 +21,9 @@ require_once '..\controllers\modoContact_controller.php';
     <?php include '..\include\include_navbar.php' ?>
     <main>
         <div class="container-fluid containerBg">
-            <div class="row justify-content-start pt-3">
+            <div class="row justify-content-center pt-5">
                 <?php
+                if (($getContactArray) == true) {
                 foreach ($getContactArray as $contact) {
                 ?>
                     <div class="col-sm-2 mb-4">
@@ -59,12 +60,15 @@ require_once '..\controllers\modoContact_controller.php';
                     </div>
                 <?php
                 }
+            } else {
+                ?>
+                <div class="mb-4">Aucune demande ou question n'est postée</div>
+                <?php
+                }
                 ?>
             </div>
         </div>
     </main>
-
-    <?php include '..\include\include_footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

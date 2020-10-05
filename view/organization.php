@@ -38,77 +38,90 @@ require_once '..\controllers\organization_controller.php';
                             </select>
                         </div>
                         <div class="">
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn font-weight-bold cardOrga textFont">Rechercher</button>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn font-weight-bold cardOrga text-white">Rechercher</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
-                    foreach ($getOrgaArray as $user) {
-                        if ($user['activity_name'] == $_POST['activity'] && $user['user_validate'] == 1) { ?>
-                            <div class="col-sm-3 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardOrga">
-                                    <div class="text-center mt-2">
-                                        <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-images text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                            <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
-                                        </svg>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-title text-uppercase font-weight-bold text-truncate"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text textFont text-truncate text-truncate"><?= $user['organization_desc'] ?></div>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic text-truncate"><?= $user['organization_mail'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <a class="btn btn-light font-weight-bold textFont" href="../view/zoomUser.php?user=<?= $user['id_user'] ?>">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                    if (($getOrgaArray) == true) {
+                        foreach ($getOrgaArray as $user) {
+                            if ($user['activity_name'] == $_POST['activity'] && $user['user_validate'] == 1) {
+                ?>
+                                <div class="col-sm-3 mb-4">
+                                    <div class="card w-100 shadow rounded-0 cardOrga">
+                                        <div class="text-center mt-2">
+                                            <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-images text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
                                             </svg>
-                                        </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-title text-uppercase font-weight-bold text-truncate"><?= $user['organization_name'] ?></div>
+                                            <div class="card-text textFont text-truncate text-truncate"><?= $user['organization_desc'] ?></div>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item font-italic text-truncate"><?= $user['organization_mail'] ?></li>
+                                            <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a class="btn btn-light font-weight-bold textFont" href="../view/zoomUser.php?user=<?= $user['id_user'] ?>">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         <?php
+                            }
                         }
+                    } else {
+                        ?>
+                        <div class="mb-3">Aucune structure ne correspond à votre recherche</div>
+                        <?php
                     }
                 } else {
-                    foreach ($getOrgaArray as $user) {
-                        if ($user['user_validate'] == 1) {
+                    if (($getOrgaArray) == true) {
+                        foreach ($getOrgaArray as $user) {
+                            if ($user['user_validate'] == 1) {
                         ?>
-                            <div class="col-sm-3 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardOrga">
-                                    <div class="text-center mt-2">
-                                        <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                            <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
-                                        </svg>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-title text-uppercase font-weight-bold text-truncate"><?= $user['organization_name'] ?></div>
-                                        <div class="card-text textFont text-truncate"><?= $user['organization_desc'] ?></div>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic text-truncate"><?= $user['organization_mail'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <a class="btn btn-light font-weight-bold textFont" href="../view/zoomUser.php?user=<?= $user['id_user'] ?>">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                <div class="col-sm-3 mb-4">
+                                    <div class="card w-100 shadow rounded-0 cardOrga">
+                                        <div class="text-center mt-2">
+                                            <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-images text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                <path fill-rule="evenodd" d="M4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
                                             </svg>
-                                        </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-title text-uppercase font-weight-bold text-truncate"><?= $user['organization_name'] ?></div>
+                                            <div class="card-text textFont text-truncate"><?= $user['organization_desc'] ?></div>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item font-italic text-truncate"><?= $user['organization_mail'] ?></li>
+                                            <li class="list-group-item font-italic"><?= $user['organization_phone'] ?></li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a class="btn btn-light font-weight-bold textFont" href="../view/zoomUser.php?user=<?= $user['id_user'] ?>">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                <?php
+                        <?php
+                            }
                         }
+                    } else {
+                        ?>
+                        <div class="mb-3">Aucune structure n'est inscrite sur la plateforme</div>
+                <?php
                     }
                 }
                 ?>

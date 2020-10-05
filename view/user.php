@@ -26,7 +26,7 @@ require_once '..\controllers\user_controller.php';
     <main>
         <div class="container-fluid pb-4 containerBg">
             <div class="row justify-content-center pb-1 pt-5">
-                <div class="col h2 text-center textFont">Mon espace</div>
+                <div class="col h4 text-center textFont text-uppercase">Mon espace</div>
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-sm-4">

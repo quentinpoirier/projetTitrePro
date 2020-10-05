@@ -41,11 +41,11 @@ require_once '..\controllers\advert_controller.php';
                             </select>
                         </div>
                         <div>
-                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn cardOrga font-weight-bold mr-2 textFont">Rechercher</button>
+                            <button type="submit" name="selectOrgaSubmit" id="selectOrgaSubmit" class="btn cardOrga font-weight-bold mr-2 text-white">Rechercher</button>
                             <?php
                             if (isset($_SESSION['user'])) {
                             ?>
-                                <a class="btn cardOrga font-weight-bold textFont" href="..\view\createAdvert.php">créer annonce</a>
+                                <a class="btn cardOrga font-weight-bold text-white" href="..\view\createAdvert.php">Créer annonce</a>
                             <?php
                             }
                             ?>
@@ -57,9 +57,10 @@ require_once '..\controllers\advert_controller.php';
                 <div class="col text-uppercase h4 text-center textFont">associations</div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row mb-3 justify-content-center">
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
+                    if (($getAdvertArray) == true) {
                     foreach ($getAdvertArray as $advert) {
                         if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             if ($advert['activity_name'] == $_POST['activity']) {
@@ -95,6 +96,12 @@ require_once '..\controllers\advert_controller.php';
                         }
                     }
                 } else {
+                    ?>
+                        <div class="mb-3">Aucune annonce ne correspond à votre recherche</div>
+                        <?php
+                    }
+                } else {
+                    if (($getAdvertArray) == true) {
                     foreach ($getAdvertArray as $advert) {
                         if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
                             ?>
@@ -127,6 +134,11 @@ require_once '..\controllers\advert_controller.php';
                 <?php
                         }
                     }
+                } else {
+                    ?>
+                        <div class="mb-3">Aucune annonce de structure n'est postée sur la plateforme</div>
+                        <?php
+                    }
                 }
                 ?>
             </div>
@@ -135,8 +147,9 @@ require_once '..\controllers\advert_controller.php';
                 <div class="col text-uppercase h4 text-center textFont">bénévoles</div>
             </div>
             <hr>
-            <div class="row">
+            <div class="row mb-4 justify-content-center">
                 <?php
+                if (($getAdvertArray) == true) {
                 foreach ($getAdvertArray as $advert) {
                     if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
                 ?>
@@ -168,6 +181,11 @@ require_once '..\controllers\advert_controller.php';
                         </div>
                 <?php
                     }
+                }
+            } else {
+                ?>
+                    <div class="mb-3">Aucune annonce de bénévole n'est postée sur la plateforme</div>
+                    <?php
                 }
                 ?>
             </div>

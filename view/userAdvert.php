@@ -28,7 +28,7 @@ require_once '../controllers/userAdvert_controller.php';
             <a class="btn navBg text-white mt-2 mr-4" href="..\view\createAdvert.php">Créer annonce</a>
         </div>
         <div class="row justify-content-center pb-1 pt-5">
-            <div class="col h2 text-center textFont">Mes annonces</div>
+            <div class="col h4 text-center textFont text-uppercase">Mes annonces</div>
         </div>
 
         <div class="row justify-content-center pb-5">
