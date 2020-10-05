@@ -18,6 +18,9 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour publier une annonce par un utilisateur
+     */
     public function addAdvert($title, $object, $desc, $date, $user)
     {
         $query = 'INSERT INTO `advert` (advert_title, advert_object, advert_desc, advert_date, advert_validate, id_user)
@@ -37,6 +40,11 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour récuperer les annonces publiées
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getAdvert()
     {
         $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`, `advert_validate`
@@ -65,6 +73,12 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour récuperer une annonce publié par un utilisateur pour afficher le détail de celle-ci
+     * @param type integer id du user qui a posté l'annonce
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getAdvertById($idAdvert)
     {
         $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`
@@ -95,6 +109,12 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour récuperer une annonce publié par l'utilisateur connecté et l'afficher dans son espace personnel
+     * @param type integer id du user qui a posté l'annonce
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getAdvertByUser($idUser)
     {
         $query = 'SELECT `id_advert`, `advert_title`, `advert_object`, `advert_desc`, `advert_date`, `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `organization_name`, `organization_mail`, `activity_name`, `id_usertypes`
@@ -125,6 +145,10 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour modifier une annonce publié par l'utilisateur connecté dans son espace personnel
+     * @param type integer id de l'advert modifié
+     */
     public function updateAdvert($title, $object, $desc, $date, $idAdvert)
     {
         $query = 'UPDATE advert 
@@ -145,6 +169,10 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour valider une annonce publié par un utilisateur depuis l'espace de modération
+     * @param type integer id de l'advert modifié
+     */
     public function updateAdvertValidate($idAdvert)
     {
         $query = 'UPDATE advert SET `advert_validate` = 1 WHERE `id_advert` = :id_advert';
@@ -159,6 +187,10 @@ class Advert
         }
     }
 
+    /**
+     * Méthode pour supprimer une annonce depuis l'espace modération et depuis l'espace personnel de l'utilisateur connecté
+     * @param type integer id de l'advert
+     */
     public function deleteAdvert($idAdvert)
     {
         $query = 'DELETE FROM `advert` WHERE `advert`.`id_advert` = :id_advert';

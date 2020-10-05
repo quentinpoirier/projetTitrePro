@@ -18,6 +18,11 @@ class Activity
         }
     }
 
+    /**
+     * Méthode pour récuperer les catégories des association et des annonces pour l'outil de recherche
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getActivityInfos()
     {
         $query = 'SELECT `id_activity`, `activity_name` FROM `activity`';

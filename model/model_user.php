@@ -18,6 +18,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour vérifier si le mail de l'utilisateur existe déjà au moment de son inscription
+     * @param type string email du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function verifyMailExist($mail)
     {
         $query = 'SELECT `user_mail` FROM user WHERE `user_mail` = :userMail ';
@@ -40,6 +46,13 @@ class User
         }
     }
 
+    /**
+     * Méthode pour vérifier si le mail et le password de l'utilisateur existent lors de la connection
+     * @param type integer password du user
+     * @param type string mail du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function VerifyLogin($mail, $password)
     {
 
@@ -65,6 +78,9 @@ class User
         }
     }
 
+    /**
+     * Méthode pour ajouter un utilisateur lors de son inscription
+     */
     public function addUser($mail, $password, $idUsertypes)
     {
 
@@ -82,6 +98,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour publié un message destiné au staff
+     * @param type integer id du user qui poste le message
+     */
     public function addContact($object, $claim, $userId) 
     {
         $query = 'INSERT INTO `contact` (contact_object, contact_claim, id_user) VALUES (:contact_object, :contact_claim, :id_user)';
@@ -98,6 +118,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour modifier les donnée d'un bénévole connecté dans son espace personnel
+     * @param type integer id du user
+     */
     public function updateVolunteer($firstname, $lastname, $age, $idUser)
     {
         $query = 'UPDATE user SET `volunteer_firstname` = :volunteer_firstname,  `volunteer_lastname` = :volunteer_lastname, `volunteer_age` = :volunteer_age
@@ -116,6 +140,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour modifier les donnée d'une association connecté dans son espace personnel
+     * @param type integer id du user
+     */
     public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
     {
         $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity 
@@ -138,6 +166,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour valider le profil d'un utilisateur dans l'espace de modération
+     * @param type integer id du user
+     */
     public function updateUserValidate($idUser)
     {
         $query = 'UPDATE user SET `user_validate` = 1 WHERE `id_user` = :id_user';
@@ -152,6 +184,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour promouvoir un utilisateur en modérateur
+     * @param type integer id du user
+     */
     public function updateUserModerator($idUser)
     {
         $query = 'UPDATE `user` SET `user_moderator` = 1 WHERE `user`.`id_user` = :id_user';
@@ -166,6 +202,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour rétrograder un modérateur en simple utilisateur
+     * @param type interger id du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function updateUserModeratorLess($idUser)
     {
         $query = 'UPDATE `user` SET `user_moderator` = 0 WHERE `user`.`id_user` = :id_user';
@@ -180,6 +222,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour récupérer le mail de l'utilisateur connecté pour lancé sa session
+     * @param type string email du user
+     * @return type string when succcess
+     * @return type booleen when fail
+     */
     public function getUserMail($mail)
     {
 
@@ -205,9 +253,17 @@ class User
         }
     }
 
+    /**
+     * Méthode pour récupérer les infos des utilisateur et les afficher
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getUserInfos()
     {
-        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user`, `user_validate`, `user_moderator` FROM `user` LEFT JOIN `activity` ON `user`.`id_activity` = `activity`.`id_activity`';
+        $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user`, `user_validate`, `user_moderator` 
+        FROM `user` 
+        LEFT JOIN `activity` 
+        ON `user`.`id_activity` = `activity`.`id_activity`';
 
         try {
 
@@ -228,6 +284,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour récupérer les infos d'un utilisateur et les afficher en détail
+     * @param type integer id du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getUserInfosById($idUser)
     {
         $query = 'SELECT `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name` 
@@ -256,6 +318,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour récupérer les infos des utilisateurs si se sont des associations
+     * @param type integer id_usertypes du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getOrgaInfos()
     {
         $query = 'SELECT `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_user`, `user_validate` 
@@ -283,6 +351,12 @@ class User
         }
     }
 
+    /**
+     * Méthode pour récupérer les infos d'un utilisateur et les afficher en détail
+     * @param type integer id du user
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getInfosById($idUser)
     {
         $query = 'SELECT `user_mail`, `volunteer_firstname`, `volunteer_lastname`, `volunteer_age`, `organization_name`, `organization_adress`, `organization_phone`, `organization_mail`, `organization_siren`, `organization_desc`, `activity_name`, `id_usertypes`, `id_user` 
@@ -311,6 +385,10 @@ class User
         }
     }
 
+    /**
+     * Méthode pour supprimer un utilisateur dans l'espace modération et dans son espaces personnel s'il est connecté
+     * @param type integer id du user
+     */
     public function deleteUserInfos($idUser)
     {
         $query = 'DELETE FROM `user` WHERE `id_user` = :id_user';

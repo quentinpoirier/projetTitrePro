@@ -18,6 +18,11 @@ class Contact
         }
     }
 
+    /**
+     * Méthode pour récuperer les messages envoyer aux staff par les utilisateurs
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getContactInfos()
     {
         $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `contact`.`id_user` 
@@ -44,6 +49,12 @@ class Contact
         }
     }
 
+    /**
+     * Méthode pour récuperer les messages envoyer aux staff par un utilisateur pour afficher la détail de celui-ci
+     * @param type integer id du user qui a posté le message
+     * @return type array when succcess
+     * @return type booleen when fail
+     */
     public function getContactInfoById($idContact)
     {
         $query = 'SELECT `user_mail`, `contact_object`, `contact_claim`, `id_contact`, `contact`.`id_user` 
@@ -72,6 +83,11 @@ class Contact
         }
     }
 
+    /**
+     * Méthode pour supprimer le message envoyer aux staff par un utilisateur
+     * @param type integer id du user qui a posté le message
+     * @return type booleen indiquant le succès de la méthode
+     */
     public function deleteContact($idContact)
     {
         $query = 'DELETE FROM `contact` WHERE `id_contact` = :id_contact';
