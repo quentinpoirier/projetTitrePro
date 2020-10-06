@@ -27,6 +27,7 @@ require_once '..\controllers\modoUser_controller.php';
             </div>
             <div class="row mt-2 justify-content-center">
                 <?php
+                if (($getUserArray) == true) {
                 foreach ($getUserArray as $user) {
                     if ($user['user_validate'] == 0) {
                 ?>
@@ -77,11 +78,12 @@ require_once '..\controllers\modoUser_controller.php';
                             </div>
                         </div>
                     <?php
-                    } else {
-                    ?>
-                        <div class="mb-3">Aucun utilisateur en attente de validation</div>
-                <?php
-                    }
+                    } 
+                }
+            } else {
+                ?>
+                    <div class="mb-3">Aucun utilisateur en attente de validation</div>
+            <?php
                 }
                 ?>
             </div>
@@ -137,13 +139,13 @@ require_once '..\controllers\modoUser_controller.php';
                                 </div>
                             </div>
                         <?php
-                        } else {
-                        ?>
-                            <div class="mb-4">Aucun utilisateur validé</div>
-                <?php
-                        }
+                        } 
                     }
-                }
+                } else {
+                    ?>
+                        <div class="mb-4">Aucun utilisateur validé</div>
+            <?php
+                    }
                 ?>
             </div>
         </div>
