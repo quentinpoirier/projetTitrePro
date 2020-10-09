@@ -14,7 +14,7 @@ require_once '..\model\model_activity.php';
 
 $error = array();
 
-$longString = '/^[a-zA-ZéèêëiîïôöüäçÉÀÂÛÔÎÙÈÊ\" -,!.;:?()]{0,20}$/';
+$longString = '/^[a-zA-ZéèêëiîïôöüäçÉÀÂÛÔÎÙÈÊ\" -,!.;:?()]{0,200}$/';
 $DateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";
 
 if (isset($_POST['advertTitle'])) {

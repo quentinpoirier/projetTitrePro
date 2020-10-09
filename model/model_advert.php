@@ -5,6 +5,9 @@ class Advert
 {
     private $bdd;
 
+    /**
+     * @param method __construct() qui fait le lien avec la base de données
+     */
     public function __construct()
     {
         try {

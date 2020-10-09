@@ -118,7 +118,7 @@ require_once '..\controllers\modoAdvert_controller.php';
                                 if ($advert['id_usertypes'] == 2) {
                                 ?>
                                     <div class="card-body">
-                                        <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                        <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
                                         <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
@@ -129,7 +129,7 @@ require_once '..\controllers\modoAdvert_controller.php';
                                 } else {
                                 ?>
                                     <div class="card-body">
-                                        <div class="card-title h4"><?= $advert['advert_title'] ?></div>
+                                        <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
                                         <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
