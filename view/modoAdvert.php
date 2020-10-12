@@ -123,8 +123,8 @@ require_once '..\controllers\modoAdvert_controller.php';
                                         <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic"><?= $advert['organization_name'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $advert['organization_name'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $advert['advert_date'] ?></li>
                                     </ul>
                                 <?php
                                 } else {
@@ -134,8 +134,8 @@ require_once '..\controllers\modoAdvert_controller.php';
                                         <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic"><?= $advert['volunteer_firstname'] . ' ' . $advert['volunteer_lastname'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $advert['volunteer_firstname'] . ' ' . $advert['volunteer_lastname'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $advert['advert_date'] ?></li>
                                     </ul>
                                 <?php
                                 }

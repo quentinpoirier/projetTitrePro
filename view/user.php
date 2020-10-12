@@ -63,17 +63,6 @@ require_once '..\controllers\user_controller.php';
                                         <span class="font-italic text-danger"><?= isset($error['oragnizationName']) ? $error['oragnizationName'] : '' ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="activity" class="navText">Domaine d'activité</label>
-                                        <select class="form-control" id="activity" name="activity">
-                                            <option selected disabled><?= $getUserArray[0]['activity_name'] ?></option>
-                                            <option value="1" <?= isset($_POST['activity']) && ($_POST['activity']) == '1'  ? 'selected' : '' ?>>Culture</option>
-                                            <option value="2" <?= isset($_POST['activity']) && ($_POST['activity']) == '2'  ? 'selected' : '' ?>>Environnement</option>
-                                            <option value="3" <?= isset($_POST['activity']) && ($_POST['activity']) == '3'  ? 'selected' : '' ?>>Social</option>
-                                            <option value="4" <?= isset($_POST['activity']) && ($_POST['activity']) == '4'  ? 'selected' : '' ?>>Sport</option>
-                                        </select>
-                                        <span class="font-italic text-danger"><?= isset($error['activity']) ? $error['activity'] : '' ?></span>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="organizationAdress" class="navText">Adresse</label>
                                         <input type="text" class="form-control" id="organizationAdress" name="organizationAdress" value="<?= isset($_POST['organizationAdress']) ? htmlspecialchars($_POST['organizationAdress']) : $getUserArray[0]['organization_adress'] ?>">
                                         <span class="font-italic text-danger"><?= isset($error['organizationAdress']) ? $error['organizationAdress'] : '' ?></span>

@@ -52,12 +52,6 @@ if (isset($_POST['oragnizationName'])) {
     };
 }
 
-if (isset($_POST['registerSubmit'])) {
-    if (!array_key_exists('activity', $_POST)) {
-        $error['activity'] = 'Veuillez renseigner le champ';
-    };
-}
-
 if (isset($_POST['organizationAdress'])) {
     if (preg_match($adressRagex, $_POST['organizationAdress']) == false) {
         $error['organizationAdress'] = 'Mauvais format';
@@ -138,9 +132,8 @@ if (isset($_POST['updateUserSubmit']) && count($error) == 0) {
         $orgaMail = htmlspecialchars($_POST['organizationMail']);
         $siren = htmlspecialchars($_POST['organizationSiren']);
         $desc = htmlspecialchars($_POST['organizationDesc']);
-        $activity = htmlspecialchars($_POST['activity']);
         $idUser = $_SESSION['user']['id_user'];
 
-        $user->updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser);
+        $user->updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $idUser);
     }
 };

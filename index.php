@@ -42,8 +42,8 @@ session_start();
                 <div class="row no-gutters">
                     <div class="col-md">
                         <div class="card-body">
-                            <h5 class="card-title textFont">Partagez vos envis</h5>
-                            <p class="card-text textFont">Inscrivez vous et publiez votre propres annonces pour trouver une assocition qui sera mettre en valeur vos savoir-faires. Action le Havre vous propose en plus un largfe choix de mission pour vous aidez à faire un xhoix</p>
+                            <h5 class="card-title textFont">Partagez vos envie</h5>
+                            <p class="card-text textFont">Inscrivez-vous et publiez vos propres annonces pour trouver une association qui sera mettre en valeur vos savoir-faires. Action le Havre vous propose en plus un large choix de mission pour vous aider à faire un choix.</p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ session_start();
                     <div class="col-md">
                         <div class="card-body">
                             <h5 class="card-title textFont">Contactez les acteurs locaux</h5>
-                            <p class="card-text textFont">Action le Havre vous permet de contacter en les autres utilisateurs en un clic. Vous êtes interessé part une annonce ou vous souhaiter contactez une association, laissez lui un mail pour ouvrir la discussion sans intermédiares.</p>
+                            <p class="card-text textFont">Action le Havre vous permet de contacter en les autres utilisateurs en un clic. Vous êtes intéressé part une annonce ou vous souhaiter contactez une association, laissez lui un mail pour ouvrir la discussion sans intermédiaires.</p>
                         </div>
                     </div>
                 </div>

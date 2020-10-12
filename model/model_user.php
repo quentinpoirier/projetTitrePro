@@ -144,9 +144,9 @@ class User
      * Méthode pour modifier les donnée d'une association connecté dans son espace personnel
      * @param type integer id du user
      */
-    public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $activity, $idUser)
+    public function updateOrganization($name, $adress, $phone, $orgaMail, $siren, $desc, $idUser)
     {
-        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc, `id_activity` = :id_activity 
+        $query = 'UPDATE user SET `organization_name` = :organization_name, `organization_adress` = :organization_adress, `organization_phone` = :organization_phone, `organization_mail` = :organization_mail, `organization_siren` = :organization_siren, `organization_desc` = :organization_desc 
         WHERE `id_user` = :id_user';
 
         try {
@@ -158,7 +158,6 @@ class User
             $resultQuery->bindValue(':organization_mail', $orgaMail);
             $resultQuery->bindValue(':organization_siren', $siren);
             $resultQuery->bindValue(':organization_desc', $desc);
-            $resultQuery->bindValue(':id_activity', $activity);
             $resultQuery->bindValue(':id_user', $idUser);
             $resultQuery->execute();
         } catch (Exception $e) {

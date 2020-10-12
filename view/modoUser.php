@@ -32,7 +32,7 @@ require_once '..\controllers\modoUser_controller.php';
                 foreach ($getUserArray as $user) {
                     if ($user['user_validate'] == 0) {
                 ?>
-                        <div class="col-sm-2 mb-4">
+                        <div class="col-md-2 mb-4">
                             <div class="card w-100 shadow rounded-0 <?= $user['id_usertypes'] == 1 ? 'cardVolunteer' : 'cardOrga' ?>">
                                 <div class="text-center mt-2">
                                     <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-person-circle text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
