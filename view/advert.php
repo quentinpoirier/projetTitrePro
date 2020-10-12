@@ -12,7 +12,8 @@ require_once '..\controllers\advert_controller.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="..\assets\css\styles.css">
-    <title>Titre Pro</title>
+    <link rel="icon" type="image/gif" href="..\assets\img\logocouleur.png"/>
+    <title>Annonces</title>
 </head>
 
 <body>
@@ -58,10 +59,50 @@ require_once '..\controllers\advert_controller.php';
                 <?php
                 if (isset($_POST['selectOrgaSubmit'])) {
                     if (($getAdvertArray) == true) {
-                    foreach ($getAdvertArray as $advert) {
-                        if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
-                            if ($advert['activity_name'] == $_POST['activity']) {
+                        foreach ($getAdvertArray as $advert) {
+                            if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
+                                if ($advert['activity_name'] == $_POST['activity']) {
                 ?>
+                                    <div class="col-sm-3 mb-4">
+                                        <div class="card w-100 shadow rounded-0 cardOrga">
+                                            <div class="text-center mt-2">
+                                                <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-stickies-fill text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
+                                                    <path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zm6 8.5v4.396c0 .223.27.335.427.177l5.146-5.146a.25.25 0 0 0-.177-.427H10.5a1 1 0 0 0-1 1z" />
+                                                </svg>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
+                                                <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item font-italic text-truncate"><?= $advert['organization_name'] ?></li>
+                                                <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <?php
+                                }
+                            }
+                        }
+                    } else {
+                        ?>
+                        <div class="mb-3">Aucune annonce ne correspond à votre recherche</div>
+                        <?php
+                    }
+                } else {
+                    if (($getAdvertArray) == true) {
+                        foreach ($getAdvertArray as $advert) {
+                            if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
+                        ?>
                                 <div class="col-sm-3 mb-4">
                                     <div class="card w-100 shadow rounded-0 cardOrga">
                                         <div class="text-center mt-2">
@@ -72,69 +113,29 @@ require_once '..\controllers\advert_controller.php';
                                         </div>
                                         <div class="card-body">
                                             <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
-                                            <div class="card-subtitle textFont text-truncate"><?= $advert['advert_object'] ?></div>
+                                            <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item font-italic text-truncate"><?= $advert['organization_name'] ?></li>
                                             <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
                                         </ul>
                                         <div class="card-body">
-                                            <button type="submit" name="orgaZoomSubmit" id="orgaZoomSubmit" class="btn btn-light font-weight-bold textFont">
+                                            <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
                                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
                                                     <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            <?php
+                        <?php
                             }
                         }
-                    }
-                } else {
-                    ?>
-                        <div class="mb-3">Aucune annonce ne correspond à votre recherche</div>
-                        <?php
-                    }
-                } else {
-                    if (($getAdvertArray) == true) {
-                    foreach ($getAdvertArray as $advert) {
-                        if ($advert['id_usertypes'] == 2 && $advert['advert_validate'] == 1) {
-                            ?>
-                            <div class="col-sm-3 mb-4">
-                                <div class="card w-100 shadow rounded-0 cardOrga">
-                                    <div class="text-center mt-2">
-                                        <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-stickies-fill text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
-                                            <path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zm6 8.5v4.396c0 .223.27.335.427.177l5.146-5.146a.25.25 0 0 0-.177-.427H10.5a1 1 0 0 0-1 1z" />
-                                        </svg>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
-                                        <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item font-italic text-truncate"><?= $advert['organization_name'] ?></li>
-                                        <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                <?php
-                        }
-                    }
-                } else {
-                    ?>
+                    } else {
+                        ?>
                         <div class="mb-3">Aucune annonce de structure n'est postée sur la plateforme</div>
-                        <?php
+                <?php
                     }
                 }
                 ?>
@@ -147,42 +148,42 @@ require_once '..\controllers\advert_controller.php';
             <div class="row mb-4 justify-content-center">
                 <?php
                 if (($getAdvertArray) == true) {
-                foreach ($getAdvertArray as $advert) {
-                    if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
+                    foreach ($getAdvertArray as $advert) {
+                        if ($advert['id_usertypes'] == 1 && $advert['advert_validate'] == 1) {
                 ?>
-                        <div class="col-sm-3 mb-4">
-                            <div class="card w-100 shadow rounded-0 cardVolunteer">
-                                <div class="text-center mt-2">
-                                    <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-stickies-fill text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
-                                        <path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zm6 8.5v4.396c0 .223.27.335.427.177l5.146-5.146a.25.25 0 0 0-.177-.427H10.5a1 1 0 0 0-1 1z" />
-                                    </svg>
-                                </div>
-                                <div class="card-body">
-                                    <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
-                                    <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
-                                    <li class="list-group-item font-italic text-truncate"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
-                                </ul>
-                                <div class="card-body">
-                                    <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            <div class="col-sm-3 mb-4">
+                                <div class="card w-100 shadow rounded-0 cardVolunteer">
+                                    <div class="text-center mt-2">
+                                        <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-stickies-fill text-white mb-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
+                                            <path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zm6 8.5v4.396c0 .223.27.335.427.177l5.146-5.146a.25.25 0 0 0-.177-.427H10.5a1 1 0 0 0-1 1z" />
                                         </svg>
-                                    </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title h4 text-truncate"><?= $advert['advert_title'] ?></div>
+                                        <div class="card-subtitle h5 text-truncate"><?= $advert['advert_object'] ?></div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item font-italic"><?= $advert['advert_date'] ?></li>
+                                        <li class="list-group-item font-italic text-truncate"><?= $advert['volunteer_firstname'] . '  ' . $advert['volunteer_lastname'] ?></li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <a class="btn btn-light font-weight-bold textFont" href="..\view\zoomAdvert.php?advert=<?= $advert['id_advert'] ?>">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                <?php
-                    }
-                }
-            } else {
-                ?>
-                    <div class="mb-3">Aucune annonce de bénévole n'est postée sur la plateforme</div>
                     <?php
+                        }
+                    }
+                } else {
+                    ?>
+                    <div class="mb-3">Aucune annonce de bénévole n'est postée sur la plateforme</div>
+                <?php
                 }
                 ?>
             </div>

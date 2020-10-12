@@ -46,11 +46,14 @@
                             <a class="dropdown-item navBg text-white" href="..\view\modoContact.php">Contacts</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
-                    </li>
-            <?php
+
+                <?php
                 }
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="..\view\contact.php">Contact</a>
+                </li>
+            <?php
             }
             ?>
         </ul>

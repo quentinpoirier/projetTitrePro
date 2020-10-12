@@ -12,7 +12,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets\css\styles.css">
-    <title>Titre Pro</title>
+    <link rel="icon" type="image/gif" href="assets\img\logocouleur.png"/>
+    <title>Accueil</title>
     <style>
 
     </style>
@@ -29,7 +30,7 @@ session_start();
                 <div class="row no-gutters">
                     <div class="col-md">
                         <div class="card-body">
-                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
+                            <h5 class="card-title textFont">Trouvez la structure qui vous correspond</h5>
                             <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
                         </div>
                     </div>
@@ -41,8 +42,8 @@ session_start();
                 <div class="row no-gutters">
                     <div class="col-md">
                         <div class="card-body">
-                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
-                            <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
+                            <h5 class="card-title textFont">Partagez vos envis</h5>
+                            <p class="card-text textFont">Inscrivez vous et publiez votre propres annonces pour trouver une assocition qui sera mettre en valeur vos savoir-faires. Action le Havre vous propose en plus un largfe choix de mission pour vous aidez à faire un xhoix</p>
                         </div>
                     </div>
                 </div>
@@ -53,8 +54,8 @@ session_start();
                 <div class="row no-gutters">
                     <div class="col-md">
                         <div class="card-body">
-                            <h5 class="card-title textFont">Trouver la structure qui vous correspond</h5>
-                            <p class="card-text textFont">Vous souhaitez vous engager et participer à la vie sociale de votre quartier, Action Le Havre vous propose un large choix d'associations dans le bassin havrais pour vous permettre de trouver la structure qui vous correspond.</p>
+                            <h5 class="card-title textFont">Contactez les acteurs locaux</h5>
+                            <p class="card-text textFont">Action le Havre vous permet de contacter en les autres utilisateurs en un clic. Vous êtes interessé part une annonce ou vous souhaiter contactez une association, laissez lui un mail pour ouvrir la discussion sans intermédiares.</p>
                         </div>
                     </div>
                 </div>

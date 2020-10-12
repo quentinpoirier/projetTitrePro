@@ -7,7 +7,7 @@
         <a class="text-white" href="..\view\contact.php">Contact</a>
     </div>
     <div class="col-sm-2 h5">
-        <a class="text-white" href="..\view\legalNotice.php">Mentions légales</a>
+        <a class="text-white" href="..\view\legalNotice.php" target="_blank">Mentions légales</a>
     </div>
 </div>
 <div class="row pt-5 justify-content-center text-center text-white">

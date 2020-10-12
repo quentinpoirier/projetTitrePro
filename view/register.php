@@ -12,7 +12,8 @@ require_once '..\controllers\register_controller.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="..\assets\css\styles.css">
-    <title>Titre Pro</title>
+    <link rel="icon" type="image/gif" href="..\assets\img\logocouleur.png"/>
+    <title>Inscription</title>
     <style>
 
     </style>
@@ -38,7 +39,7 @@ require_once '..\controllers\register_controller.php';
                         </div>
                         <div class="form-group">
                             <label for="userPassword" class="navText">Mot de passe</label>
-                            <input type="password" class="form-control" id="userPassword" name="userPassword" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
+                            <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="ex: John020558?" value="<?= isset($_POST['userPassword']) ? htmlspecialchars($_POST['userPassword']) : '' ?>">
                             <span class="font-italic text-danger"><?= isset($error['userPassword']) ? $error['userPassword'] : '' ?></span>
                         </div>
                         <div class="form-group">
