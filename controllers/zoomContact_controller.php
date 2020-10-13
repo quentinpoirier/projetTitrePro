@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 require_once '..\model\model_contact.php';
 
 $contact = new Contact();

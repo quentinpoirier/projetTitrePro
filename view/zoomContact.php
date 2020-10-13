@@ -12,7 +12,7 @@ require_once '..\controllers\zoomContact_controller.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="..\assets\css\styles.css">
-    <link rel="icon" type="image/gif" href="..\assets\img\logocouleur.png"/>
+    <link rel="icon" type="image/gif" href="..\assets\img\logocouleur.png" />
     <title>Détail contact</title>
 </head>
 
@@ -25,6 +25,7 @@ require_once '..\controllers\zoomContact_controller.php';
         <div class="container-fluid containerBg">
             <div class="row justify-content-center pt-5 pb-5">
                 <?php
+                if (isset($_GET['contact'])) {
                 foreach ($getContactArray as $contact) {
                 ?>
                     <div class="col-sm-8 mb-4">
@@ -36,6 +37,11 @@ require_once '..\controllers\zoomContact_controller.php';
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item font-italic"><?= $contact['user_mail'] ?></li>
                             </ul>
+                            <a href="mailto:<?= $contact['user_mail'] ?>" class="btn btn-light textContact">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chat-square-dots-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                            </a>
                             <div class="card-body">
                                 <form method="post" action="">
                                     <button type="submit" name="deleteSubmit" id="deleteSubmit" class="btn btn-light" value="<?= $contact['id_contact'] ?>">
@@ -49,6 +55,7 @@ require_once '..\controllers\zoomContact_controller.php';
                     </div>
                 <?php
                 }
+            }
                 ?>
             </div>
         </div>
